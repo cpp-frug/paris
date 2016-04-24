@@ -9,8 +9,7 @@ Score   |0
 
 
 L'association C++FRUG organise la douzième rencontre parisienne **C++ Francophone** avec pour nom de code : `decltype(new event)`.
-===============
-
+===========
 
 * Mercredi 27 avril 2016 de 19:00 à 21:30&nbsp;;
 * [43 Rue Beaubourg, Paris](http://www.openstreetmap.org/?mlat=48.86&amp;mlon=2.354#map=19/48.86/2.354), locaux de Mobiskill Partner&nbsp;;
@@ -26,6 +25,9 @@ Horaire | Programme
 20:30 | Révolution des `<algorithme>` en C++17
 21:15 | Informations générales et fin de la rencontre
 
+
+![logo C++ Francophonie, licence CC0](http://cpp-frug.github.io/images/Cpp-Francophonie.svg)
+
 ----
 
 * [Meetup C++ FRUG #12](http://www.meetup.com/User-Group-Cpp-Francophone/events/230392153/)
@@ -38,6 +40,16 @@ Horaire | Programme
 
 Présentations éclairs *(Lightning talks)*
 -----------------------------------------
+
+* Loïc Joly présente deux outils autour du C++, 
+    - Les [*Raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
+        ```C++
+        const char* ma_chaine_de_caracteres = R"nesaffichepas(
+        Salut
+        LinuxFr.org
+        )nesaffichepas";
+        ```
+    - Un visualiseur interactif d'arbre syntaxique basé sur Clang 
 
 * Loïc Joly présente deux outils autour du C++, 
     - Les [*Raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
@@ -77,8 +89,13 @@ Historique des rencontres *C++ Francophone*
 -------------------------------------------
 
 
-En 2011, les développeurs C++ se sont pris une claque. Du moins, ceux qui ont découvert le tout nouveau C++11 qui tranche avec l’encéphalogramme plat auquel nous étions habitués depuis les années 90 !
+Profitons de cette dépêche pour faire un point sur les rencontres C++ francophones.
 
+
+Traditionnellement les développeurs C++ n'étaient pas très motivés pour se réunir en association comme pour d'autres langages de programmation comme Perl, Python, Ada, PHP.
+  
+
+Mais en 2011, les développeurs C++ se sont pris une claque. Du moins, ceux qui ont compris la porté des révolutions apportés dans le nouveau standard C++11 qui tranche avec l’encéphalogramme plat auquel nous étions habitués depuis les années 90 !
 
 C'est ainsi que de partout dans le monde les passionnés du C++ se sont mis à avoir de plus en plus envie de se rencontrer pour partager leur enthousiasme et parfois leurs incompréhensions...
 
@@ -109,12 +126,17 @@ Date      | Lieu      | Sujet
 2016-03-18|Marseille  |[Première rencontre: lancement du groupe](http://www.meetup.com/fr-FR/Marseille-Marseille-C-User-Group/events/229405969/)
 2016-03-31|Paris      |[C++ FRUG #11 - `std::move(meetup)`](http://www.meetup.com/User-Group-Cpp-Francophone/events/229508095/)
 2016-04-19|Montpellier|[Rencontre C++](http://www.meetup.com/fr-FR/Montpellier-CPP/events/230050042/)
+2016-04-27|Paris      |[C++ FRUG #12 - `decltype(new event)`](http://www.meetup.com/User-Group-Cpp-Francophone/events/230392153/)
+
+Les [rencontres de Paris sont classés au sixième rang](http://www.meetup.com/topics/c-programming/) au niveau mondial dans la catégorie *"C++ Programming"* sur le site meetup.com.
 
 
 Genèse de l'association C++FRUG
 -------------------------------
 
-
 Ce besoin de partager les nouveautés du C++ a pour conséquence la création d'associations C++ dans plusieurs pays. Et c'est aussi le cas de la communauté francophone dont les plus motivés ont [proposé](https://groups.google.com/forum/#!msg/cpp-frug/A61eq1wPsZ8/lNxR4lMIbFEJ) une association C++FRUG.
 
-Le site web officiel est encore en cours de rédaction et avance selon les disponibilités des plus motivés...
+L'association se veut trans-mondiale et servir à toute rencontre C++ dans la francophonie. Un objectif important est de réduire notre dépendance au bon vouloir des sites non-libres.
+
+
+Par contre, le site web C++FRUG est encore en cours de rédaction et avance selon les disponibilités des plus motivés... (faut dire que les dévs C++ ne sont pas forcément des flèches en développement web).
