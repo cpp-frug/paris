@@ -1,15 +1,15 @@
-URL     | http://linuxfr.org/redaction/news/douzieme-rencontre-parisienne-c-jeudi-27-avril-2016
+URL     | http://linuxfr.org/redaction/news/douzieme-rencontre-parisienne-c-mercredi-27-avril-2016
 --------|---------
-Title   |Douzième rencontre parisienne C++ jeudi 27 avril 2016
-Authors |Oliver H
+Title   |Douzième rencontre parisienne C++ mercredi 27 avril 2016
+Authors |Oliver H, Benoît Sibaud
 Date    |2016-04-21T22:57:19+02:00
 License |CC by-sa
-Tags    |
+Tags    |c++, infos_locales et c++17
 Score   |0
 
 
 L'association C++FRUG organise la douzième rencontre parisienne **C++ Francophone** avec pour nom de code : `decltype(new event)`.
-===========
+============
 
 * Mercredi 27 avril 2016 de 19:00 à 21:30&nbsp;;
 * [43 Rue Beaubourg, Paris](http://www.openstreetmap.org/?mlat=48.86&amp;mlon=2.354#map=19/48.86/2.354), locaux de Mobiskill Partner&nbsp;;
@@ -35,36 +35,41 @@ Horaire | Programme
 * [Dépêche C++ FRUG #10](http://linuxfr.org/news/dixieme-rencontre-c-francophone-jeudi-21-janvier-2016-paris-chatelet-les-halles)
 * [Site officiel du Standard C++](https://isocpp.org/)
 * [Dépôts Git du Standard C++](https://github.com/cplusplus)
+* [Événement dans l'Agenda du Libre](http://www.agendadulibre.org/events/11228)
 
 ----
+
+Joël, le joyeux organisateur
+----------------------------
+
+
+[Joël Falcou](https://www.lri.fr/membre.php?mb=1146) organise depuis 2013 les rencontres parisiennes du *Groupe des Utilisateurs C++ Francophone* (abrégé en anglais *C++ FRUG* en clin d'œil à nous les [*Frogs*](https://fr.wiktionary.org/wiki/Frog)).
+
+
+Dans la vie, [Joël](https://fr.linkedin.com/in/jfalcou) est maître de conférences [LRI](https://fr.wikipedia.org/wiki/Laboratoire_de_recherche_en_informatique) et [Polytech Paris-Sud](https://fr.wikipedia.org/wiki/%C3%89cole_polytechnique_de_l'universit%C3%A9_Paris-Sud). Joël assure bénévolement la [maintenance de projets libres comme des parties de Boost](http://www.boost.org/doc/libs/1_60_0/libs/predef/doc/html/index.html). Joël est également [membre bénévole du comité de standardisation ISO C++](https://isocpp.org/blog/2014/05/n4035).
+
+
+![Joël anime Questions pour un Champion++](https://upload.wikimedia.org/wikipedia/commons/d/dc/20160121_CppFRUG_Joel_Falcou_CppQuiz_2.jpg)
+
+
 
 Présentations éclairs *(Lightning talks)*
 -----------------------------------------
 
 * Loïc Joly présente deux outils autour du C++, 
-    - Les [*Raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
-        ```C++
+    - Les [*raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
+    
+        ```cpp
         const char* ma_chaine_de_caracteres = R"nesaffichepas(
         Salut
-        LinuxFr.org
+        les "passionnés" du C++
         )nesaffichepas";
         ```
     - Un visualiseur interactif d'arbre syntaxique basé sur Clang 
 
-* Loïc Joly présente deux outils autour du C++, 
-    - Les [*Raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
-    ```
-    const char* ma_chaine_de_caracteres = R"nesaffichepas(
-    Salut
-    LinuxFr.org
-    )nesaffichepas";
-    ```
-    - Un visualiseur interactif d'arbre syntaxique basé sur Clang 
-
 * Joël Falcou présente quelques bonnes pratiques en C++ moderne 
     - Trucs et astuces
-    - Détourner les Variadiques à son profit
-
+    - Détourner les variadiques à son profit
 
 Révolution des `<algorithme>` en C++17
 --------------------------------------
@@ -128,15 +133,48 @@ Date      | Lieu      | Sujet
 2016-04-19|Montpellier|[Rencontre C++](http://www.meetup.com/fr-FR/Montpellier-CPP/events/230050042/)
 2016-04-27|Paris      |[C++ FRUG #12 - `decltype(new event)`](http://www.meetup.com/User-Group-Cpp-Francophone/events/230392153/)
 
-Les [rencontres de Paris sont classés au sixième rang](http://www.meetup.com/topics/c-programming/) au niveau mondial dans la catégorie *"C++ Programming"* sur le site meetup.com.
+Les [rencontres C++ parisiennes sont classées au sixième rang](http://www.meetup.com/topics/c-programming/) au niveau mondial dans la catégorie *"C++ Programming"* sur le site meetup.com (avec 489 *c++ dev* lors de la rédaction de cette dépêche).
 
+Anciennes présentations disponibles en ligne
+--------------------------------------------
+
+
+Avec un peu de web-spéléo-archéologie, on trouve des traces d'anciennes présentations.
+
+
+* Supports de présentation&nbsp;:
+    * [Montpellier](http://cpp-frug.github.io/montpellier/)&nbsp;;
+    * [Paris](http://fr.slideshare.net/cppfrug/)&nbsp;;
+    * [Lyon](http://lyon.francecpp.org/).
+* Captations audiovisuelles&nbsp;:
+    * [Canal C++FRUG sur dailymotion](http://www.dailymotion.com/cppfrug)&nbsp;;
+    * [Vidéos par Guillaume Belz](https://www.youtube.com/user/GuillaumeBelz)&nbsp;;
+    * [Vidéos par NumScale](https://www.youtube.com/user/NumScale).
+
+
+Merci de proposer d'autres liens dans les commentaires ;-)
 
 Genèse de l'association C++FRUG
 -------------------------------
 
 Ce besoin de partager les nouveautés du C++ a pour conséquence la création d'associations C++ dans plusieurs pays. Et c'est aussi le cas de la communauté francophone dont les plus motivés ont [proposé](https://groups.google.com/forum/#!msg/cpp-frug/A61eq1wPsZ8/lNxR4lMIbFEJ) une association C++FRUG.
 
-L'association se veut trans-mondiale et servir à toute rencontre C++ dans la francophonie. Un objectif important est de réduire notre dépendance au bon vouloir des sites non-libres.
-
+L'association se veut trans-mondiale et aider toute rencontre C++ dans la francophonie. Un objectif important est de réduire notre dépendance au bon vouloir des sites non-libres. Un autre objectif est de conserver en accès libre les supports de présentations et les captations audiovisuelles.
 
 Par contre, le site web C++FRUG est encore en cours de rédaction et avance selon les disponibilités des plus motivés... (faut dire que les dévs C++ ne sont pas forcément des flèches en développement web).
+
+Inscription sur meetup.com
+--------------------------
+
+
+L'inscription sur le site meetup.com n'est pas obligatoire, mais cela permet de :
+
+
+* Commander suffisamment de pizza et de bières sans trop en commander&nbsp;
+* Choisir/préparer la salle et installer le nombre de chaises nécessaires&nbsp;
+* Suivre dans le temps les statistiques du nombre d'inscrits&nbsp;
+* Les inscrits peuvent donner leur impression et indiquer ce qui peut être amélioré&nbsp;
+* Retrouver une personne rencontrée pour, par exemple, continuer une discussion…
+
+
+Ceux qui n'ont pas une adresse e-mail anonyme ou qui ne veulent pas dévoiler leur identité au site meetup.com peuvent venir sans s'y inscrire. Nous espérons que cela représente une petite minorité afin de ne pas avoir de surprise dans l'organisation de l'événement ;-)
