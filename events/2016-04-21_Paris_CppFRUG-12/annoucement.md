@@ -1,32 +1,27 @@
-URL     | http://linuxfr.org/redaction/news/douzieme-rencontre-parisienne-c-mercredi-27-avril-2016
---------|---------
-Title   |Douzième rencontre parisienne C++ mercredi 27 avril 2016
-Authors |Oliver H, Benoît Sibaud
-Date    |2016-04-21T22:57:19+02:00
-License |CC by-sa
-Tags    |c++, infos_locales et c++17
-Score   |0
+URL|     http://linuxfr.org/news/douzieme-rencontre-parisienne-c-mercredi-27-avril-2016
+---|------
+Title|   Douzième rencontre parisienne C++ mercredi 27 avril 2016
+Authors| Oliver H, Benoît Sibaud, ZeroHeure et tankey
+Date|    2016-04-21T22:57:19+02:00
+License| CC by-sa
+Tags|    c++17, c++ et infos_locales
+Score|   10
 
 
 L'association C++FRUG organise la douzième rencontre parisienne **C++ Francophone** avec pour nom de code : `decltype(new event)`.
-============
+-----------------
 
 * Mercredi 27 avril 2016 de 19:00 à 21:30&nbsp;;
 * [43 Rue Beaubourg, Paris](http://www.openstreetmap.org/?mlat=48.86&amp;mlon=2.354#map=19/48.86/2.354), locaux de Mobiskill Partner&nbsp;;
-* Stations **Rambuteau** (métro 11) et **Châtelet - Les Halles** (RER A, B, D et métro 4)&nbsp;;
-* [Bus 29, 38, 47, 75, N12, N13, N14 et N23](http://www.vianavigo.com/fr/itineraire-plan-de-quartier/#id=&proximity=43+rue+Beaubourg%2C+Paris&proximityType=Address&proximityCity=Paris&proximityExternalCode=ADDRESS32611&proximityCityCode=75000&proximityCoordX=&proximityCoordY=&spcar=%C3%A2&hit=1&hat=1&L=0&submitSearchProximity=&ajid=/stif_web_carto/comp/proximity/search.html_)&nbsp;;
-* [Station vélib n°3010](http://www.velib.paris/Plan/Trouver-une-station/%28id%29/3010).
+* **Métros** Rambuteau (ligne 11) et Châtelet - Les Halles (RER A, B, D et ligne 4)  --  **Bus** [29, 38, 47, 75, N12, N13, N14 et N23](http://www.vianavigo.com/fr/itineraire-plan-de-quartier/#id=&proximity=43+rue+Beaubourg%2C+Paris&proximityType=Address&proximityCity=Paris&proximityExternalCode=ADDRESS32611&proximityCityCode=75000&proximityCoordX=&proximityCoordY=&spcar=%C3%A2&hit=1&hat=1&L=0&submitSearchProximity=&ajid=/stif_web_carto/comp/proximity/search.html_)  --  **Station vélib** [n°3010](http://www.velib.paris/Plan/Trouver-une-station/%28id%29/3010).
 
-Horaire | Programme
+Horaires | Programme
 ------|----------
 19:00 | Accueil
 19:30 | Présentations éclairs *(Lightning talks)*
 20:00 | Pause dinatoire, pizzas et bières offertes par Mobiskill Partner
 20:30 | Révolution des `<algorithme>` en C++17
 21:15 | Informations générales et fin de la rencontre
-
-
-![logo C++ Francophonie, licence CC0](http://cpp-frug.github.io/images/Cpp-Francophonie.svg)
 
 ----
 
@@ -39,9 +34,11 @@ Horaire | Programme
 
 ----
 
+![logo C++ Francophonie, licence CC0](http://cpp-frug.github.io/images/Cpp-Francophonie.svg)
+
+
 Joël, le joyeux organisateur
 ----------------------------
-
 
 [Joël Falcou](https://www.lri.fr/membre.php?mb=1146) organise depuis 2013 les rencontres parisiennes du *Groupe des Utilisateurs C++ Francophone* (abrégé en anglais *C++ FRUG* en clin d'œil à nous les [*Frogs*](https://fr.wiktionary.org/wiki/Frog)).
 
@@ -56,20 +53,25 @@ Dans la vie, [Joël](https://fr.linkedin.com/in/jfalcou) est maître de confére
 Présentations éclairs *(Lightning talks)*
 -----------------------------------------
 
-* Loïc Joly présente deux outils autour du C++, 
-    - Les [*raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
-    
-        ```cpp
-        const char* ma_chaine_de_caracteres = R"nesaffichepas(
-        Salut
-        les "passionnés" du C++
-        )nesaffichepas";
-        ```
-    - Un visualiseur interactif d'arbre syntaxique basé sur Clang 
+Loïc Joly présente deux outils autour du C++, 
 
-* Joël Falcou présente quelques bonnes pratiques en C++ moderne 
-    - Trucs et astuces
-    - Détourner les variadiques à son profit
+
+- Les [*raw string litterals*](http://en.cppreference.com/w/cpp/language/string_literal) et comment les remanier (*refactoring*)
+
+```c++
+const char* ma_chaine_de_caracteres = R"nesaffichepas(
+Salut
+les "passionnés" du C++
+)nesaffichepas";
+```
+
+- Un visualiseur interactif d'arbre syntaxique basé sur Clang 
+
+Joël Falcou présente quelques bonnes pratiques en C++ moderne 
+
+- Trucs et astuces
+- Détourner les variadiques à son profit
+
 
 Révolution des `<algorithme>` en C++17
 --------------------------------------
@@ -78,21 +80,18 @@ Révolution des `<algorithme>` en C++17
 Thomas Petit présente les avancées du comité de normalisation C++17 (SG9) a propos des [`<algorithm>`](http://en.cppreference.com/w/cpp/header/algorithm) -- *Ranges TS : `view::transform<algorithm>`*.
 
 
-Les `<algorithm>` de la STL sont mal aimés : Difficilement composables, encombrés d'une syntaxe pénible, ils n'ont jamais réussi à convaincre et vivotent dans l'ombre des conteneurs. Mais récemment le comité de normalisation C++ (SG9) sous l'impulsion d'Eric Niebler a annoncé une série de TS (*Technical Specification*) qui devrait les remettre sur le devant de la scène.
-
+Les `<algorithm>` de la STL sont mal aimés : difficilement composables, encombrés d'une syntaxe pénible, ils n'ont jamais réussi à convaincre et vivotent dans l'ombre des conteneurs. Mais récemment le comité de normalisation C++ (SG9) sous l'impulsion d'Eric Niebler a annoncé une série de TS (*Technical Specification*) qui devrait les remettre sur le devant de la scène.
 
 Le premier TS, pas encore publié, mais dont le brouillon (*draft*) est très avancé, va revisiter les algorithmes existant pour en simplifier massivement l'utilisation. En introduisant de nouvelles surcharges acceptant les *ranges* (https://github.com/ericniebler/range-v3/).
 
-Les infâmes `begin()`/`end()` que vomissent les codes utilisant fortement les `<algorithm>` ne seront bientôt plus qu'un lointain souvenir. L'arrivé des [Concepts](http://en.cppreference.com/w/cpp/language/constraints), ainsi que de nouvelles fonctionnalités comme les [Callables](http://en.cppreference.com/w/cpp/concept/Callable) et les Projections, vont eux aussi participer à la cure de simplification qui attends `<algorithm>`.
-
+Les infâmes `begin()`/`end()` que vomissent les codes utilisant fortement les `<algorithm>` ne seront bientôt plus qu'un lointain souvenir. L'arrivé des [Concepts](http://en.cppreference.com/w/cpp/language/constraints), ainsi que de nouvelles fonctionnalités comme les [Callables](http://en.cppreference.com/w/cpp/concept/Callable) et les Projections, vont eux aussi participer à la cure de simplification qui attend `<algorithm>`.
 
 Le deuxième TS, en préparation, s'annonce encore plus révolutionnaire. En introduisant les *View*, la STL devrait se doter d'une nouvelle classe d'algorithme [paresseux (*lazy*)](https://fr.wikipedia.org/wiki/%C3%89valuation_paresseuse), non-mutable et composable permettant une écriture fonctionnelle merveilleusement concise et malléable.  
 
 
 
-Historique des rencontres *C++ Francophone*
+Historique des rencontres *C++ francophones*
 -------------------------------------------
-
 
 Profitons de cette dépêche pour faire un point sur les rencontres C++ francophones.
 
@@ -100,7 +99,7 @@ Profitons de cette dépêche pour faire un point sur les rencontres C++ francoph
 Traditionnellement les développeurs C++ n'étaient pas très motivés pour se réunir en association comme pour d'autres langages de programmation comme Perl, Python, Ada, PHP.
   
 
-Mais en 2011, les développeurs C++ se sont pris une claque. Du moins, ceux qui ont compris la porté des révolutions apportés dans le nouveau standard C++11 qui tranche avec l’encéphalogramme plat auquel nous étions habitués depuis les années 90 !
+Mais en 2011, les développeurs C++ se sont pris une claque. Du moins, ceux qui ont compris la portée des révolutions apportées dans le nouveau standard [C++11](https://fr.wikipedia.org/wiki/C%2B%2B11) qui tranche avec l’encéphalogramme plat auquel nous étions habitués depuis les années 90 !
 
 C'est ainsi que de partout dans le monde les passionnés du C++ se sont mis à avoir de plus en plus envie de se rencontrer pour partager leur enthousiasme et parfois leurs incompréhensions...
 
@@ -111,7 +110,7 @@ La communauté C++ francophone n'a pas échappé à ce phénomène et de nombreu
 
 Date      | Lieu      | Sujet
 ----------|-----------|------
-2013-06-05|Paris      | [Qt on mobile](http://www.meetup.com/User-Group-Cpp-Francophone/events/120838202/)
+2013-06-05|Paris      |[Qt on mobile](http://www.meetup.com/User-Group-Cpp-Francophone/events/120838202/)
 2014-03-11|Lyon       |[C++ et Web: la croisée des chemins](http://humantalks.com/talks/363-c-et-web-la-croisee-des-chemins)
 2014-03-13|Lyon       |[Le C++ évolue, et vous ?](http://www.meetup.com/fr-FR/LyonCPP/events/168296962/)
 2014-04-22|Lyon       |[Rencontre C++](http://www.meetup.com/fr-FR/LyonCPP/events/175920152/)
@@ -177,4 +176,4 @@ L'inscription sur le site meetup.com n'est pas obligatoire, mais cela permet de 
 * Retrouver une personne rencontrée pour, par exemple, continuer une discussion…
 
 
-Ceux qui n'ont pas une adresse e-mail anonyme ou qui ne veulent pas dévoiler leur identité au site meetup.com peuvent venir sans s'y inscrire. Nous espérons que cela représente une petite minorité afin de ne pas avoir de surprise dans l'organisation de l'événement ;-)
+Ceux qui n'ont pas une adresse de courriel anonyme ou qui ne veulent pas dévoiler leur identité au site meetup.com peuvent venir sans s'y inscrire. Nous espérons que cela représente une petite minorité afin de ne pas avoir de surprise dans l'organisation de l'événement ;-)
