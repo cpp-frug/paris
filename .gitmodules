@@ -1,0 +1,3 @@
+[submodule "events/2013-03-19_Paris_CppFRUG-01/cpp-event-2013.03.19"]
+	path = events/2013-03-19_Paris_CppFRUG-01/cpp-event-2013.03.19
+	url = https://github.com/cpp-frug/cpp-event-2013.03.19
