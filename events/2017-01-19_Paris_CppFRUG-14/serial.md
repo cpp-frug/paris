@@ -74,7 +74,7 @@ Type/index mapping : *dynamic*
 
 	* std::map<T_Key, T_Value>
 	* Polymorphism
-	* Initializer-list
+	* Initializer-list for template viariadics expansion
 
 // TODO : Insert diagram 0
 // TODO : Insert diagram 1
