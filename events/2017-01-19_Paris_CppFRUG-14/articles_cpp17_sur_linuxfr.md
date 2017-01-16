@@ -42,7 +42,7 @@ Rédacion au lendemain de la dernière réunion du commité C++ clôturant l'ajo
 * Août [Les coulisses du standard C++](http://linuxfr.org/news/les-coulisses-du-standard-cpp)
 * Oct. [C++17, Genèse d’une version mineure](http://linuxfr.org/news/cpp17-genese-d-une-version-mineure)
 
-![Deux collègues content d'une nouvelle version C++17 mais qui ne sont pas au courant des dépêches C++17 sur LinuxFr.org qui leur permettrait de cerner les nouvelles fonctionnalités.](http://cpp-frug.github.io/materials/images/cpp-complexe-path.svg)
+[![Évolution du langage C++](https://cpp-frug.github.io/materials/images/cpp-evolution-path.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-evolution-original.svg)
 
 
 Calendrier de l'Avent du C++
@@ -55,8 +55,7 @@ Calendrier de l'Avent du C++
 * 11/déc [C++ se court-circuite le constructeur de copie](http://linuxfr.org/news/cpp-se-court-circuite-le-constructeur-de-copie)
 * 13/déc [C++17 garantit le court-circuit de copie](http://linuxfr.org/news/cpp17-garantit-le-court-circuit-de-copie-suite-de-la-precedente-depeche)
 
-[![Une personne déprime de ne plus rien comprendre au C++ et son collègue le rassure que LinuxFr.org publie le calendrier de l'Avent du C++ avec des explications pédagogiques](http://cpp-frug.github.io/materials/images/calendrier-avent-cpp.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/README.md#calendrier-de-l-avent-du-c)
-
+[![Une personne affolé prévient son collègue que LinuxFr.org s'est fait piraté. Son collègue vient constater l’attaque avec un site inondé de dépêches C++ et avoue que les dév. C++ sont trop balaises](https://cpp-frug.github.io/materials/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)
 
 Articles disponibles sur GitHub
 ===============================
