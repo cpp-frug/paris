@@ -1,5 +1,7 @@
-C++FRUG #14
-===========
+[C++FRUG #14][M] `auto happy = new Year(2017)`
+=============================================
+
+[M]: https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/236788136/
 
 19:30 &nbsp; **Accueil**  
 19:45 &nbsp; **Trois présentations de 10mn chacune** (LinuxFr.org, Sérialisation, Boson)  
@@ -19,7 +21,7 @@ C++17 s'invite sur LinuxFr.org
 Qualités :
     
 * Licence libre (CC BY-SA, AGPL) contrairement à d'autres alternatives comme cpp.developpez.com
-* Respect de la vie privée
+* Respect de la vie privée (cookies, publicité...)
 * Rédaction collaborative en Markdown
 * Équipe de rédacteurs
 * Modérateurs sympatiques, professionnels et réactifs
