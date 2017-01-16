@@ -34,28 +34,30 @@ Attention :
 ![Deux collègues content d'une nouvelle version C++17 mais qui ne sont pas au courant des dépêches C++17 sur LinuxFr.org qui leur permettrait de cerner les nouvelles fonctionnalités.](http://cpp-frug.github.io/materials/images/cpp-complexe-path.svg)
 
 
-Articles publiées en 2016
-=========================
+Rédaction et succès des publications
+====================================
     
-Rédacion au lendemain de la dernière réunion du commité C++ clôturant l'ajout des fonctionnalités pour C++17 (25 juin 2016).
-    
-* Août [Les coulisses du standard C++](http://linuxfr.org/news/les-coulisses-du-standard-cpp)
-* Oct. [C++17, Genèse d’une version mineure](http://linuxfr.org/news/cpp17-genese-d-une-version-mineure)
+* 25 juin 2016, dernière réunion du commité C++ clôturant l'ajout des fonctionnalités pour C++17 => Début de la rédaction
+* 20 août 2016 [Les coulisses du standard C++](http://linuxfr.org/news/les-coulisses-du-standard-cpp)
+* 2 octobre 2016 [C++17, Genèse d’une version mineure](http://linuxfr.org/news/cpp17-genese-d-une-version-mineure)
 
 [![Évolution du langage C++](https://cpp-frug.github.io/materials/images/cpp-evolution-path.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-evolution-original.svg)
 
 
 Calendrier de l'Avent du C++
 ============================
-    
-* 1/déc [C++17 fixe l’ordre d’évaluation des expressions](http://linuxfr.org/news/cpp17-fixe-l-ordre-d-evaluation-des-expressions)
-* 2/déc [C++17 indique la disponibilité des headers](http://linuxfr.org/news/cpp17-indique-la-disponibilite-des-en-tetes-header)
-* 3/déc [C++17 branche à la compilation](http://linuxfr.org/news/cpp17-branche-a-la-compilation-if-constexpr)
-* 7/déc [C++17 exprime la virgule flottante en hexadécimal](http://linuxfr.org/news/cpp17-exprime-la-virgule-flottante-en-hexadecimal-et-offre-des-cadeaux-aux-lecteurs-de-linuxfr-org)
-* 11/déc [C++ se court-circuite le constructeur de copie](http://linuxfr.org/news/cpp-se-court-circuite-le-constructeur-de-copie)
-* 13/déc [C++17 garantit le court-circuit de copie](http://linuxfr.org/news/cpp17-garantit-le-court-circuit-de-copie-suite-de-la-precedente-depeche)
+   
+Rédiger 25 articles entre le 1er et le 25 décembre !
+
+* 01/12 [C++17 fixe l’ordre d’évaluation des expressions](http://linuxfr.org/news/cpp17-fixe-l-ordre-d-evaluation-des-expressions)
+* 02/12 [C++17 indique la disponibilité des headers](http://linuxfr.org/news/cpp17-indique-la-disponibilite-des-en-tetes-header)
+* 03/12 [C++17 branche à la compilation](http://linuxfr.org/news/cpp17-branche-a-la-compilation-if-constexpr)
+* 07/12 [C++17 exprime la virgule flottante en hexadécimal](http://linuxfr.org/news/cpp17-exprime-la-virgule-flottante-en-hexadecimal-et-offre-des-cadeaux-aux-lecteurs-de-linuxfr-org)
+* 11/12 [C++ se court-circuite le constructeur de copie](http://linuxfr.org/news/cpp-se-court-circuite-le-constructeur-de-copie)
+* 13/12 [C++17 garantit le court-circuit de copie](http://linuxfr.org/news/cpp17-garantit-le-court-circuit-de-copie-suite-de-la-precedente-depeche)
 
 [![Une personne affolé prévient son collègue que LinuxFr.org s'est fait piraté. Son collègue vient constater l’attaque avec un site inondé de dépêches C++ et avoue que les dév. C++ sont trop balaises](https://cpp-frug.github.io/materials/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)
+
 
 Articles disponibles sur GitHub
 ===============================
