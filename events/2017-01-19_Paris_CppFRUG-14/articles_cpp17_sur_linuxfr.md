@@ -86,14 +86,14 @@ Profiter de [Reveal.js](https://github.com/hakimel/reveal.js), [Flatdoc](https:/
 ![Logo jekyll GitHub Pages](https://www.awesomeincu.com/img/logos/logo-jekyll-udemy.png)
 
 
-Transition C++17/C++20/C++23 avec les macros `__cpp_*`
-======================================================
+Écrire du code C++17/C++20/C++23 aujourd'hui
+============================================
 
 Les [*feature testing macros*](http://en.cppreference.com/w/User:D41D8CD98F/feature_testing_macros) permettent d'écrire du code qui s'adapte aux fonctionnalités prises en charge par le compilateur.
 
 ```cpp
 #ifdef __cpp_lib_experimental_filesystem
-#  include <filesystem>
+#include <filesystem>
 void backup()
 {
   std::filesystem::copy("file.txt","file.bak");
@@ -112,7 +112,7 @@ Penser à tester aussi `__cpp_lib_filesystem` et à comparer les [valeur (année
 Alternatives aux macros `__cpp_*`
 =================================
 
-* macro `__cplusplus` (`201103`, `201402`, `201700`)
+* macro `__cplusplus` (`201103`, `201402`, `201700`) => Fausse *bonne idée*
 * macros [Boost.Config](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)
 * macro `__has_include`
 * [CMAKE_CXX_KNOWN_FEATURES](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html) => CMake connait les fonctionnalités C++ supportées par le compilateur
