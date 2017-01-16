@@ -1,16 +1,16 @@
 C++FRUG #14
 ===========
 
-19:30 **Accueil**  
-19:45 **Trois présentations de 10mn chacune** (LinuxFr.org, Sérialisation, Boson)  
-20:15 **Pause Dinatoire**  
-20h45 **C++17 abstractions for heterogeneous computing** Ronan Keryell
-21h30 **Mots de clôture du Meetup**
+19:30 &nbsp; **Accueil**  
+19:45 &nbsp; **Trois présentations de 10mn chacune** (LinuxFr.org, Sérialisation, Boson)  
+20:15 &nbsp; **Pause Dinatoire**  
+20:45 &nbsp; **C++17 abstractions for heterogeneous computing** Ronan Keryell  
+21:30 &nbsp; **Mots de clôture du Meetup**
 
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
-Communauté francophone C++
-http://cppfrug.org
+<big>Communauté francophone C++</big>  
+<big>[cppfrug.org](http://cppfrug.org)</big>
 
 
 C++17 s'invite sur LinuxFr.org
