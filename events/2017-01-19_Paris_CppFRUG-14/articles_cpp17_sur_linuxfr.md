@@ -81,7 +81,7 @@ Une partie des Meetups :
 * https://github.com/cpp-frug/paris
 * https://github.com/cpp-frug/montpellier
 
-Profotiter de [Reveal.js](https://github.com/hakimel/reveal.js), [Flatdoc](https://github.com/rstacruz/flatdoc), [Remark](https://github.com/gnab/remark), [Jekyll](https://github.com/jekyll/jekyll)...
+Profiter de [Reveal.js](https://github.com/hakimel/reveal.js), [Flatdoc](https://github.com/rstacruz/flatdoc), [Remark](https://github.com/gnab/remark), [Jekyll](https://github.com/jekyll/jekyll)...
 
 ![Logo jekyll GitHub Pages](https://www.awesomeincu.com/img/logos/logo-jekyll-udemy.png)
 
@@ -115,7 +115,12 @@ Alternatives aux macros `__cpp_*`
 * macro `__cplusplus` (`201103`, `201402`, `201700`)
 * macros [Boost.Config](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)
 * macro `__has_include`
-
+* [CMAKE_CXX_KNOWN_FEATURES](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html) => CMake connait les fonctionnalités C++ supportées par le compilateur
+    
+    ```cmake
+    # MyLib utilise constexpr
+    target_compile_features(MyLib PRIVATE cxx_constexpr)
+    ```
 
 `__has_include`
 ===============
