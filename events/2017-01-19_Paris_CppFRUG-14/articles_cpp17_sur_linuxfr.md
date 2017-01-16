@@ -115,17 +115,16 @@ Alternatives aux macros `__cpp_*`
 * macro `__cplusplus` (`201103`, `201402`, `201700`) => Fausse *bonne idée*
 * macros [Boost.Config](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)
 * macro `__has_include`
-* [CMAKE_CXX_KNOWN_FEATURES](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html) => CMake connait les fonctionnalités C++ supportées par le compilateur
-    
+* [CMAKE_CXX_KNOWN_FEATURES](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html) => CMake connait les fonctionnalités C++ du compilateur
+        
     ```cmake
-    # MyLib utilise constexpr
     target_compile_features(MyLib PRIVATE cxx_constexpr)
     ```
 
 `__has_include`
 ===============
 
-[[P0061]](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include) pour vérifier la présence d'un *header* pendant la compilation.
+[P0061](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include) pour vérifier la présence d'un *header* pendant la compilation.
 
 ```cpp
 #ifdef __has_include
@@ -146,7 +145,7 @@ Alternatives aux macros `__cpp_*`
 Virgule flottante en hexadécimal
 ================================
     
-[[P0245]](http://wg21.link/p0245) officialise les *hexadecimal floating literals* déjà présents des C99, Java 5 (2004)…
+[P0245](http://wg21.link/p0245) officialise les *hexadecimal floating literals* déjà présents des C99, Java 5 (2004)…
     
 ```cpp
 float  v = 0x'Baffe.bobo'p1f;
@@ -160,7 +159,7 @@ double w = 0x'C0DE'2017.1'cafe'p1;
 `if constexpr`
 =============
     
-[[P0292]](https://wg21.link/p0292) simplifie la métaprogrammation avec `static_if` ... `constexpr_if` ... `constexpr if` ...
+[P0292](https://wg21.link/p0292) simplifie la métaprogrammation avec `static_if` ... `constexpr_if` ... `constexpr if` ...
     
 ```cpp
 template <class T, class... R>
@@ -178,7 +177,7 @@ void fonction (const T& t, const R&... r)
 Variable `inline`
 =================
 
-Après les variables `template`, voici que [[P0386]](http://wg21.link/p0386) nous rajoute les variables `inline` et nous permet de contourner la [*One Definition Rule*](https://en.wikipedia.org/wiki/One_Definition_Rule).
+Après les variables `template`, voici que [P0386](http://wg21.link/p0386) nous rajoute les variables `inline` et nous permet de contourner la [*One Definition Rule*](https://en.wikipedia.org/wiki/One_Definition_Rule).
 
 [![Les deux filles nerds résolvent une erreur de link d'une variable membre static non définie en rajoutant inline](https://cpp-frug.github.io/materials/images/nerd_cpp17_variable_inline.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_cpp17_variable_inline.svg)
 
@@ -186,7 +185,7 @@ Après les variables `template`, voici que [[P0386]](http://wg21.link/p0386) nou
 Structured bindings
 ===================
 
-[[P0217]](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**, mais limitée aux `std::tuple`, aux tableaux (comme `std::array`) et aux structures plates (comme `std::pair`).
+[P0217](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**, mais limitée aux `std::tuple`, aux tableaux (comme `std::array`) et aux structures plates (comme `std::pair`).
     
 ```cpp
 struct A
@@ -230,7 +229,7 @@ switch (bool loop=true; loop)
 `auto x{42};` déduit comme `int x{42};`
 =======================================
 
-[[N3922]](https://wg21.link/n3922) comble un trou sur les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`.
+[N3922](https://wg21.link/n3922) comble un trou sur les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`.
     
 ```cpp
 auto a   {1};     //ok => int a{1};
@@ -249,7 +248,7 @@ auto f = {1, 2.0}; //KO car pas le même type (int et double)
 `typename` pour les paramètres `template template`
 =================================================
 
-[[N4051]](https://wg21.link/n4051) autorise enfin `typename` pour les paramètres `template template` !
+[N4051](https://wg21.link/n4051) autorise enfin `typename` pour les paramètres `template template` !
 
 ```cpp
 template<template<typename> class    T> class Cpp98;
@@ -282,7 +281,7 @@ private:
 Suppression des trigraphes
 ==========================
 
-C++11 aurait pu rendre les trigraphes obsolètes, mais quelques membres du comité de normalisation du C++ (IBM et Bloomberg) s'y étaient opposés. Pour C++17, les membres ont finalement voté [[N4086]](https://wg21.link/n4086) qui les supprime sans étape intermédiaire.
+C++11 aurait pu rendre les trigraphes obsolètes, mais quelques membres du comité de normalisation du C++ (IBM et Bloomberg) s'y étaient opposés. Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086) qui les supprime sans étape intermédiaire.
 
 ```cpp
 // Avec digraphes et trigraphes
