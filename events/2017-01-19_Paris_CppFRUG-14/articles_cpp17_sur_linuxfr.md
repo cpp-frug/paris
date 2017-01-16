@@ -2,14 +2,15 @@ C++FRUG #14
 ===========
 
 19:30 **Accueil**  
-19:45 **Trois présentations de 10mn chacune** (LinuxFr.org, Détournenement, Boson)  
+19:45 **Trois présentations de 10mn chacune** (LinuxFr.org, Sérialisation, Boson)  
 20:15 **Pause Dinatoire**  
-20h45 **C++17 abstractions for heterogeneous computing with Khronos OpenCL SYCL** Ronan Keryell, Xilinx Research Labs  
-21h30 **Remerciments et fin du Meetup**
+20h45 **C++17 abstractions for heterogeneous computing** Ronan Keryell
+21h30 **Mots de clôture du Meetup**
 
-[![logo C++FRUG](http://cpp-frug.github.io/images/Cpp-Francophonie.svg)]()
+[![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
-Communauté francophone C++ cppfrug.org
+Communauté francophone C++
+http://cppfrug.org
 
 
 C++17 s'invite sur LinuxFr.org
