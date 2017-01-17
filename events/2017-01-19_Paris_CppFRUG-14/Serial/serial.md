@@ -13,7 +13,7 @@ Problematic overview :
 > * Frances buentempo's article
 > * Brownian motion reproducibility
 
-![GGE, est un moteur de simulation](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
+![GGE](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
 
 > "How generate a two-way mapping between **types** and constexpr **indexes**,
 > with both **static** and **dynamic** accessors ?
@@ -41,7 +41,7 @@ Store type infos (1)
 ==============
 * Type/index mapping : *static*
  
-// TODO : TypePack diagram IMG
+![TypePack](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack.png "TypePack : Static association")
 
 ```cpp
 template <typename ... Types>
@@ -71,19 +71,17 @@ Store types infos (2)
 
 Type/index mapping : *dynamic*
 
-	* std::map<T_Key, T_Value>
 	* Polymorphism
 	* Initializer-list for template viariadics expansion
+	* std::map<T_Key, T_Value>
 
-// TODO : Insert diagram 0
-// TODO : Insert diagram 1
-
+![TypeIndexer_0](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
+![TypeIndexer_1](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
+![TypeIndexer_2](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_2.png "TypePack : Static association 2")
 ---
 
 C++ Serialization : Bring all pieces together
 ==============
-
-// TODO : Insert writer diagram
 
 ```cpp
 template <class T_Interface>
@@ -110,7 +108,7 @@ struct InterfaceIs
 C++ Serialization : Writer
 ==============
 
-// TODO : Insert diagram
+![Writer](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/Writer.png "GCL::Serialization::Writer")
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -138,7 +136,7 @@ struct Writer
 C++ Serialization : Reader
 ==============
 
-// TODO : Insert Reader diagram
+![Reader](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/Reader.png "GCL::Serialization::Reader")
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -284,11 +282,6 @@ Few words about  [NonSerialized()] attribute
 ```Csharp
 namespace Sample
 {
-    public class MyClassThatINeverWantToSerialize
-    {
-        // ...
-        private BigObject _wayToBig;
-    }
     public class MyClassThatIAlwaysWantToSerialize
     {
         // ...
