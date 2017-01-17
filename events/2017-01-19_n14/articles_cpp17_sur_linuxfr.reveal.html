@@ -6,28 +6,29 @@
 
 		<title>Articles C++17 sur LinuxFr.org</title>
 
-		<link rel="stylesheet" href="/external/reveal/css/reveal.css">
-		<link rel="stylesheet" href="/external/reveal/css/theme/black.css">
+		<link rel="stylesheet" href="http://cpp-frug.github.io/external/reveal/css/reveal.css">
+		<link rel="stylesheet" href="http://cpp-frug.github.io/external/reveal/css/theme/serif.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="/external/reveal/lib/css/zenburn.css">
+		<link rel="stylesheet" href="http://cpp-frug.github.io/external/reveal/lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
+			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '/external/reveal/css/print/pdf.css' : '/external/reveal/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'http://cpp-frug.github.io/external/reveal/css/print/pdf.css' : 'http://cpp-frug.github.io/external/reveal/css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
 		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<style media="screen" type="text/css">
-					.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { text-transform: none; }
-					.reveal pre code { max-height: 80%; }
-					.reveal blockquote { font-style: normal; text-align: left; background: rgba(255, 255, 255, 0.2); }
+					.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 { text-transform:none; }
+					.reveal pre code { max-height:80%; }
+					.reveal blockquote { font-style:normal; text-align:left; background:rgba(255,255,255,0.2); }
+					.reveal section img { background:none; border:none; box-shadow:none; }
                 </style>
 				<section
 					data-markdown="articles_cpp17_sur_linuxfr.md"
@@ -37,8 +38,8 @@
 			</div>
 		</div>
 
-		<script src="/external/reveal/lib/js/head.min.js"></script>
-		<script src="/external/reveal/js/reveal.js"></script>
+		<script src="http://cpp-frug.github.io/external/reveal/lib/js/head.min.js"></script>
+		<script src="http://cpp-frug.github.io/external/reveal/js/reveal.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -47,10 +48,10 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/marked.js' },
-					{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/markdown.js' },
-					{ src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true },
-					{ src: 'http://lab.hakim.se/reveal-js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'http://cpp-frug.github.io/external/reveal/plugin/markdown/marked.js' },
+					{ src: 'http://cpp-frug.github.io/external/reveal/plugin/markdown/markdown.js' },
+					{ src: 'http://cpp-frug.github.io/external/reveal/plugin/notes/notes.js', async: true },
+					{ src: 'http://cpp-frug.github.io/external/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				],
 
 				width: "100%",

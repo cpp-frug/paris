@@ -1,99 +1,78 @@
-[C++FRUG #14][M] `auto happy = new Year(2017)`
-=============================================
+[C++FRUG #14][M]
+================
+`auto happy = new Year(2017)`
+----------------------------
 
 [M]: https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/236788136/
 
-19:30 &nbsp; **Accueil**  
-19:45 &nbsp; **Trois présentations de 10mn chacune** (LinuxFr.org, Sérialisation, Boson)  
-20:15 &nbsp; **Pause Dinatoire**  
-20:45 &nbsp; **C++17 abstractions for heterogeneous computing** Ronan Keryell  
-21:30 &nbsp; **Mots de clôture du Meetup**
+> 19:30 &nbsp; **Accueil**  
+> 19:45 &nbsp; **Trois courtes présentations**  
+> 20:15 &nbsp; **Pause Dinatoire**  
+> 20:45 &nbsp; **C++17 abstractions for heterogeneous computing**  
+> 21:30 &nbsp; **Mots de clôture**
 
-[![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
-
-<big>Communauté francophone C++</big>  
-<big>[cppfrug.org](http://cppfrug.org)</big>
+&nbsp; &nbsp; &nbsp; &nbsp; **[cppfrug.org](http://cppfrug.org) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](../../../github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) Communauté C++ francophone**
 
 
-C++17 s'invite sur LinuxFr.org
-==============================
 
-Qualités :
-    
-* Licence libre (CC BY-SA, AGPL) contrairement à d'autres alternatives comme cpp.developpez.com
-* Respect de la vie privée (cookies, publicité...)
+LinuxFr.org
+===========
+
 * Rédaction collaborative en Markdown
-* Équipe de rédacteurs
-* Modérateurs sympatiques, professionnels et réactifs
+* Licence libre (CC BY-SA 4.0)
+* Modérateurs sympas, pro et réactifs
 * Grande audience francophone
-
-Attention :
-    
-* Peu de lecteurs intéressés par le C++
-* Trolls
-* ~~Franglais~~
+* ~~Lecteurs C++~~ ~~Trolls~~ ~~Franglais~~
 
 ![Deux collègues content d'une nouvelle version C++17 mais qui ne sont pas au courant des dépêches C++17 sur LinuxFr.org qui leur permettrait de cerner les nouvelles fonctionnalités.](http://cpp-frug.github.io/materials/images/cpp-complexe-path.svg)
 
 
-Rédaction et succès des publications
-====================================
-    
-* 25 juin 2016, dernière réunion du commité C++ clôturant l'ajout des fonctionnalités pour C++17 => Début de la rédaction
-* 20 août 2016 &emsp; [Les coulisses du standard C++](http://linuxfr.org/news/les-coulisses-du-standard-cpp)
-* 2 octobre 2016 &nbsp; [C++17, Genèse d’une version mineure](http://linuxfr.org/news/cpp17-genese-d-une-version-mineure)
+Succès des publications
+=======================
+
+* 25 juin 2016 &emsp; Commité C++ clôture l'ajout des fonctionnalités pour C++17
+* 20 août 2016 &emsp; [**Les coulisses du standard C++**](http://linuxfr.org/news/les-coulisses-du-standard-cpp)
+* 2 octobre 2016 &nbsp; [**C++17, Genèse d’une version mineure**](http://linuxfr.org/news/cpp17-genese-d-une-version-mineure)
 
 [![Évolution du langage C++](https://cpp-frug.github.io/materials/images/cpp-evolution-path.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-evolution-original.svg)
 
 
-Calendrier de l'Avent du C++
-============================
-   
-Rédiger 25 articles entre le 1er et le 25 décembre !
+Calendrier de l'Avent
+=====================
 
-* 01/12 &nbsp; [C++17 fixe l’ordre d’évaluation des expressions](http://linuxfr.org/news/cpp17-fixe-l-ordre-d-evaluation-des-expressions)
-* 02/12 &nbsp; [C++17 indique la disponibilité des headers](http://linuxfr.org/news/cpp17-indique-la-disponibilite-des-en-tetes-header)
-* 05/12 &nbsp; [C++17 branche à la compilation](http://linuxfr.org/news/cpp17-branche-a-la-compilation-if-constexpr)
-* 07/12 &nbsp; [C++17 exprime la virgule flottante en hexadécimal](http://linuxfr.org/news/cpp17-exprime-la-virgule-flottante-en-hexadecimal-et-offre-des-cadeaux-aux-lecteurs-de-linuxfr-org)
-* 11/12 &nbsp; [C++ se court-circuite le constructeur de copie](http://linuxfr.org/news/cpp-se-court-circuite-le-constructeur-de-copie)
-* 13/12 &nbsp; [C++17 garantit le court-circuit de copie](http://linuxfr.org/news/cpp17-garantit-le-court-circuit-de-copie-suite-de-la-precedente-depeche)
+> 01/12 &nbsp; [**C++17 fixe l’ordre d’évaluation des expressions**](http://linuxfr.org/news/cpp17-fixe-l-ordre-d-evaluation-des-expressions)  
+> 02/12 &nbsp; [**C++17 indique la disponibilité des headers**](http://linuxfr.org/news/cpp17-indique-la-disponibilite-des-en-tetes-header)  
+> 05/12 &nbsp; [**C++17 branche à la compilation**](http://linuxfr.org/news/cpp17-branche-a-la-compilation-if-constexpr)  
+> 07/12 &nbsp; [**C++17 exprime la virgule flottante en hexadécimal**](http://linuxfr.org/news/cpp17-exprime-la-virgule-flottante-en-hexadecimal-et-offre-des-cadeaux-aux-lecteurs-de-linuxfr-org)  
+> 11/12 &nbsp; [**C++ se court-circuite le constructeur de copie**](http://linuxfr.org/news/cpp-se-court-circuite-le-constructeur-de-copie)  
+> 13/12 &nbsp; [**C++17 garantit le court-circuit de copie**](http://linuxfr.org/news/cpp17-garantit-le-court-circuit-de-copie-suite-de-la-precedente-depeche)
+
+
+Bonnes résolutions 2017
+=======================
+
+Être plus nombreux, mieux se répartir l'effort
 
 [![Une personne affolé prévient son collègue que LinuxFr.org s'est fait piraté. Son collègue vient constater l’attaque avec un site inondé de dépêches C++ et avoue que les dév. C++ sont trop balaises](https://cpp-frug.github.io/materials/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)
 
 
-Articles disponibles sur GitHub
-===============================
+`github.com/cpp-frug`
+---------------------
     
-Après publication, seuls les modérateurs peuvent corriger les articles.
-Donc, l'amélioration s'effectue sur un dépôt Git du C++FRUG
+* Les dépêches restent figées sur LinuxFr.org
+* L'amélioration s'effectue sur le Git C++FRUG
+* Idéal pour héberger les illustrations
+* Montpellier, Paris, Aix-Marseille, Toulouse...
 
-https://github.com/cpp-frug/materials/tree/gh-pages/news
-
-Idéal pour héberger les illustrations :
-
-* Upload  https://github.com/cpp-frug/materials/tree/gh-pages/images
-* Download http://cpp-frug.github.io/materials/images/
-
-![silouhette du logo GitHub](https://gh-prod-ruby-images.s3.amazonaws.com/uploads/growth_study_post/logo/9/github_logo.png)
+![Logo GitHub social coding](http://securityaffairs.co/wordpress/wp-content/uploads/2015/03/github-social-coding.jpg)
 
 
-Meetups disponibles sur GitHub
-==============================
-    
-Une partie des Meetups :
 
-* https://github.com/cpp-frug/paris
-* https://github.com/cpp-frug/montpellier
+C++17/20/23 aujourd'hui
+-----------------------
 
-Profiter de [Reveal.js](https://github.com/hakimel/reveal.js), [Flatdoc](https://github.com/rstacruz/flatdoc), [Remark](https://github.com/gnab/remark), [Jekyll](https://github.com/jekyll/jekyll)...
-
-![Logo jekyll GitHub Pages](https://www.awesomeincu.com/img/logos/logo-jekyll-udemy.png)
-
-
-Écrire du code C++17/C++20/C++23 aujourd'hui
-============================================
-
-Les [*feature testing macros*](http://en.cppreference.com/w/User:D41D8CD98F/feature_testing_macros) permettent d'écrire du code qui s'adapte aux fonctionnalités prises en charge par le compilateur.
+> Les [*feature testing macros*](http://en.cppreference.com/w/User:D41D8CD98F/feature_testing_macros) permettent d'écrire du code  
+> qui s'adapte aux fonctionnalités prises en charge par le compilateur.
 
 ```cpp
 #ifdef __cpp_lib_experimental_filesystem
@@ -110,25 +89,30 @@ void backup()
 #endif
 ```
 
-Penser à tester aussi `__cpp_lib_filesystem` et à comparer les [valeur (année mois)](en.cppreference.com/w/cpp/experimental/feature_test#Language_Features) (exemple : `201501`).
+* `__cpp_lib_filesystem`
+* [valeur (année mois)](en.cppreference.com/w/cpp/experimental/feature_test#Language_Features) (`201501`)
 
 
-Alternatives aux macros `__cpp_*`
-=================================
+Alternatives à `__cpp_*`
+------------------------
 
-* macro `__cplusplus` (`201103`, `201402`, `201700`) => Fausse *bonne idée*
-* macros [Boost.Config](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)
+* macro `__cplusplus` = `201103`, `201402`, `201700`  
+  => Détecte le flag `-std=c++14`
+* macros [**Boost.Config**](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)
 * macro `__has_include`
-* [CMAKE_CXX_KNOWN_FEATURES](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html) => CMake connait les fonctionnalités C++ du compilateur
+* [**`CMAKE_CXX_KNOWN_FEATURES`**](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html)  
+  => CMake connait les fonctionnalités C++ du compilateur
         
     ```cmake
     target_compile_features(MyLib PRIVATE cxx_constexpr)
     ```
 
-`__has_include`
-===============
 
-[P0061](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include) pour vérifier la présence d'un *header* pendant la compilation.
+`__has_include`
+---------------
+
+> [**P0061**](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include)  
+> pour vérifier la présence d'un *header* à la compilation.
 
 ```cpp
 #ifdef __has_include
@@ -147,9 +131,9 @@ Alternatives aux macros `__cpp_*`
 
 
 Virgule flottante en hexadécimal
-================================
+--------------------------------
     
-[P0245](http://wg21.link/p0245) officialise les *hexadecimal floating literals* déjà présents des C99, Java 5 (2004)…
+[**P0245**](http://wg21.link/p0245) officialise les ***hexadecimal floating literals*** (C99, Java 5 2004)
     
 ```cpp
 float  v = 0x'Baffe.bobo'p1f;
@@ -159,12 +143,12 @@ double w = 0x'C0DE'2017.1'cafe'p1;
 [![Les Nerdettes s’entraînent pour le concours des littéraux hexadécimaux sur LinuxFr.org](https://cpp-frug.github.io/materials/images/nerdettes_litteral_hexa.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerdettes_litteral_hexa.svg)
 
 
-
 `if constexpr`
-=============
-    
-[P0292](https://wg21.link/p0292) simplifie la métaprogrammation avec `static_if` ... `constexpr_if` ... `constexpr if` ...
-    
+-------------
+
+> [**P0292**](https://wg21.link/p0292) simplifie la métaprogrammation  
+> avec `static_if` ... `constexpr_if` ... `constexpr if` ...
+  
 ```cpp
 template <class T, class... R>
 void fonction (const T& t, const R&... r)
@@ -178,16 +162,17 @@ void fonction (const T& t, const R&... r)
 ```
 
 
-Variable `inline`
-=================
+Variable `inline` ([P0386](http://wg21.link/p0386))
+----------------------------------------------------
 
-Après les variables `template`, voici que [P0386](http://wg21.link/p0386) nous rajoute les variables `inline` et nous permet de contourner la [*One Definition Rule*](https://en.wikipedia.org/wiki/One_Definition_Rule).
+> On avait déjà les variables `template` (C++14)  
+> Fin du [***One Definition Rule***](https://en.wikipedia.org/wiki/One_Definition_Rule) ?
 
 [![Les deux filles nerds résolvent une erreur de link d'une variable membre static non définie en rajoutant inline](https://cpp-frug.github.io/materials/images/nerd_cpp17_variable_inline.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_cpp17_variable_inline.svg)
 
 
 Structured bindings
-===================
+-------------------
 
 [P0217](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**, mais limitée aux `std::tuple`, aux tableaux (comme `std::array`) et aux structures plates (comme `std::pair`).
     
