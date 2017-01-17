@@ -11,7 +11,7 @@
 > 20:45 &nbsp; **C++17 abstractions for heterogeneous computing**  
 > 21:30 &nbsp; **Mots de clôture**
 
-&nbsp; &nbsp; &nbsp; &nbsp; **[cppfrug.org](http://cppfrug.org) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](../../../github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) Communauté C++ francophone**
+&nbsp; &nbsp; &nbsp; &nbsp; **[cppfrug.org](http://cppfrug.org) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) Communauté C++ francophone**
 
 
 
