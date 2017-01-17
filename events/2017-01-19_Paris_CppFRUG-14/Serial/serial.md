@@ -340,7 +340,7 @@ struct WriterImpl
 	static constexpr void	write_impl<false>(std::ostream & os, const T & var)
 	{
 	    // Do nothing or ...
-		// static_assert(false, "This type has \"NeverSerialize\"");
+		// static_assert(false, "This type has \"NotSerializable\" static-qualifier");
 	}
 };
 ```
@@ -365,7 +365,7 @@ writer
 ```
 
 ```cpp
-error C2338: This type has "NeverSerialize"
+error C2338: This type has "NotSerializable"
 ```
 
 ---
