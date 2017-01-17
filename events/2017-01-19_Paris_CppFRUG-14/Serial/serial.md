@@ -10,7 +10,7 @@ Problematic overview :
 ===================
 
 > * Needs of GGE
-> * Frances buentempo's article
+> * Frances buentempo's article ([see Overload journal, Accu.org](https://accu.org/index.php/journal))
 > * Brownian motion reproducibility
 
 ![GGE](/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
