@@ -13,7 +13,7 @@ Problematic overview :
 > * Frances buentempo's article
 > * Brownian motion reproducibility
 
-![GGE](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
+![GGE](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
 
 > "How generate a two-way mapping between **types** and constexpr **indexes**,
 > with both **static** and **dynamic** accessors ?
@@ -41,7 +41,7 @@ Store type infos (1)
 ==============
 * Type/index mapping : *static*
  
-![TypePack](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack.png "TypePack : Static association")
+![TypePack](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack.png "TypePack : Static association")
 
 ```cpp
 template <typename ... Types>
@@ -75,9 +75,9 @@ Type/index mapping : *dynamic*
 	* Initializer-list for template viariadics expansion
 	* std::map<T_Key, T_Value>
 
-![TypeIndexer_0](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
-![TypeIndexer_1](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
-![TypeIndexer_2](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_2.png "TypePack : Static association 2")
+![TypeIndexer_0](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
+![TypeIndexer_1](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
+![TypeIndexer_2](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/TypePack_dynamic_2.png "TypePack : Static association 2")
 ---
 
 C++ Serialization : Bring all pieces together
@@ -108,7 +108,7 @@ struct InterfaceIs
 C++ Serialization : Writer
 ==============
 
-![Writer](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/Writer.png "GCL::Serialization::Writer")
+![Writer](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/Writer.png "GCL::Serialization::Writer")
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -136,7 +136,7 @@ struct Writer
 C++ Serialization : Reader
 ==============
 
-![Reader](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/Reader.png "GCL::Serialization::Reader")
+![Reader](/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/Reader.png "GCL::Serialization::Reader")
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
