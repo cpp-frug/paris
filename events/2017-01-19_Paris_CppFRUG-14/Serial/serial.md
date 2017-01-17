@@ -13,9 +13,8 @@ Problematic overview :
 > * Frances buentempo's article
 > * Brownian motion reproducibility
 
-// TODO : Insert screenshot of GGE ?
+![GGE, est un moteur de simulation](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_Paris_CppFRUG-14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
 
- .
 > "How generate a two-way mapping between **types** and constexpr **indexes**,
 > with both **static** and **dynamic** accessors ?
 >
