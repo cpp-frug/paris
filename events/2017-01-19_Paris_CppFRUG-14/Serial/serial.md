@@ -212,7 +212,7 @@ struct name : TestInterface	{	\
 Writer
 ---------
 ```cpp
-using Writer = Serialization::InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu, NotSerializableType>::Writer<>;
+using Writer = Serialization::InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Writer<>;
 
 std::stringstream ss;
 Writer writer(ss);
