@@ -14,6 +14,17 @@
 &nbsp; &nbsp; &nbsp; &nbsp; **[cppfrug.org](http://cppfrug.org) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) Communauté C++ francophone**
 
 
+Trois courtes présentations
+===========================
+
+1. Articles [C++17 sur LinuxFr.org](http://linuxfr.org/tags/c++17/public) par Oliver
+2. Sérialisation à la compilation et à l'éxécution par Guss
+3. Framework [**Boson**](https://github.com/duckie/boson) par JB
+
+Ces présentations sont sous licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).  
+Et leur code Mardown est disponible sur [le dépôt Git C++FRUG](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
+
+
 
 LinuxFr.org
 ===========
