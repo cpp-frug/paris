@@ -19,13 +19,13 @@ Trois courtes présentations
 
 &nbsp;
 
-1. Articles [C++17 sur LinuxFr.org](http://linuxfr.org/tags/c++17/public) par Oliver
-2. Sérialisation à la compilation et à l'éxécution par Guss
+1. Articles [**C++17 sur LinuxFr.org**](http://linuxfr.org/tags/c++17/public) par Oliver
+2. [**Sérialisation**](https://github.com/GuillaumeDua/GCL_CPP/blob/master/GCL_CPP/Serialization.h) à la compilation et à l'éxécution par Guss
 3. Framework [**Boson**](https://github.com/duckie/boson) par JB
 
 &nbsp;
 
-Ces présentations sont sous licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).  
+Ces présentations sont sous licence [**CC BY-SA 4.0**](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).  
 Et leur code Mardown est disponible sur [le dépôt Git C++FRUG](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
 
 
@@ -283,6 +283,7 @@ private:
 ```
 
 
+
 Suppression des trigraphes
 --------------------------
 
@@ -307,6 +308,22 @@ int main(int argc, char *argv[]) {
 ```
 
 
+BBC Master
+----------
+
+Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994
+
+[![Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
+
+
+Apple ][
+--------
+
+Aucune touche de l'Apple II ne dispose du symbole *accolade* ou *crochet*.
+
+[![Image du clavier de l'Apple II qui n'a pas de touche avec accolade ou crochet](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Apple_II-IMG_7073.jpg/1024px-Apple_II-IMG_7073.jpg)](https://commons.wikimedia.org/wiki/File:Apple_II-IMG_7073.jpg)
+
+
 Suppression du mot-clé `register`
 --------------------------------
 
@@ -320,7 +337,7 @@ Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/
 Booléen non incrémentable
 -------------------------
 
-`bool` avait été conçu pour ne pas casser le vieux code :
+`bool` avait été conçu pour ne pas trop casser le vieux code C/C++ (`#define bool int`)
 
 * décrémentation interdite
 * incrémentation autorisée
