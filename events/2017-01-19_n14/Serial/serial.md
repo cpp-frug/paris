@@ -22,6 +22,7 @@ Problematic overview :
 >  and get it back while **reading**
 > 
 >  Part of https://github.com/GuillaumeDua/GCL_CPP
+>  GCL::Serialization
 
 ---
 
@@ -33,7 +34,6 @@ Existing solutions :
 * STL
 * Templates : template-template-..., variadics
 * *(Bonus)* SFINAE using std::void_t
-
 
 ---
 
@@ -50,10 +50,10 @@ struct TypePack
 	using _Types = std::tuple<Types...>;
 
 	template <typename T>
-	static constexpr inline size_t indexOf(void);
+	static constexpr inline size_t indexOf(void);			// Type -> ID
 	
 	template <size_t N>
-	using TypeAt = typename std::tuple_element<N, _Types>::type;
+	using TypeAt = typename std::tuple_element<N, _Types>::type;	// ID -> Type
 };
 ```
 ```cpp
@@ -71,9 +71,9 @@ Store types infos (2)
 
 Type/index mapping : *dynamic*
 
-	* Polymorphism
-	* Initializer-list for template viariadics expansion
 	* std::map<T_Key, T_Value>
+	* Initializer-list for template viariadics expansion
+	* Polymorphism
 
 ![TypeIndexer_0](/events/2017-01-19_n14/Serial/img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
 ![TypeIndexer_1](/events/2017-01-19_n14/Serial/img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
@@ -92,8 +92,6 @@ struct InterfaceIs
 	template <typename ...Types>
 	struct OfTypes
 	{
-		(void)GCL::TMP::Foreach<Types...>::template Require<IsChildOf<T_Interface>>
-
 		using _TypesPack = typename GCL::TypeTrait::TypePack<Types...>;
 		using _ThisType = typename OfTypes<Types...>;
 
@@ -118,7 +116,8 @@ struct Writer
 	static void	write(std::ostream & os, const T & var)
 	{
 		static_assert(std::is_base_of<_InterfaceType, T>::value,
-		"GCL::Serialization::InterfaceIs<I>::Writer::write<T> : T is not child of I");
+		              "GCL::Serialization::InterfaceIs<I>::Writer::write<T> : T is not child of I");
+		
 		T_IO_POlicy::write(os, _TypesPack::template indexOf<T>());
 		os << var;
 	}
@@ -159,7 +158,7 @@ struct Reader
 		T_IO_POlicy::read(is, typeIndex);
 		if (is.eof()) return 0x0;
 
-		auto & constructor = T_TypeManager::index.at(typeIndex).defaultConstructeurCallerOp;
+		auto & constructor = T_TypeManager::index.at(typeIndex).defaultConstructeurCallerOp; // std::map.at can throw
 		_InterfaceType * elem = constructor();
 		is >> *elem;
 		return elem;
@@ -207,6 +206,13 @@ struct name : TestInterface	{	\
 };
 ```
 
+```cpp
+GenTestClass(Toto, int);
+GenTestClass(Titi, std::string);
+GenTestClass(Tata, int);
+GenTestClass(Tutu, std::string);
+```
+
 ---
 
 Writer
@@ -246,7 +252,7 @@ try
 
 	while (not elements.empty())
 	{
-		elements.front()->DoStuff();
+		elements.front()->DoStuff();	// TestInterface::DoStuff
 		delete elements.front();
 		elements.pop();
 	}
@@ -282,11 +288,11 @@ Few words about  [NonSerialized()] attribute
 ```Csharp
 namespace Sample
 {
-    public class MyClassThatIAlwaysWantToSerialize
+    public class DataToSerialize
     {
         // ...
-        [NonSerialized()] // <------- !
-        private MyClassThatINeverWantToSerialize bigStuff;
+        [NonSerialized()] 		// <------- !
+        private BigStuff _bigStuff;
     }
 }
 ```
@@ -302,7 +308,7 @@ What about **C++** ?
 * SFINAE
 *(also introduce by Walter Brown talk's about std::void_t : [see Cppcon14 Youtube video](https://www.youtube.com/watch?v=a0FliKwcwXE))*
 
-	``` std::void_t<typename T\:\: > ``` 
+	``` std::void_t<typename T:: > ``` 
 
 * Base code, be lazy : 
 
@@ -354,6 +360,13 @@ Result
 ---------
 
 ```cpp
+struct NotSerializableType
+{
+	enum NotSerializable{};
+};
+```
+
+```cpp
 Writer writer(ss);
 writer
 	<< Toto{ 42 }
@@ -365,7 +378,7 @@ writer
 ```
 
 ```cpp
-error C2338: This type has "NotSerializable"
+error C2338: This type has "NotSerializable" static-qualifier
 ```
 
 ---
