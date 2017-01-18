@@ -230,6 +230,7 @@ switch (bool loop=true; loop)
 }
 ```
 
+
 `auto x{42};` déduit comme `int x{42};`
 -------------------------------------
 
