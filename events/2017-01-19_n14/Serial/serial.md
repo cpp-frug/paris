@@ -50,7 +50,7 @@ struct TypePack
 	using _Types = std::tuple<Types...>;
 
 	template <typename T>
-	static constexpr inline size_t indexOf(void);			// Type -> ID
+	static constexpr inline size_t indexOf(void);				// Type -> ID
 	
 	template <size_t N>
 	using TypeAt = typename std::tuple_element<N, _Types>::type;	// ID -> Type
@@ -87,14 +87,9 @@ C++ Serialization : Bring all pieces together
 template <class T_Interface>
 struct InterfaceIs
 {
-	using _InterfaceType = T_Interface;
-
 	template <typename ...Types>
 	struct OfTypes
 	{
-		using _TypesPack = typename GCL::TypeTrait::TypePack<Types...>;
-		using _ThisType = typename OfTypes<Types...>;
-
 		template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
 		struct Writer;
 		template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -115,9 +110,6 @@ struct Writer
 	template <typename T>
 	static void	write(std::ostream & os, const T & var)
 	{
-		static_assert(std::is_base_of<_InterfaceType, T>::value,
-		              "GCL::Serialization::InterfaceIs<I>::Writer::write<T> : T is not child of I");
-		
 		T_IO_POlicy::write(os, _TypesPack::template indexOf<T>());
 		os << var;
 	}
@@ -141,6 +133,7 @@ C++ Serialization : Reader
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
 struct Reader
 {
+	// Type -> ID, ID -> Type mapping
 	using T_TypeManager = typename TypeTrait::InterfaceIs<_InterfaceType>::template OfTypes<Types...>;
 
 	template <typename T>
@@ -148,7 +141,7 @@ struct Reader
 	{
 		size_t typeIndex;
 		is >> typeIndex;
-		_GCL_ASSERT(_TypesPack::template indexOf<T>() == typeIndex);
+		_GCL_ASSERT(T_TypesPack::template indexOf<T>() == typeIndex);
 		is >> var;
 	}
 	static _InterfaceType *	read(std::istream & is)
@@ -180,11 +173,6 @@ Interface
 struct TestInterface
 {
 	virtual void DoStuff() const = 0;
-
-	virtual std::istream & operator>>(std::istream &) = 0;
-	virtual std::ostream & operator<<(std::ostream &) const = 0;
-	friend inline std::ostream& operator<<(std::ostream & os, const TestInterface & s);
-	friend inline std::istream& operator>>(std::istream & is, TestInterface & s);
 };
 ```
 Classes to serialize
