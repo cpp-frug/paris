@@ -1,12 +1,10 @@
-# **C++** Serialization
+# **Presentation** : Guillaume *"Guss"* Dua
 
 ---
 
-## Guillaume *"Guss"* Dua
+## **C++** Serialization
 
 ---
-
-
 
 Problematic overview :
 ===================
@@ -15,11 +13,10 @@ Problematic overview :
 > * Frances buentempo's article ([see Overload journal, Accu.org](https://accu.org/index.php/journal))
 > * Brownian motion reproducibility
 
-![GGE](./img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")
+![GGE](/events/2017-01-19_n14/Serial/img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")]
 
-
-> "How generate a two-way mapping between **types** and constexpr **indexes** <br>
->  with both **static** and **dynamic** accessors ?"
+> "How generate a two-way mapping between **types** and constexpr **indexes**,
+> with both **static** and **dynamic** accessors ?
 >
 >  **Write** "type" information in a file
 >  and get it back while **reading**
@@ -27,22 +24,24 @@ Problematic overview :
 >  Part of https://github.com/GuillaumeDua/GCL_CPP
 >  GCL::Serialization
 
-
-Pre-requis :
-============
 ---
+
+Existing solutions :
+> Debug infos : GCC Drawf ?
+
+---
+### Pre-requis :
 * STL
 * Templates : template-template-..., variadics
 * *(Bonus)* SFINAE using std::void_t
+
 ---
 
-
-
 Store type infos (1)
-====================
-Type/index mapping : *static*
+==============
+* Type/index mapping : *static*
  
-![TypePack](./img_rendering/TypePack.png "TypePack : Static association")
+![TypePack](/events/2017-01-19_n14/Serial/img_rendering/TypePack.png "TypePack : Static association")
 
 ```cpp
 template <typename ... Types>
@@ -51,45 +50,38 @@ struct TypePack
 	using _Types = std::tuple<Types...>;
 
 	template <typename T>
-	static constexpr inline size_t indexOf(void);                   // Type -> ID
+	static constexpr inline size_t indexOf(void);				// Type -> ID
 	
 	template <size_t N>
-	using TypeAt = typename std::tuple_element<N, _Types>::type;    // ID -> Type
+	using TypeAt = typename std::tuple_element<N, _Types>::type;	// ID -> Type
 };
 ```
 ```cpp
 using _TypePack = TypePack<...>;
 
-using MyType = _TypePack.TypeAt<42>;                 // correct
-const size_t index = _TypePack.indexOf<MyClass1>();  // correct
+using MyType = _TypePack.TypeAt<42>;                // correct
+const size_t index = _TypePack.indexOf<MyClass1>(); // correct
 
 size_t myTypeIndex = /* dynamic value */;
-using MyType = _TypePack.TypeAt<myTypeIndex>;        // error !
+using MyType = _TypePack.TypeAt<myTypeIndex>;		// error !
 ```
-
-
+----------
 Store types infos (2)
-=====================
+==============
 
 Type/index mapping : *dynamic*
 
-1. std::map<T_Key, T_Value>
-2. Initializer-list for template viariadics expansion
-3. Polymorphism
+	* std::map<T_Key, T_Value>
+	* Initializer-list for template viariadics expansion
+	* Polymorphism
 
-
-![TypeIndexer_0](./img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
-
-
-![TypeIndexer_1](./img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
-
-
-![TypeIndexer_2](./img_rendering/TypePack_dynamic_2.png "TypePack : Static association 2")
-
-
+![TypeIndexer_0](/events/2017-01-19_n14/Serial/img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
+![TypeIndexer_1](/events/2017-01-19_n14/Serial/img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
+![TypeIndexer_2](/events/2017-01-19_n14/Serial/img_rendering/TypePack_dynamic_2.png "TypePack : Static association 2")
+---
 
 C++ Serialization : Bring all pieces together
-=============================================
+==============
 
 ```cpp
 template <class T_Interface>
@@ -105,13 +97,11 @@ struct InterfaceIs
 	}
 }	
 ```
-
-
-
+---
 C++ Serialization : Writer
-==========================
+==============
 
-![Writer](./img_rendering/Writer.png "GCL::Serialization::Writer")
+![Writer](/events/2017-01-19_n14/Serial/img_rendering/Writer.png "GCL::Serialization::Writer")
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -133,12 +123,11 @@ struct Writer
 };
 ```
 
-
-
+---
 C++ Serialization : Reader
-==========================
+==============
 
-![Reader](./img_rendering/Reader.png "GCL::Serialization::Reader")
+![Reader](/events/2017-01-19_n14/Serial/img_rendering/Reader.png "GCL::Serialization::Reader")
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -173,7 +162,7 @@ struct Reader
 };
 ```
 
-
+---
 
 C++ Serialization : Usage
 ==============
@@ -212,8 +201,7 @@ GenTestClass(Tata, int);
 GenTestClass(Tutu, std::string);
 ```
 
-
-
+---
 
 Writer
 ---------
@@ -235,8 +223,7 @@ Console output :
 Serialized : [    *   ☺   ♀   Hello, world☻   V²☺ ♥   ☼   Morning' coffee]
 ```
 
-
-
+---
 
 Reader
 ----------
@@ -271,15 +258,15 @@ Tata -> value=[130390]
 Tutu -> value=[Morning' coffee]
 ```
 
-
-
+---
 
 Bonus : Go futher
-=================
+==============
 
+---
 
 Restrictions using "Attributes" (1)
-===================================
+===========================
 
 What about **C#** ?
 ----------------------------
@@ -298,9 +285,10 @@ namespace Sample
 }
 ```
 
+---
 
 Restrictions using "Attributes" (2)
-===================================
+===========================
 
 What about **C++** ?
 ------------------------------
@@ -321,9 +309,10 @@ struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_t
 
 ```
 
+---
 
 Restrictions using "Attributes" (3)
-===================================
+===========================
 
 What about GCL::Serialization ?
 --------------------------------------------
@@ -353,9 +342,10 @@ struct WriterImpl
 };
 ```
 
+---
 
 Restrictions using "Attributes" (4)
-===================================
+===========================
 
 Result
 ---------
@@ -382,7 +372,7 @@ writer
 error C2338: This type has "NotSerializable" static-qualifier
 ```
 
-
+---
 
 Evolutions ?
 ==========
