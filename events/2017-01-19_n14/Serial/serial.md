@@ -15,7 +15,7 @@ Problematic overview :
 > * Frances buentempo's article ([see Overload journal, Accu.org](https://accu.org/index.php/journal))
 > * Brownian motion reproducibility
 
-![GGE](./img_rendering/GGE.PNG "Screenshot GGE : Brownian particles test")
+![GGE](./img_rendering_big/GGE.PNG "Screenshot GGE : Brownian particles test")
 
 
 > "How generate a two-way mapping between **types** and constexpr **indexes** <br>
@@ -41,8 +41,13 @@ Pre-requis :
 Store type infos (1)
 ====================
 Type/index mapping : *static*
+-----------------------------
  
-![TypePack](./img_rendering/TypePack.png "TypePack : Static association")
+![TypePack](./img_rendering_big/TypePack.png "TypePack : Static association")
+
+
+Store type infos (2)
+====================
 
 ```cpp
 template <typename ... Types>
@@ -68,23 +73,24 @@ using MyType = _TypePack.TypeAt<myTypeIndex>;        // error !
 ```
 
 
-Store types infos (2)
+Store types infos (3)
 =====================
 
 Type/index mapping : *dynamic*
+------------------------------
 
 1. std::map<T_Key, T_Value>
 2. Initializer-list for template viariadics expansion
 3. Polymorphism
 
 
-![TypeIndexer_0](./img_rendering/TypePack_dynamic_0.png "TypePack : Static association 0")
+![TypeIndexer_0](./img_rendering_big/TypePack_dynamic_0.png "TypePack : Static association 0")
 
 
-![TypeIndexer_1](./img_rendering/TypePack_dynamic_1.png "TypePack : Static association 1")
+![TypeIndexer_1](./img_rendering_big/TypePack_dynamic_1.png "TypePack : Static association 1")
 
 
-![TypeIndexer_2](./img_rendering/TypePack_dynamic_2.png "TypePack : Static association 2")
+![TypeIndexer_2](./img_rendering_big/TypePack_dynamic_2.png "TypePack : Static association 2")
 
 
 
@@ -108,10 +114,14 @@ struct InterfaceIs
 
 
 
-C++ Serialization : Writer
-==========================
+C++ Serialization : Writer (1)
+==============================
 
-![Writer](./img_rendering/Writer.png "GCL::Serialization::Writer")
+![Writer](./img_rendering_big/Writer.png "GCL::Serialization::Writer")
+
+
+C++ Serialization : Writer (2)
+==============================
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -135,10 +145,14 @@ struct Writer
 
 
 
-C++ Serialization : Reader
-==========================
+C++ Serialization : Reader (1)
+==============================
 
-![Reader](./img_rendering/Reader.png "GCL::Serialization::Reader")
+![Reader](./img_rendering_big/Reader.png "GCL::Serialization::Reader")
+
+
+C++ Serialization : Reader (2)
+==============================
 
 ```cpp
 template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
@@ -147,14 +161,6 @@ struct Reader
 	// Type -> ID, ID -> Type mapping
 	using T_TypeManager = typename TypeTrait::InterfaceIs<_InterfaceType>::template OfTypes<Types...>;
 
-	template <typename T>
-	static void				read(std::istream & is, T & var)
-	{
-		size_t typeIndex;
-		is >> typeIndex;
-		_GCL_ASSERT(T_TypesPack::template indexOf<T>() == typeIndex);
-		is >> var;
-	}
 	static _InterfaceType *	read(std::istream & is)
 	{
 		size_t typeIndex;
@@ -175,8 +181,8 @@ struct Reader
 
 
 
-C++ Serialization : Usage
-==============
+C++ Serialization : Usage (1)
+=============================
 
 Interface
 ------------
@@ -214,7 +220,8 @@ GenTestClass(Tutu, std::string);
 
 
 
-
+C++ Serialization : Usage (2)
+=============================
 Writer
 ---------
 ```cpp
@@ -387,4 +394,5 @@ error C2338: This type has "NotSerializable" static-qualifier
 Evolutions ?
 ==========
 * Codec
+* Encryption
 * Retro-compatibility ?
