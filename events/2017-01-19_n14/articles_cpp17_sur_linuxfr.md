@@ -15,11 +15,15 @@
 
 
 Trois courtes présentations
-===========================
+---------------------------
+
+&nbsp;
 
 1. Articles [C++17 sur LinuxFr.org](http://linuxfr.org/tags/c++17/public) par Oliver
 2. Sérialisation à la compilation et à l'éxécution par Guss
 3. Framework [**Boson**](https://github.com/duckie/boson) par JB
+
+&nbsp;
 
 Ces présentations sont sous licence [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).  
 Et leur code Mardown est disponible sur [le dépôt Git C++FRUG](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
@@ -33,7 +37,7 @@ LinuxFr.org
 * Licence libre (CC BY-SA 4.0)
 * Modérateurs sympas, pro et réactifs
 * Grande audience francophone
-* ~~Lecteurs C++~~ ~~Trolls~~ ~~Franglais~~
+* ~~Lecteurs C++~~ &nbsp; ~~Trolls~~ &nbsp; ~~Franglais~~
 
 ![Deux collègues content d'une nouvelle version C++17 mais qui ne sont pas au courant des dépêches C++17 sur LinuxFr.org qui leur permettrait de cerner les nouvelles fonctionnalités.](http://cpp-frug.github.io/materials/images/cpp-complexe-path.svg)
 
@@ -62,7 +66,7 @@ Calendrier de l'Avent
 Bonnes résolutions 2017
 =======================
 
-Être plus nombreux, mieux se répartir l'effort
+Être plus nombreux, mieux répartir l'effort.
 
 [![Une personne affolé prévient son collègue que LinuxFr.org s'est fait piraté. Son collègue vient constater l’attaque avec un site inondé de dépêches C++ et avoue que les dév. C++ sont trop balaises](https://cpp-frug.github.io/materials/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)
 
@@ -208,7 +212,7 @@ auto [ x, y, ignored ] = foo();
 
 
 `if(init;condition)` et `switch(init;condition)`
-===============================================
+------------------------------------------------
 
 Le TS [P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur* comme pour `for( initialisation; condition; incrémentation )`.
 
@@ -227,7 +231,7 @@ switch (bool loop=true; loop)
 ```
 
 `auto x{42};` déduit comme `int x{42};`
-=======================================
+-------------------------------------
 
 [N3922](https://wg21.link/n3922) comble un trou sur les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`.
     
@@ -246,7 +250,7 @@ auto f = {1, 2.0}; //KO car pas le même type (int et double)
 
 
 `typename` pour les paramètres `template template`
-=================================================
+-------------------------------------------------
 
 [N4051](https://wg21.link/n4051) autorise enfin `typename` pour les paramètres `template template` !
 
@@ -257,7 +261,7 @@ template<template<typename> typename T> class Cpp17;
 
 
 C++ without `class`
-===================
+-------------------
 
 Le nom originel du C++ était ***C with `class`***.
 C++17 est, par conséquent, le ***C++ without `class`***.
@@ -279,7 +283,7 @@ private:
 
 
 Suppression des trigraphes
-==========================
+--------------------------
 
 C++11 aurait pu rendre les trigraphes obsolètes, mais quelques membres du comité de normalisation du C++ (IBM et Bloomberg) s'y étaient opposés. Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086) qui les supprime sans étape intermédiaire.
 
@@ -303,7 +307,7 @@ int main(int argc, char *argv[]) {
 
 
 Suppression du mot-clé `register`
-================================
+--------------------------------
 
 Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à garder dans un registre la variable qui était très utilisée. Les compilateurs n'étaient pas très futés...
 
@@ -313,9 +317,12 @@ Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/
 
 
 Booléen non incrémentable
-=========================
+-------------------------
 
-La création du type `bool` avait nécessité de garder une comptabilité avec le vieux code : l'incrémentation avait été autorisée mais pas la décrémentation.
+`bool` avait été conçu pour ne pas casser le vieux code :
+
+* décrémentation interdite
+* incrémentation autorisée
 
 ```cpp
 bool b = foo();
