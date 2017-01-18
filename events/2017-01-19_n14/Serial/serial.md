@@ -301,9 +301,12 @@ What about **C++** ?
 * Base code, be lazy : 
 
 ```cpp
-#define GCL_Introspection__GenHasNested(nested)			\
-template< class, class = std::void_t<> >				\
-struct has_##nested##_nested : std::false_type { };
+#define GCL_Introspection__GenHasNested(nested)							\
+template< class, class = std::void_t<> >							\
+struct has_##nested##_nested : std::false_type { };						\
+template< class T >										\
+struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { };	\
+
 ```
 
 ---
