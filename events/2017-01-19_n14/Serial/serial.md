@@ -64,7 +64,7 @@ using MyType = TypePack<...>.TypeAt<myTypeIndex>;     // ERROR
 
 Dynamic mapping (theory)
 ------------------------
-1. `std::map<Key, Value>` (template parameters)
+1. `std::map<Key,Value>` (template parameters)
 2. Initializer-list for template viariadics expansion
 3. Polymorphism
 
