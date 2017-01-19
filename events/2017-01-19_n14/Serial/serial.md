@@ -249,9 +249,15 @@ Output
 
 Bonus
 =====
-Forbid serializing for some types
----------------------------------
-* **C#** has attribute `[NonSerialized()]`
+
+&nbsp;
+
+&nbsp;
+
+Forbid serialization for some types
+-----------------------------------
+> **C#** has attribute `[NonSerialized()]`
+> How to have it in C++?
 
 
 C++ target
