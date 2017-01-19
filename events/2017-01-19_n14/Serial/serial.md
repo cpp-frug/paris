@@ -1,297 +1,354 @@
-# **C++** Serialization
+# C++ &nbsp; Serialization
+
+&nbsp;
+
+&nbsp;
 
 ---
 
-## Guillaume *"Guss"* Dua
+## Guillaume &nbsp; *Guss* &nbsp; Dua
 
 ---
 
+&nbsp;
+
+&nbsp;
+
+[CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/deed.fr)  
+[cppfrug.org / paris / events / 2017-01-19_n14 / Serial](http://cpp-frug.github.io/paris/events/2017-01-19_n14/Serial/index.html)
 
 
-Problematic overview :
-===================
+`GCL::Serialization`
+-------------------
 
-> * Needs of GGE
-> * Frances buentempo's article ([see Overload journal, Accu.org](https://accu.org/index.php/journal))
-> * Brownian motion reproducibility
+* [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)  
 
-![GGE](./img_rendering_big/GGE.PNG "Screenshot GGE : Brownian particles test")
+* Two-way mapping  
+  **Type** <---> **Index**  
 
+* Accessors  
+  **Static**  
+  **Dynamic**  
 
-> "How generate a two-way mapping between **types** and constexpr **indexes** <br>
->  with both **static** and **dynamic** accessors ?"
->
->  **Write** "type" information in a file
->  and get it back while **reading**
-> 
->  Part of https://github.com/GuillaumeDua/GCL_CPP
->  GCL::Serialization
-
-
-Pre-requis :
-============
----
-* STL
-* Templates : template-template-..., variadics
-* *(Bonus)* SFINAE using std::void_t
----
+* Runtime  
+  **Write** into a file  
+  **Read** the file
 
 
 
-Store type infos (1)
-====================
-Type/index mapping : *static*
------------------------------
- 
-![TypePack](./img_rendering_big/TypePack.png "TypePack : Static association")
+Static mapping (theory)
+-----------------------
+![TypePack](./img_rendering_big/TypePack.png "TypePack: Static association")
 
 
-Store type infos (2)
-====================
-
+Static mapping (implementation)
+-------------------------------
 ```cpp
 template <typename ... Types>
 struct TypePack
 {
-	using _Types = std::tuple<Types...>;
+  using types_t = std::tuple<Types...>;
 
-	template <typename T>
-	static constexpr inline size_t indexOf(void);                   // Type -> ID
-	
-	template <size_t N>
-	using TypeAt = typename std::tuple_element<N, _Types>::type;    // ID -> Type
+  // Template function - Mapping Type -> ID
+  template <typename T>
+  static constexpr inline size_t indexOf(void);                
+
+  // Template type - Mapping ID -> Type
+  template <size_t N>
+  using TypeAt = typename std::tuple_element<N, types_t>::type;
 };
 ```
 ```cpp
-using _TypePack = TypePack<...>;
-
-using MyType = _TypePack.TypeAt<42>;                 // correct
-const size_t index = _TypePack.indexOf<MyClass1>();  // correct
-
-size_t myTypeIndex = /* dynamic value */;
-using MyType = _TypePack.TypeAt<myTypeIndex>;        // error !
+using MyType = TypePack<...>.TypeAt<42>;              // Static value
+const size_t index = TypePack<...>.indexOf<MyType>(); // Correct
+```
+```cpp
+size_t myTypeIndex = foo();                           // Dynamic value
+using MyType = TypePack<...>.TypeAt<myTypeIndex>;     // ERROR
 ```
 
 
-Store types infos (3)
-=====================
 
-Type/index mapping : *dynamic*
-------------------------------
-
-1. std::map<T_Key, T_Value>
+Dynamic mapping (theory)
+------------------------
+1. `std::map<Key,Value>` (template parameters)
 2. Initializer-list for template viariadics expansion
 3. Polymorphism
 
 
-![TypeIndexer_0](./img_rendering_big/TypePack_dynamic_0.png "TypePack : Static association 0")
+Dynamic mapping (theory)
+------------------------
+![TypeIndexer_0](./img_rendering_big/TypePack_dynamic_0.png)
 
 
-![TypeIndexer_1](./img_rendering_big/TypePack_dynamic_1.png "TypePack : Static association 1")
+Dynamic mapping (theory)
+------------------------
+![TypeIndexer_1](./img_rendering_big/TypePack_dynamic_1.png)
 
 
-![TypeIndexer_2](./img_rendering_big/TypePack_dynamic_2.png "TypePack : Static association 2")
+Dynamic mapping (theory)
+------------------------
+![TypeIndexer_2](./img_rendering_big/TypePack_dynamic_2.png)
 
 
 
-C++ Serialization : Bring all pieces together
-=============================================
-
+Dynamic mapping (implementation)
+--------------------------------
 ```cpp
-template <class T_Interface>
+template <class Interface>
 struct InterfaceIs
 {
-	template <typename ...Types>
-	struct OfTypes
-	{
-		template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
-		struct Writer;
-		template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
-		struct Reader;
-	}
+  template <typename ...Types>
+  struct OfTypes
+  {
+    template <typename Policy = Binary>
+    struct Writer;
+    
+    template <typename Policy = Binary>
+    struct Reader;
+  }
 }	
 ```
 
 
 
-C++ Serialization : Writer (1)
-==============================
-
+`Writer` (dynamic mapping)
+--------------------------
 ![Writer](./img_rendering_big/Writer.png "GCL::Serialization::Writer")
 
 
-C++ Serialization : Writer (2)
-==============================
-
+`Writer` (dynamic mapping)
+--------------------------
 ```cpp
-template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
+template <typename Policy = Binary>
 struct Writer
 {
-	template <typename T>
-	static void	write(std::ostream & os, const T & var)
-	{
-		T_IO_POlicy::write(os, _TypesPack::template indexOf<T>());
-		os << var;
-	}
-
-	template <typename T>
-	Writer &	operator<<(const T & element)
-	{
-		write(_oStream, element);
-		return *this;
-	}
+  template <typename T>
+  Writer & operator<< (const T & element)
+  {
+    Policy::write(_oStream, TypePack<...>::template indexOf<T>());
+    os << element;
+    return *this;
+  }
 };
 ```
 
 
 
-C++ Serialization : Reader (1)
-==============================
-
+`Reader` (dynamic mapping)
+--------------------------
 ![Reader](./img_rendering_big/Reader.png "GCL::Serialization::Reader")
 
 
-C++ Serialization : Reader (2)
-==============================
-
+`Reader` (dynamic mapping)
+--------------------------
 ```cpp
-template <typename T_IO_POlicy = GCL::IO::Policy::Binary>
+template <typename Policy = Binary>
 struct Reader
 {
-	// Type -> ID, ID -> Type mapping
-	using T_TypeManager = typename TypeTrait::InterfaceIs<_InterfaceType>::template OfTypes<Types...>;
+  // Two-way mapping Type <--> ID
+  using mapping_t = typename InterfaceIs<Interface>::template OfTypes<Types...>;
 
-	static _InterfaceType *	read(std::istream & is)
-	{
-		size_t typeIndex;
+  static Interface * read (std::istream & is)
+  {
+    size_t typeIndex;
+    Policy::read(is, typeIndex);
 
-		T_IO_POlicy::read(is, typeIndex);
-		if (is.eof()) return 0x0;
+    if (is.eof()) return 0x0;
 
-		auto & constructor = T_TypeManager::index.at(typeIndex).defaultConstructeurCallerOp; // std::map.at can throw
-		_InterfaceType * elem = constructor();
-		is >> *elem;
-		return elem;
-	}
+    auto & constructor = mapping_t::index.at(typeIndex).defaultConstructeurCallerOp;
+    Interface * elem = constructor();
+    is >> *elem;
+    return elem;
+  }
 	
-	Reader &				operator>>(_InterfaceType *& element);
-	Reader &				operator>>(std::queue<_InterfaceType*> & elemQueue);
+  Reader &  operator>> (Interface *& element);
+  Reader &  operator>> (std::queue<Interface*> & elemQueue);
 };
 ```
 
 
 
-C++ Serialization : Usage (1)
-=============================
-
-Interface
-------------
+Dynamic mapping usage
+---------------------
 ```cpp
 struct TestInterface
 {
-	virtual void DoStuff() const = 0;
+  virtual void DoStuff() const = 0;
 };
-```
-Classes to serialize
----------------------------
-Let's be lazy *(sorry)*
-```cpp
-#define GenTestClass(name, type)\
-struct name : TestInterface	{	\																									
-	name() = default;			\
-	name(type value)			\
-	: _value(value){}           \
-	type _value;                \
-	void	DoStuff(void) const override \
-	{ std::cout << ""#name##"" " -> value=[" << _value << ']' << std::endl; }\
-	std::ostream & operator<<(std::ostream & os) const  override \
-	{ GCL::IO::Policy::Binary::write(os, _value); return os; }	 \
-	std::istream & operator>>(std::istream & is) override        \
-	{ GCL::IO::Policy::Binary::read (is, _value); return is; }	 \
-};
-```
 
-```cpp
 GenTestClass(Toto, int);
 GenTestClass(Titi, std::string);
 GenTestClass(Tata, int);
 GenTestClass(Tutu, std::string);
 ```
-
-
-
-C++ Serialization : Usage (2)
-=============================
-Writer
----------
 ```cpp
-using Writer = Serialization::InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Writer<>;
+#define GenTestClass(name, type)                                  \
+struct name : TestInterface                                       \
+{                                                                 \
+  type _value;                                                    \
+                                                                  \
+  name() = default;                                               \
+  name(type value) : _value(value) {}                             \
+                                                                  \
+  void  DoStuff() const override                                  \
+  { std::cout << #name " -> value=["<< _value <<']'<< std::endl; }\
+                                                                  \
+  std::ostream & operator<< (std::ostream & os) const override    \
+  { Binary::write(os, _value); return os; }                       \
+                                                                  \
+  std::istream & operator>> (std::istream & is) override          \
+  { Binary::read(is, _value); return is; }                        \
+}
+```
+
+
+
+`Writer` usage (dynamic mapping)
+--------------------------------
+```cpp
+using Writer = InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Writer<>;
 
 std::stringstream ss;
-Writer writer(ss);
-writer
-	<< Toto{ 42 }
-	<< Titi{ "Hello, world" }
-	<< Tata{ 130390 }
-	<< Tutu{ "Morning' coffee" }
+Writer(ss)
+  << Toto{ 42 }
+  << Titi{ "Hello, world" }
+  << Tata{ 130390 }
+  << Tutu{ "Morning' coffee" }
 ;
 std::cout << "Serialized : [" << ss.str() << ']' << std::endl;
 ```
-Console output :
-```
-Serialized : [    *   ☺   ♀   Hello, world☻   V²☺ ♥   ☼   Morning' coffee]
-```
+
+Output
+
+    Serialized : [    *   ☺   ♀   Hello, world☻   V²☺ ♥   ☼   Morning' coffee]
 
 
-
-
-Reader
-----------
+`Reader` usage (dynamic mapping)
+--------------------------------
 ```cpp
-using Reader = Serialization::InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Reader<>;
-try
-{
-    Reader			reader(ss);
+using Reader = InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Reader<>;
 
-	std::queue<TestInterface*> elements;
-	reader
-        >> elements
-    ;
+std::stringstream ss;
+Reader reader(ss);
 
-	while (not elements.empty())
-	{
-		elements.front()->DoStuff();	// TestInterface::DoStuff
-		delete elements.front();
-		elements.pop();
-	}
-}
-catch (const std::exception & ex)
+std::queue<TestInterface*> elements;
+reader
+  >> elements
+;
+
+while (not elements.empty())
 {
-	std::cerr << ex.what() << std::endl;
+  elements.front()->DoStuff();  // TestInterface::DoStuff
+  delete elements.front();
+  elements.pop();
 }
 ```
-Console output :
+
+Output
+
+    Toto -> value=[42]
+    Titi -> value=[Hello, world]
+    Tata -> value=[130390]
+    Tutu -> value=[Morning' coffee]
+
+
+
+Bonus
+=====
+
+&nbsp;
+
+Forbid serialization for some types
+-----------------------------------
+C# has attribute `[NonSerialized()]`  
+### How in C++?
+
+
+
+What we want
+------------
+```cpp
+struct Huge
+{
+  enum NonSerialized{};
+
+  BigStuff _bigStuff;
+};
+
+Writer(ss)
+  << Toto{42}
+  << Huge{13}  // ERROR
+;
 ```
-Toto -> value=[42]
-Titi -> value=[Hello, world]
-Tata -> value=[130390]
-Tutu -> value=[Morning' coffee]
+
+
+#### Detect member `NonSerialized` using macro `GenHasNested`
+```cpp
+GenHasNested(NonSerialized);
+
+template <typename T>
+struct Writer
+{                                       // From macro GenHasNested
+  static constexpr bool nonSerialized = has_NonSerialized_nested<T>::value;
+
+  template <bool NonSerialized = nonSerialized>
+  static constexpr void   write        (std::ostream & os, const T & var);
+  
+  template <>
+  static constexpr void   write<true>  (std::ostream & os, const T & var)
+  {
+    static_assert(false, "This type has NonSerialized static-qualifier");
+  }
+
+  template <>
+  static constexpr void   write<false> (std::ostream & os, const T & var)
+  {
+    Policy::write (os, TypesPack<...>::template indexOf<T>());
+    os << var;
+  }
+};
+```
+
+
+The macro `GenHasNested`
+-----------------------
+
+&nbsp;
+
+Inspired from [Walter Brown](https://www.youtube.com/watch?v=a0FliKwcwXE) (CppCon 2014)
+
+```std::void_t<typename T:: >```
+
+&nbsp;
+
+```cpp
+#define GenHasNested(nested)                                                           \
+                                                                                       \
+template< class, class = std::void_t<> >                                               \
+struct has_##nested##_nested : std::false_type { };                                    \
+                                                                                       \
+template< class T >                                                                    \
+struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { }
 ```
 
 
 
+Future
+======
+* Codec
+* Encryption
+* Backward version compatibility
 
-Bonus : Go futher
-=================
 
 
-Restrictions using "Attributes" (1)
-===================================
 
-What about **C#** ?
-----------------------------
+Annex
+=====
 
-Few words about  [NonSerialized()] attribute
+
+**C#** `[NonSerialized()]` attribute
+------------------------------------
 
 ```Csharp
 namespace Sample
@@ -299,100 +356,9 @@ namespace Sample
     public class DataToSerialize
     {
         // ...
-        [NonSerialized()] 		// <------- !
-        private BigStuff _bigStuff;
+        [NonSerialized()]
+        // ...
+	private BigStuff _bigStuff;
     }
 }
 ```
-
-
-Restrictions using "Attributes" (2)
-===================================
-
-What about **C++** ?
-------------------------------
-
-* SFINAE
-*(also introduce by Walter Brown talk's about std::void_t : [see Cppcon14 Youtube video](https://www.youtube.com/watch?v=a0FliKwcwXE))*
-
-	``` std::void_t<typename T:: > ``` 
-
-* Base code, be lazy : 
-
-```cpp
-#define GCL_Introspection__GenHasNested(nested)							\
-template< class, class = std::void_t<> >							\
-struct has_##nested##_nested : std::false_type { };						\
-template< class T >										\
-struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { };	\
-
-```
-
-
-Restrictions using "Attributes" (3)
-===================================
-
-What about GCL::Serialization ?
---------------------------------------------
-
-```cpp
-GCL_Introspection__GenHasNested(NotSerializable)
-
-template <typename T>
-struct WriterImpl
-{
-	static constexpr bool isSerializable = !GCL::Introspection::has_NotSerializable_nested<T>::value;
-
-	template <bool _isSerializable = isSerializable>
-	static constexpr void	write_impl(std::ostream & os, const T & var);
-	template <>
-	static constexpr void	write_impl<true>(std::ostream & os, const T & var)
-	{
-		T_IO_POlicy::write(os, _TypesPack::template indexOf<T>());
-		os << var;
-	}
-	template <>
-	static constexpr void	write_impl<false>(std::ostream & os, const T & var)
-	{
-	    // Do nothing or ...
-		// static_assert(false, "This type has \"NotSerializable\" static-qualifier");
-	}
-};
-```
-
-
-Restrictions using "Attributes" (4)
-===================================
-
-Result
----------
-
-```cpp
-struct NotSerializableType
-{
-	enum NotSerializable{};
-};
-```
-
-```cpp
-Writer writer(ss);
-writer
-	<< Toto{ 42 }
-	<< Titi{ "Hello, world" }
-	<< Tata{ 130390 }
-	<< Tutu{ "Morning' coffee" }
-	<< NotSerializableType{}     // Error !
-;
-```
-
-```cpp
-error C2338: This type has "NotSerializable" static-qualifier
-```
-
-
-
-Evolutions ?
-==========
-* Codec
-* Encryption
-* Retro-compatibility ?

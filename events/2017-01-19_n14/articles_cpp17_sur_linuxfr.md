@@ -9,7 +9,7 @@
 > 19:45 &nbsp; **Trois courtes présentations**  
 > 20:15 &nbsp; **Pause Dinatoire**  
 > 20:45 &nbsp; **C++17 abstractions for heterogeneous computing**  
-> 21:30 &nbsp; **Mots de clôture**
+> 21:30 &nbsp; **Mot de clôture**
 
 &nbsp; &nbsp; &nbsp; &nbsp; **[cppfrug.org](http://cppfrug.org) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) Communauté C++ francophone**
 
@@ -19,8 +19,8 @@ Trois courtes présentations
 
 &nbsp;
 
-1. Articles [**C++17 sur LinuxFr.org**](http://linuxfr.org/tags/c++17/public) par Oliver
-2. [**Sérialisation**](https://github.com/GuillaumeDua/GCL_CPP/blob/master/GCL_CPP/Serialization.h) à la compilation et à l'éxécution par Guss
+1. [**Articles C++17 sur LinuxFr.org**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/articles_cpp17_sur_linuxfr.reveal.html#/2/4) par Oliver
+2. [**Sérialisation à la compilation et à l'éxécution**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/Serial/index.html) par Guss
 3. Framework [**Boson**](https://github.com/duckie/boson) par JB
 
 &nbsp;
@@ -30,8 +30,8 @@ Et leur code Mardown est disponible sur [le dépôt Git C++FRUG](https://github.
 
 
 
-LinuxFr.org
-===========
+[C++17 sur LinuxFr.org](http://linuxfr.org/tags/c++17/public)
+=======================
 
 * Rédaction collaborative en Markdown
 * Licence libre (CC BY-SA 4.0)
@@ -71,13 +71,13 @@ Bonnes résolutions 2017
 [![Une personne affolé prévient son collègue que LinuxFr.org s'est fait piraté. Son collègue vient constater l’attaque avec un site inondé de dépêches C++ et avoue que les dév. C++ sont trop balaises](https://cpp-frug.github.io/materials/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)
 
 
-`github.com/cpp-frug`
----------------------
+`github.com` / `cpp-frug`
+-------------------------
     
 * Les dépêches restent figées sur LinuxFr.org
 * L'amélioration s'effectue sur le Git C++FRUG
 * Idéal pour héberger les illustrations
-* Montpellier, Paris, Aix-Marseille, Toulouse...
+* Montpellier, Paris (Aix, Marseille, Toulouse...)
 
 ![Logo GitHub social coding](http://securityaffairs.co/wordpress/wp-content/uploads/2015/03/github-social-coding.jpg)
 
@@ -152,10 +152,19 @@ Virgule flottante en hexadécimal
     
 ```cpp
 float  v = 0x'Baffe.bobo'p1f;
-double w = 0x'C0DE'2017.1'cafe'p1;
+double w = 0x'C0DE'2017'1.cafe'p1;
 ``` 
     
 [![Les Nerdettes s’entraînent pour le concours des littéraux hexadécimaux sur LinuxFr.org](https://cpp-frug.github.io/materials/images/nerdettes_litteral_hexa.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerdettes_litteral_hexa.svg)
+
+
+Concours de jeux de mots
+------------------------
+
+[Attention, le concours se termine fin janvier !](http://linuxfr.org/news/attention-le-concours-de-jeux-de-mots-se-termine-fin-janvier-2017)
+
+[![Les deux filles nerds discutent sur la manipulation des bits au grand bonheur des jeux de mots](https://cpp-frug.github.io/materials/images/nerd_jeux-de-mots.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_jeux-de-mots.svg)
+
 
 
 `if constexpr`
@@ -290,38 +299,41 @@ Suppression des trigraphes
 C++11 aurait pu rendre les trigraphes obsolètes, mais quelques membres du comité de normalisation du C++ (IBM et Bloomberg) s'y étaient opposés. Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086) qui les supprime sans étape intermédiaire.
 
 ```cpp
-// Avec digraphes et trigraphes
+/??/
+/??/ Avec trigraphes
 ??=include <iostream>
-int main(int argc, char *argv<::>) ??< 
-  const char hello_world ??(??) = "Hello world !??/0";
-  std::cout << hello_world << std::endl;
+int main (int argc, char *argv??(??)) ??< 
+  const char txt??(??) = "J'aime le C++17??/0";
+  std::cout << txt << std::endl;
 ??>
 ``` 
     
 ```cpp
-// Sans digraphe/trigraphe
+/\
+/\ Sans trigraphe
 #include <iostream>
-int main(int argc, char *argv[]) {
-  const char hello_world[] = "Hello world !";
-  std::cout << hello_world << std::endl;
+int main (int argc, char *argv[]) {
+  const char txt[] = "J'aime le C++17";
+  std::cout << txt << std::endl;
 }
 ```
-
-
-BBC Master
-----------
-
-Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994
-
-[![Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
 
 
 Apple ][
 --------
 
-Aucune touche de l'Apple II ne dispose du symbole *accolade* ou *crochet*.
+Aucune touche de l'Apple II (1977-1988) ne dispose du symbole *accolade* ou *crochet*.
 
 [![Image du clavier de l'Apple II qui n'a pas de touche avec accolade ou crochet](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Apple_II-IMG_7073.jpg/1024px-Apple_II-IMG_7073.jpg)](https://commons.wikimedia.org/wiki/File:Apple_II-IMG_7073.jpg)
+
+
+BBC Master
+----------
+
+Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994.
+
+[![Clavier intégré du micro-ordinateur BBC Master de Acorn](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
+
 
 
 Suppression du mot-clé `register`
