@@ -71,13 +71,13 @@ Bonnes résolutions 2017
 [![Une personne affolé prévient son collègue que LinuxFr.org s'est fait piraté. Son collègue vient constater l’attaque avec un site inondé de dépêches C++ et avoue que les dév. C++ sont trop balaises](https://cpp-frug.github.io/materials/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/linuxfr-ne-parle-que-de-cpp_copyright-OliverH-2016_CC-BY-SA-3.png)
 
 
-`github.com/cpp-frug`
----------------------
+`github.com` / `cpp-frug`
+-------------------------
     
 * Les dépêches restent figées sur LinuxFr.org
 * L'amélioration s'effectue sur le Git C++FRUG
 * Idéal pour héberger les illustrations
-* Montpellier, Paris, Aix-Marseille, Toulouse...
+* Montpellier, Paris (Aix, Marseille, Toulouse...)
 
 ![Logo GitHub social coding](http://securityaffairs.co/wordpress/wp-content/uploads/2015/03/github-social-coding.jpg)
 
