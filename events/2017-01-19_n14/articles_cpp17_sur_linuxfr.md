@@ -290,20 +290,22 @@ Suppression des trigraphes
 C++11 aurait pu rendre les trigraphes obsolètes, mais quelques membres du comité de normalisation du C++ (IBM et Bloomberg) s'y étaient opposés. Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086) qui les supprime sans étape intermédiaire.
 
 ```cpp
-// Avec digraphes et trigraphes
+/??/
+/??/ Avec trigraphes
 ??=include <iostream>
-int main(int argc, char *argv<::>) ??< 
-  const char hello_world ??(??) = "Hello world !??/0";
-  std::cout << hello_world << std::endl;
+int main (int argc, char *argv??(??)) ??< 
+  const char txt??(??) = "J'aime le C++17??/0";
+  std::cout << txt << std::endl;
 ??>
 ``` 
     
 ```cpp
-// Sans digraphe/trigraphe
+/\
+/\ Sans trigraphe
 #include <iostream>
-int main(int argc, char *argv[]) {
-  const char hello_world[] = "Hello world !";
-  std::cout << hello_world << std::endl;
+int main (int argc, char *argv[]) {
+  const char txt[] = "J'aime le C++17";
+  std::cout << txt << std::endl;
 }
 ```
 
