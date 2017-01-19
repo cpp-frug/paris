@@ -19,8 +19,8 @@ Trois courtes présentations
 
 &nbsp;
 
-1. Articles [**C++17 sur LinuxFr.org**](http://linuxfr.org/tags/c++17/public) par Oliver
-2. [**Sérialisation**](https://github.com/GuillaumeDua/GCL_CPP/blob/master/GCL_CPP/Serialization.h) à la compilation et à l'éxécution par Guss
+1. [**Articles C++17 sur LinuxFr.org**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/articles_cpp17_sur_linuxfr.reveal.html#/2/4) par Oliver
+2. [**Sérialisation à la compilation et à l'éxécution**](cpp-frug.github.io/paris/events/2017-01-19_n14/articles_cpp17_sur_linuxfr.reveal.html) par Guss
 3. Framework [**Boson**](https://github.com/duckie/boson) par JB
 
 &nbsp;
@@ -30,8 +30,8 @@ Et leur code Mardown est disponible sur [le dépôt Git C++FRUG](https://github.
 
 
 
-LinuxFr.org
-===========
+[C++17 sur LinuxFr.org](http://linuxfr.org/tags/c++17/public)
+=======================
 
 * Rédaction collaborative en Markdown
 * Licence libre (CC BY-SA 4.0)
@@ -158,10 +158,10 @@ double w = 0x'C0DE'2017'1.cafe'p1;
 [![Les Nerdettes s’entraînent pour le concours des littéraux hexadécimaux sur LinuxFr.org](https://cpp-frug.github.io/materials/images/nerdettes_litteral_hexa.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerdettes_litteral_hexa.svg)
 
 
-Virgule flottante en hexadécimal
---------------------------------
+Concours de jeux de mots
+------------------------
 
-[Attention, le concours de jeux de mots se termine fin janvier 2017 !](http://linuxfr.org/news/attention-le-concours-de-jeux-de-mots-se-termine-fin-janvier-2017)
+[Attention, le concours se termine fin janvier !](http://linuxfr.org/news/attention-le-concours-de-jeux-de-mots-se-termine-fin-janvier-2017)
 
 ![Les deux filles nerds discutent sur la manipulation des bits au grand bonheur des jeux de mots](https://cpp-frug.github.io/materials/images/nerd_jeux-de-mots.svg)
 
