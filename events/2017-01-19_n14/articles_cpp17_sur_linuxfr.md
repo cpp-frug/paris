@@ -20,7 +20,7 @@ Trois courtes présentations
 &nbsp;
 
 1. [**Articles C++17 sur LinuxFr.org**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/articles_cpp17_sur_linuxfr.reveal.html#/2/4) par Oliver
-2. [**Sérialisation à la compilation et à l'éxécution**](cpp-frug.github.io/paris/events/2017-01-19_n14/articles_cpp17_sur_linuxfr.reveal.html) par Guss
+2. [**Sérialisation à la compilation et à l'éxécution**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/Serial/index.html) par Guss
 3. Framework [**Boson**](https://github.com/duckie/boson) par JB
 
 &nbsp;
