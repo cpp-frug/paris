@@ -1,36 +1,29 @@
-# **C++** Serialization
+# C++ &nbsp; Serialization
 
 ---
 
-## Guillaume *"Guss"* Dua
+## Guillaume &nbsp; *Guss* &nbsp; Dua
 
 ---
 
 
 
-Problem
--------
+Features
+--------
 
-Two-way mapping between **types** and `constexpr` **indexes**  
-with both **static** and **dynamic** accessors
+**`GCL::Serialization`** at [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)
 
----
-
-My implementation
------------------
-
-**Write** "type" information in a file  
-and get it back while **reading**
-
-See `GCL::Serialization`  
-(github.com/GuillaumeDua/GCL_CPP)[https://github.com/GuillaumeDua/GCL_CPP]
+* Two-way mapping between **types** and `constexpr` **indexes**
+* Accessors **static** and **dynamic**
+* **Write** serilized info in a file
+* **Read** the file and hydrate the types
 
 
 
 *static* mapping Type <--> Index
 ================================
  
-![TypePack](./img_rendering_big/TypePack.png "TypePack : Static association")
+![TypePack](./img_rendering_big/TypePack.png "TypePack: Static association")
 
 
 *static* mapping Type <--> Index
@@ -42,20 +35,22 @@ struct TypePack
 {
   using types_t = std::tuple<Types...>;
 
-  template <typename T>                                        // Template function
-  static constexpr inline size_t indexOf(void);                // Type -> ID
-	
-  template <size_t N>                                          // Template type
-  using TypeAt = typename std::tuple_element<N, types_t>::type; // ID -> Type
+  // Template function - Mapping Type -> ID
+  template <typename T>
+  static constexpr inline size_t indexOf(void);                
+
+  // Template type - Mapping ID -> Type
+  template <size_t N>
+  using TypeAt = typename std::tuple_element<N, types_t>::type;
 };
 ```
 
 ```cpp
-using MyType = TypePack<...>.TypeAt<42>;               // correct
-const size_t index = TypePack<...>.indexOf<MyType>();  // correct
+using MyType = TypePack<...>.TypeAt<42>;               // Correct
+const size_t index = TypePack<...>.indexOf<MyType>();  // Correct
 
-size_t myTypeIndex = foo();                            // dynamic value
-using MyType = TypePack<...>.TypeAt<myTypeIndex>;      // error !
+size_t myTypeIndex = foo();                            // Dynamic value
+using MyType = TypePack<...>.TypeAt<myTypeIndex>;      // ERROR
 ```
 
 
@@ -77,8 +72,8 @@ using MyType = TypePack<...>.TypeAt<myTypeIndex>;      // error !
 
 
 
-Bring all pieces together
-=========================
+`Writer` and `Reader`
+=====================
 
 ```cpp
 template <class Interface>
@@ -87,10 +82,10 @@ struct InterfaceIs
   template <typename ...Types>
   struct OfTypes
   {
-    template <typename IO_POlicy = IO::Policy::Binary>
+    template <typename Policy = Binary>
     struct Writer;
     
-    template <typename IO_POlicy = IO::Policy::Binary>
+    template <typename Policy = Binary>
     struct Reader;
   }
 }	
@@ -108,20 +103,14 @@ Writer
 ======
 
 ```cpp
-template <typename IO_POlicy = IO::Policy::Binary>
+template <typename Policy = Binary>
 struct Writer
 {
   template <typename T>
-  static void write (std::ostream & os, const T & var)
-  {
-    IO_POlicy::write(os, TypePack<...>::template indexOf<T>());
-    os << var;
-  }
-
-  template <typename T>
   Writer & operator<< (const T & element)
   {
-    write(_oStream, element);
+    Policy::write(_oStream, TypePack<...>::template indexOf<T>());
+    os << element;
     return *this;
   }
 };
@@ -139,27 +128,27 @@ Reader
 ======
 
 ```cpp
-template <typename Policy = Policy::Binary>
+template <typename Policy = Binary>
 struct Reader
 {
-  // Type -> ID, ID -> Type mapping
-  using T_TypeManager = typename TypeTrait::InterfaceIs<_InterfaceType>::template OfTypes<Types...>;
+  // Two-way mapping:  Type <--> ID
+  using mapping_t = typename InterfaceIs<Interface>::template OfTypes<Types...>;
 
-  static _InterfaceType *  read (std::istream & is)
+  static Interface * read (std::istream & is)
   {
     size_t typeIndex;
 
-    IO_POlicy::read(is, typeIndex);
+    Policy::read(is, typeIndex);
     if (is.eof()) return 0x0;
 
-    auto & constructor = T_TypeManager::index.at(typeIndex).defaultConstructeurCallerOp;
-    _InterfaceType * elem = constructor();
+    auto & constructor = mapping_t::index.at(typeIndex).defaultConstructeurCallerOp;
+    Interface * elem = constructor();
     is >> *elem;
     return elem;
   }
 	
-  Reader &  operator>> (_InterfaceType *& element);
-  Reader &  operator>> (std::queue<_InterfaceType*> & elemQueue);
+  Reader &  operator>> (Interface *& element);
+  Reader &  operator>> (std::queue<Interface*> & elemQueue);
 };
 ```
 
@@ -169,7 +158,7 @@ Usage
 =====
 
 Interface
-------------
+---------
 ```cpp
 struct TestInterface
 {
@@ -182,19 +171,19 @@ Classes to serialize
 #define GenTestClass(name, type)                                \
 struct name : TestInterface                                     \
 {                                                               \						
-  name() = default;                                             \
-  name(type value) : _value(value){}                            \
-                                                                \
   type _value;                                                  \
                                                                 \
-  void	DoStuff(void) const override                            \
-  { std::cout << ""#name##"" " -> value=[" << _value << ']' << std::endl; }   \
+  name() = default;                                             \
+  name(type value) : _value(value) {}                           \
                                                                 \
-  std::ostream & operator<<(std::ostream & os) const  override  \
-  { GCL::IO::Policy::Binary::write(os, _value); return os; }    \
+  void	DoStuff() const override                                \
+  { std::cout << #name " -> value=["<< _value <<']'<< std::endl; }   \
                                                                 \
-  std::istream & operator>>(std::istream & is) override         \
-  { GCL::IO::Policy::Binary::read (is, _value); return is; }    \
+  std::ostream & operator<< (std::ostream & os) const override  \
+  { Binary::write(os, _value); return os; }                     \
+                                                                \
+  std::istream & operator>> (std::istream & is) override        \
+  { Binary::read(is, _value); return is; }                      \
 };
 ```
 
@@ -207,146 +196,144 @@ GenTestClass(Tutu, std::string);
 
 
 
-Usage
-=====
 Writer
----------
+------
+
 ```cpp
-using Writer = Serialization::InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Writer<>;
+using Writer = InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Writer<>;
 
 std::stringstream ss;
-Writer writer(ss);
-writer
-	<< Toto{ 42 }
-	<< Titi{ "Hello, world" }
-	<< Tata{ 130390 }
-	<< Tutu{ "Morning' coffee" }
+Writer(ss)
+  << Toto{ 42 }
+  << Titi{ "Hello, world" }
+  << Tata{ 130390 }
+  << Tutu{ "Morning' coffee" }
 ;
 std::cout << "Serialized : [" << ss.str() << ']' << std::endl;
 ```
-Console output
-```
-Serialized : [    *   ☺   ♀   Hello, world☻   V²☺ ♥   ☼   Morning' coffee]
-```
 
+Output
 
+    Serialized : [    *   ☺   ♀   Hello, world☻   V²☺ ♥   ☼   Morning' coffee]
 
 
 Reader
 ------
+
 ```cpp
-using Reader = Serialization::InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Reader<>;
-try
-{
-  Reader  reader(ss);
+using Reader = InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Reader<>;
 
-  std::queue<TestInterface*> elements;
-  reader
-    >> elements
-  ;
+std::stringstream ss;
+Reader reader(ss);
 
-  while (not elements.empty())
-  {
-    elements.front()->DoStuff();  // TestInterface::DoStuff
-    delete elements.front();
-    elements.pop();
-  }
-}
-catch (const std::exception & ex)
+std::queue<TestInterface*> elements;
+reader
+  >> elements
+;
+
+while (not elements.empty())
 {
-  std::cerr << ex.what() << std::endl;
+  elements.front()->DoStuff();  // TestInterface::DoStuff
+  delete elements.front();
+  elements.pop();
 }
 ```
-Console output
-```
-Toto -> value=[42]
-Titi -> value=[Hello, world]
-Tata -> value=[130390]
-Tutu -> value=[Morning' coffee]
-```
+
+Output
+
+    Toto -> value=[42]
+    Titi -> value=[Hello, world]
+    Tata -> value=[130390]
+    Tutu -> value=[Morning' coffee]
 
 
 
 
-Bonus: Disable serialisation on demand
-======================================
+Bonus
+=====
 
-* Inspired from **C#** Attribute `[NonSerialized()]`
-* C++ implementation based on SFINAE
-* [Walter Brown talk's about `std::void_t`](https://www.youtube.com/watch?v=a0FliKwcwXE)
+Forbid serializing for some types
+---------------------------------
 
-	``` std::void_t<typename T:: > ``` 
-
-```cpp
-#define GCL_Introspection__GenHasNested(nested)							\
-template< class, class = std::void_t<> >							\
-struct has_##nested##_nested : std::false_type { };						\
-template< class T >										\
-struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { };	\
-```
+* **C#** has attribute `[NonSerialized()]`
 
 
-In `GCL::Serialization` ?
--------------------------
+Target
+------
 
 ```cpp
-GCL_Introspection__GenHasNested(NotSerializable)
+struct Huge
+{
+  enum NonSerialized{};
+
+  BigStuff _bigStuff;
+};
+```
+
+```cpp
+Writer(ss)
+  << Toto{42}
+  << Huge{13}  // ERROR
+;
+```
+
+
+Implementation
+--------------
+
+&nbsp;
+
+> [Walter Brown](https://www.youtube.com/watch?v=a0FliKwcwXE) (CppCon 2014)
+> ```cpp
+> std::void_t<typename T:: >
+> ```
+
+&nbsp;
+
+```cpp
+#define GenHasNested(nested)                                                           \
+                                                                                       \
+template< class, class = std::void_t<> >                                               \
+struct has_##nested##_nested : std::false_type { };                                    \
+                                                                                       \
+template< class T >                                                                    \
+struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { }
+```
+
+
+Use macro `GenHasNested`
+-----------------------
+
+```cpp
+GenHasNested(NonSerialized);
 
 template <typename T>
 struct WriterImpl
-{
-  static constexpr bool isSerializable = !GCL::Introspection::has_NotSerializable_nested<T>::value;
+{                                       // From macro GenHasNested
+  static constexpr bool nonSerialized = has_NonSerialized_nested<T>::value;
 
-  template <bool _isSerializable = isSerializable>
-  static constexpr void	write_impl(std::ostream & os, const T & var);
+  template <bool NonSerialized = nonSerialized>
+  static constexpr void	write_impl (std::ostream & os, const T & var);
+  
   template <>
-  static constexpr void	write_impl<true>(std::ostream & os, const T & var)
+  static constexpr void	write_impl<true> (std::ostream & os, const T & var)
   {
-    IO_POlicy::write(os, _TypesPack::template indexOf<T>());
-    os << var;
+    static_assert(false, "This type has NonSerialized static-qualifier");    
   }
   
   template <>
   static constexpr void write_impl<false> (std::ostream & os, const T & var)
   {
-    // Do nothing or ...
-    // static_assert(false, "This type has \"NotSerializable\" static-qualifier");
+    Policy::write (os, TypesPack<...>::template indexOf<T>());
+    os << var;
   }
 };
 ```
 
 
-Result
-------
 
-```cpp
-struct NotSerializableType
-{
-  enum NotSerializable{};
-};
-```
-
-```cpp
-Writer writer(ss);
-writer
-  << Toto{ 42 }
-  << Titi{ "Hello, world" }
-  << Tata{ 130390 }
-  << Tutu{ "Morning' coffee" }
-  << NotSerializableType{}     // Error !
-;
-```
-
-Compilation error
-
-```cpp
-error C2338: This type has "NotSerializable" static-qualifier
-```
-
-
-
-Evolutions
-==========
+Future
+======
 * Codec
 * Encryption
 * Backward version compatibility
@@ -358,10 +345,8 @@ Annex
 =====
 
 
-What about **C#** ?
--------------------
-
-Few words about  [NonSerialized()] attribute
+**C#** `[NonSerialized()]` attribute
+------------------------------------
 
 ```Csharp
 namespace Sample
@@ -369,8 +354,9 @@ namespace Sample
     public class DataToSerialize
     {
         // ...
-        [NonSerialized()] 		// <------- !
-        private BigStuff _bigStuff;
+        [NonSerialized()]
+        // ...
+	private BigStuff _bigStuff;
     }
 }
 ```
