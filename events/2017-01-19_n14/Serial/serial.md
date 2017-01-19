@@ -258,8 +258,8 @@ Forbid serialization for some types
 > How to have it in C++?
 
 
-C++ target
-----------
+What we want
+------------
 ```cpp
 struct Huge
 {
@@ -275,32 +275,7 @@ Writer(ss)
 ```
 
 
-C++ implementation
-------------------
-
-&nbsp;
-
-> [Walter Brown](https://www.youtube.com/watch?v=a0FliKwcwXE) (CppCon 2014)
-> ```cpp
-> std::void_t<typename T:: >
-> ```
-
-&nbsp;
-
-```cpp
-#define GenHasNested(nested)                                                           \
-                                                                                       \
-template< class, class = std::void_t<> >                                               \
-struct has_##nested##_nested : std::false_type { };                                    \
-                                                                                       \
-template< class T >                                                                    \
-struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { }
-```
-
-
-Use macro `GenHasNested`
------------------------
-
+### Detect member `NonSerialized` using macro `GenHasNested`
 ```cpp
 GenHasNested(NonSerialized);
 
@@ -325,6 +300,28 @@ struct WriterImpl
     os << var;
   }
 };
+```
+
+
+The macro `GenHasNested`
+-----------------------
+
+&nbsp;
+
+Inspired from [Walter Brown](https://www.youtube.com/watch?v=a0FliKwcwXE) (CppCon 2014)
+
+```std::void_t<typename T:: >```
+
+&nbsp;
+
+```cpp
+#define GenHasNested(nested)                                                           \
+                                                                                       \
+template< class, class = std::void_t<> >                                               \
+struct has_##nested##_nested : std::false_type { };                                    \
+                                                                                       \
+template< class T >                                                                    \
+struct has_##nested##_nested<T, std::void_t<typename T::##nested>> : std::true_type { }
 ```
 
 
