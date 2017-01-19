@@ -163,7 +163,7 @@ Concours de jeux de mots
 
 [Attention, le concours se termine fin janvier !](http://linuxfr.org/news/attention-le-concours-de-jeux-de-mots-se-termine-fin-janvier-2017)
 
-![Les deux filles nerds discutent sur la manipulation des bits au grand bonheur des jeux de mots](https://cpp-frug.github.io/materials/images/nerd_jeux-de-mots.svg)
+[![Les deux filles nerds discutent sur la manipulation des bits au grand bonheur des jeux de mots](https://cpp-frug.github.io/materials/images/nerd_jeux-de-mots.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_jeux-de-mots.svg)
 
 
 
