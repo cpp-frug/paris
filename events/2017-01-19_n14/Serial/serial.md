@@ -11,30 +11,30 @@
 ---
 
 
-### `GCL::Serialization`
+#### `GCL::Serialization`
 
-* [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)
+* [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)  
 
 * Two-way mapping  
-  **types** <---> `constexpr` **indexes**
+  **Type** <---> **Index**  
 
 * Accessors  
-  **static**  
-  **dynamic**
+  **Static**  
+  **Dynamic**  
 
-* Usage  
+* Runtime  
   **Write** into a file  
-  **Read** the file and hydrate the types
+  **Read** the file
 
 
 
 Static mapping (theory)
-=======================
+-----------------------
 ![TypePack](./img_rendering_big/TypePack.png "TypePack: Static association")
 
 
 Static mapping (implementation)
-===============================
+-------------------------------
 ```cpp
 template <typename ... Types>
 struct TypePack
@@ -62,30 +62,30 @@ using MyType = TypePack<...>.TypeAt<myTypeIndex>;     // ERROR
 
 
 Dynamic mapping (theory)
-========================
+------------------------
 1. `std::map<Key, Value>` (template parameters)
 2. Initializer-list for template viariadics expansion
 3. Polymorphism
 
 
 Dynamic mapping (theory)
-========================
+------------------------
 ![TypeIndexer_0](./img_rendering_big/TypePack_dynamic_0.png)
 
 
 Dynamic mapping (theory)
-========================
+------------------------
 ![TypeIndexer_1](./img_rendering_big/TypePack_dynamic_1.png)
 
 
 Dynamic mapping (theory)
-========================
+------------------------
 ![TypeIndexer_2](./img_rendering_big/TypePack_dynamic_2.png)
 
 
 
 Dynamic mapping (implementation)
-========================
+--------------------------------
 ```cpp
 template <class Interface>
 struct InterfaceIs
@@ -162,7 +162,7 @@ struct Reader
 
 
 Dynamic mapping usage
-=====================
+---------------------
 ```cpp
 struct TestInterface
 {
