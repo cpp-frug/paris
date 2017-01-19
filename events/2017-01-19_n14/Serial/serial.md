@@ -252,11 +252,9 @@ Bonus
 
 &nbsp;
 
-&nbsp;
-
 Forbid serialization for some types
 -----------------------------------
-> **C#** has attribute `[NonSerialized()]`
+> **C#** has attribute `[NonSerialized()]`  
 > How to have it in C++?
 
 
