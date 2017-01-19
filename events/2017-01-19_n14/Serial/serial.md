@@ -11,13 +11,20 @@
 ---
 
 
-`GCL::Serialization`
---------------------
+### `GCL::Serialization`
+
 * [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)
-* Two-way mapping **types** <---> `constexpr` **indexes**
-* Accessors **static** and **dynamic**
-* **Write** into a file
-* **Read** the file and hydrate the types
+
+* Two-way mapping  
+  **types** <---> `constexpr` **indexes**
+
+* Accessors  
+  **static**  
+  **dynamic**
+
+* Usage  
+  **Write** into a file  
+  **Read** the file and hydrate the types
 
 
 
