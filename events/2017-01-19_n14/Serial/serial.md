@@ -175,9 +175,6 @@ GenTestClass(Titi, std::string);
 GenTestClass(Tata, int);
 GenTestClass(Tutu, std::string);
 ```
-
-macro `GenTestClass`
---------------------
 ```cpp
 #define GenTestClass(name, type)                                \
 struct name : TestInterface                                     \
