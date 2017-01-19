@@ -152,10 +152,19 @@ Virgule flottante en hexadécimal
     
 ```cpp
 float  v = 0x'Baffe.bobo'p1f;
-double w = 0x'C0DE'2017.1'cafe'p1;
+double w = 0x'C0DE'2017'1.cafe'p1;
 ``` 
     
 [![Les Nerdettes s’entraînent pour le concours des littéraux hexadécimaux sur LinuxFr.org](https://cpp-frug.github.io/materials/images/nerdettes_litteral_hexa.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerdettes_litteral_hexa.svg)
+
+
+Virgule flottante en hexadécimal
+--------------------------------
+
+[Attention, le concours de jeux de mots se termine fin janvier 2017 !](http://linuxfr.org/news/attention-le-concours-de-jeux-de-mots-se-termine-fin-janvier-2017)
+
+![Les deux filles nerds discutent sur la manipulation des bits au grand bonheur des jeux de mots](https://cpp-frug.github.io/materials/images/nerd_jeux-de-mots.svg)
+
 
 
 `if constexpr`
