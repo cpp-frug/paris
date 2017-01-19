@@ -1,5 +1,9 @@
 # C++ &nbsp; Serialization
 
+&nbsp;
+
+&nbsp;
+
 ---
 
 ## Guillaume &nbsp; *Guss* &nbsp; Dua
@@ -7,28 +11,23 @@
 ---
 
 
-
-Features
---------
-
-**`GCL::Serialization`** at [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)
-
-* Two-way mapping between **types** and `constexpr` **indexes**
+`GCL::Serialization`
+--------------------
+* [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)
+* Two-way mapping **types** <---> `constexpr` **indexes**
 * Accessors **static** and **dynamic**
-* **Write** serilized info in a file
+* **Write** into a file
 * **Read** the file and hydrate the types
 
 
 
-*static* mapping Type <--> Index
-================================
- 
+Static mapping (theory)
+=======================
 ![TypePack](./img_rendering_big/TypePack.png "TypePack: Static association")
 
 
-*static* mapping Type <--> Index
-================================
-
+Static mapping (implementation)
+===============================
 ```cpp
 template <typename ... Types>
 struct TypePack
@@ -44,37 +43,42 @@ struct TypePack
   using TypeAt = typename std::tuple_element<N, types_t>::type;
 };
 ```
-
 ```cpp
-using MyType = TypePack<...>.TypeAt<42>;               // Correct
-const size_t index = TypePack<...>.indexOf<MyType>();  // Correct
-
-size_t myTypeIndex = foo();                            // Dynamic value
-using MyType = TypePack<...>.TypeAt<myTypeIndex>;      // ERROR
+using MyType = TypePack<...>.TypeAt<42>;              // Static value
+const size_t index = TypePack<...>.indexOf<MyType>(); // Correct
+```
+```cpp
+size_t myTypeIndex = foo();                           // Dynamic value
+using MyType = TypePack<...>.TypeAt<myTypeIndex>;     // ERROR
 ```
 
 
-*dynamic* mapping Type <--> Index
-=================================
 
-1. `std::map<Key, Value>` from template parameters (`Key` and `Value`)
+Dynamic mapping (theory)
+========================
+1. `std::map<Key, Value>` (template parameters)
 2. Initializer-list for template viariadics expansion
 3. Polymorphism
 
 
-![TypeIndexer_0](./img_rendering_big/TypePack_dynamic_0.png "TypePack : Static association 0")
+Dynamic mapping (theory)
+========================
+![TypeIndexer_0](./img_rendering_big/TypePack_dynamic_0.png)
 
 
-![TypeIndexer_1](./img_rendering_big/TypePack_dynamic_1.png "TypePack : Static association 1")
+Dynamic mapping (theory)
+========================
+![TypeIndexer_1](./img_rendering_big/TypePack_dynamic_1.png)
 
 
-![TypeIndexer_2](./img_rendering_big/TypePack_dynamic_2.png "TypePack : Static association 2")
+Dynamic mapping (theory)
+========================
+![TypeIndexer_2](./img_rendering_big/TypePack_dynamic_2.png)
 
 
 
-`Writer` and `Reader`
-=====================
-
+Dynamic mapping (implementation)
+========================
 ```cpp
 template <class Interface>
 struct InterfaceIs
@@ -93,15 +97,13 @@ struct InterfaceIs
 
 
 
-Writer
-======
-
+`Writer` (dynamic mapping)
+--------------------------
 ![Writer](./img_rendering_big/Writer.png "GCL::Serialization::Writer")
 
 
-Writer
-======
-
+`Writer` (dynamic mapping)
+--------------------------
 ```cpp
 template <typename Policy = Binary>
 struct Writer
@@ -118,27 +120,25 @@ struct Writer
 
 
 
-Reader
-======
-
+`Reader` (dynamic mapping)
+--------------------------
 ![Reader](./img_rendering_big/Reader.png "GCL::Serialization::Reader")
 
 
-Reader
-======
-
+`Reader` (dynamic mapping)
+--------------------------
 ```cpp
 template <typename Policy = Binary>
 struct Reader
 {
-  // Two-way mapping:  Type <--> ID
+  // Two-way mapping Type <--> ID
   using mapping_t = typename InterfaceIs<Interface>::template OfTypes<Types...>;
 
   static Interface * read (std::istream & is)
   {
     size_t typeIndex;
-
     Policy::read(is, typeIndex);
+
     if (is.eof()) return 0x0;
 
     auto & constructor = mapping_t::index.at(typeIndex).defaultConstructeurCallerOp;
@@ -154,18 +154,21 @@ struct Reader
 
 
 
-Usage
-=====
-
-Interface
----------
+Dynamic mapping usage
+=====================
 ```cpp
 struct TestInterface
 {
   virtual void DoStuff() const = 0;
 };
+
+GenTestClass(Toto, int);
+GenTestClass(Titi, std::string);
+GenTestClass(Tata, int);
+GenTestClass(Tutu, std::string);
 ```
-Classes to serialize
+
+macro `GenTestClass`
 --------------------
 ```cpp
 #define GenTestClass(name, type)                                \
@@ -187,18 +190,10 @@ struct name : TestInterface                                     \
 };
 ```
 
-```cpp
-GenTestClass(Toto, int);
-GenTestClass(Titi, std::string);
-GenTestClass(Tata, int);
-GenTestClass(Tutu, std::string);
-```
 
 
-
-Writer
-------
-
+`Writer` usage (dynamic mapping)
+--------------------------------
 ```cpp
 using Writer = InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Writer<>;
 
@@ -217,9 +212,8 @@ Output
     Serialized : [    *   ☺   ♀   Hello, world☻   V²☺ ♥   ☼   Morning' coffee]
 
 
-Reader
-------
-
+`Reader` usage (dynamic mapping)
+--------------------------------
 ```cpp
 using Reader = InterfaceIs<TestInterface>::OfTypes<Toto, Titi, Tata, Tutu>::Reader<>;
 
@@ -248,19 +242,15 @@ Output
 
 
 
-
 Bonus
 =====
-
 Forbid serializing for some types
 ---------------------------------
-
 * **C#** has attribute `[NonSerialized()]`
 
 
-Target
-------
-
+C++ target
+----------
 ```cpp
 struct Huge
 {
@@ -268,9 +258,7 @@ struct Huge
 
   BigStuff _bigStuff;
 };
-```
 
-```cpp
 Writer(ss)
   << Toto{42}
   << Huge{13}  // ERROR
@@ -278,8 +266,8 @@ Writer(ss)
 ```
 
 
-Implementation
---------------
+C++ implementation
+------------------
 
 &nbsp;
 
