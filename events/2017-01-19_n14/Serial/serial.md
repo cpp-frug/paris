@@ -176,23 +176,23 @@ GenTestClass(Tata, int);
 GenTestClass(Tutu, std::string);
 ```
 ```cpp
-#define GenTestClass(name, type)                                \
-struct name : TestInterface                                     \
-{                                                               \						
-  type _value;                                                  \
-                                                                \
-  name() = default;                                             \
-  name(type value) : _value(value) {}                           \
-                                                                \
-  void	DoStuff() const override                                \
-  { std::cout << #name " -> value=["<< _value <<']'<< std::endl; }   \
-                                                                \
-  std::ostream & operator<< (std::ostream & os) const override  \
-  { Binary::write(os, _value); return os; }                     \
-                                                                \
-  std::istream & operator>> (std::istream & is) override        \
-  { Binary::read(is, _value); return is; }                      \
-};
+#define GenTestClass(name, type)                                  \
+struct name : TestInterface                                       \
+{                                                                 \
+  type _value;                                                    \
+                                                                  \
+  name() = default;                                               \
+  name(type value) : _value(value) {}                             \
+                                                                  \
+  void  DoStuff() const override                                  \
+  { std::cout << #name " -> value=["<< _value <<']'<< std::endl; }\
+                                                                  \
+  std::ostream & operator<< (std::ostream & os) const override    \
+  { Binary::write(os, _value); return os; }                       \
+                                                                  \
+  std::istream & operator>> (std::istream & is) override          \
+  { Binary::read(is, _value); return is; }                        \
+}
 ```
 
 
