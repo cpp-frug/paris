@@ -276,26 +276,26 @@ Writer(ss)
 ```
 
 
-### Detect member `NonSerialized` using macro `GenHasNested`
+#### Detect member `NonSerialized` using macro `GenHasNested`
 ```cpp
 GenHasNested(NonSerialized);
 
 template <typename T>
-struct WriterImpl
+struct Writer
 {                                       // From macro GenHasNested
   static constexpr bool nonSerialized = has_NonSerialized_nested<T>::value;
 
   template <bool NonSerialized = nonSerialized>
-  static constexpr void	write_impl (std::ostream & os, const T & var);
+  static constexpr void	write (std::ostream & os, const T & var);
   
   template <>
-  static constexpr void	write_impl<true> (std::ostream & os, const T & var)
+  static constexpr void	write<true> (std::ostream & os, const T & var)
   {
-    static_assert(false, "This type has NonSerialized static-qualifier");    
+    static_assert(false, "This type has NonSerialized static-qualifier");
   }
-  
+
   template <>
-  static constexpr void write_impl<false> (std::ostream & os, const T & var)
+  static constexpr void write<false> (std::ostream & os, const T & var)
   {
     Policy::write (os, TypesPack<...>::template indexOf<T>());
     os << var;
