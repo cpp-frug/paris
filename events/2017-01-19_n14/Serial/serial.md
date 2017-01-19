@@ -10,6 +10,9 @@
 
 ---
 
+[CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/deed.fr)  
+[cppfrug.org / paris / events / 2017-01-19_n14 / Serial](http://cpp-frug.github.io/paris/events/2017-01-19_n14/Serial/index.html)
+
 
 `GCL::Serialization`
 -------------------
