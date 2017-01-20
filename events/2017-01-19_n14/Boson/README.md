@@ -3,6 +3,12 @@ Boson
 Un framework pour la concurrence coopérative
 --------------------------------------------
 
+&nbsp;
+
+&nbsp;
+
+Copyright [JB](http://github.com/duckie/) 2017 &emsp; &mdash; &emsp; [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/deed.fr)
+
 [cppfrug.org / paris / events / 2017-01-19_n14 / Boson](http://cpp-frug.github.io/paris/events/2017-01-19_n14/Boson/)
 
 [github.com / cpp-frug / paris / events / 2017-01-19_n14 / Boson](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/Boson/README.md)
