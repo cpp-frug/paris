@@ -1,3 +1,10 @@
+[`cppfrug.org/paris`](http://cppfrug.org/paris/)
+=====================
+[`github.com/cpp-frug/paris`](https://github.com/cpp-frug/paris/)
+=============================
+
+[![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
+
 Événements franciliens de la communauté C++ francophone
 -----------------------------------------------------
 Paris events of the French-speaking C++ community
