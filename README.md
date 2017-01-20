@@ -1,5 +1,6 @@
 Événements franciliens de la communauté C++ francophone
 -----------------------------------------------------
+
 Paris events of the French-speaking C++ community
 -------------------------------------------------
 
@@ -7,6 +8,7 @@ Paris events of the French-speaking C++ community
 
 [`cppfrug.org/paris`](http://cppfrug.org/paris/)
 =====================
+
 [`github.com/cpp-frug/paris`](https://github.com/cpp-frug/paris/)
 =============================
 
