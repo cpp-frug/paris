@@ -1,16 +1,17 @@
-[`cppfrug.org/paris`](http://cppfrug.org/paris/)
-=====================
-[`github.com/cpp-frug/paris`](https://github.com/cpp-frug/paris/)
-=============================
-
-[![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
-
 Événements franciliens de la communauté C++ francophone
 -----------------------------------------------------
 Paris events of the French-speaking C++ community
 -------------------------------------------------
 
-### Meetups, Conférences et Rencontres
+[![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
+
+[`cppfrug.org/paris`](http://cppfrug.org/paris/)
+=====================
+[`github.com/cpp-frug/paris`](https://github.com/cpp-frug/paris/)
+=============================
+
+Meetups, Conférences et Rencontres
+----------------------------------
 
 * [C++FRUG #1](events/2013-03-19_n01)
 *  C++FRUG #2
@@ -28,7 +29,8 @@ Paris events of the French-speaking C++ community
 * [C++FRUG #14](events/2017-01-19_n14)
 
 
-### Objectif documentaire - Documentary goal
+Objectif documentaire - Documentary goal
+----------------------------------------
 
 Ce dépôt Git contient les informations des rencontres à Paris
 et quand cela est possible, le contenu des présentations,
@@ -40,7 +42,8 @@ and when possible, the presentation slides,
 links to pictures and	video recording, presented source code...
 
 
-### Licences variées - Varied licensing
+Licences variées - Varied licensing
+-----------------------------------
 
 Les licences des documents contenus dans ce dépôts sont très variées.
 Merci de se référer à chaque fichier pour connaître sa licence.
