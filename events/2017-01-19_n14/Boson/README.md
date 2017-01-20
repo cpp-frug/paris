@@ -7,6 +7,7 @@ Un framework pour la concurrence coopérative
 
 [github.com / cpp-frug / paris / events / 2017-01-19_n14 / Boson](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/Boson/README.md)
 
+
 L'existant
 ----------
 
