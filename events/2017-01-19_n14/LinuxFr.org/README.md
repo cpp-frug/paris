@@ -7,6 +7,10 @@ Copyright &emsp; Oliver H &emsp; 2017
 
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
+[cppfrug.org / paris / events / 2017-01-19_n14 / LinuxFr.org](http://cpp-frug.github.io/paris/events/2017-01-19_n14/LinuxFr.org/)
+
+[github.com / cpp-frug / paris / events / 2017-01-19_n14 / LinuxFr.org](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/LinuxFr.org/README.md)
+
 
 [LinuxFr.org](http://linuxfr.org/tags/c++17/public)
 =============
