@@ -17,9 +17,9 @@ Trois courtes présentations
 
 &nbsp;
 
-1. [**Articles C++17 sur LinuxFr.org**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/index.html#/1) par Oliver
+1. [**Articles C++17 sur LinuxFr.org**](LinuxFr.org) par Oliver
 2. [**Sérialisation à la compilation et à l'éxécution**](Serial) par Guss
-3. [**Framework Boson**](boson.reveal.html) par JB
+3. [**Framework Boson**](Boson) par JB
 
 &nbsp;
 
