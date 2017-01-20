@@ -1,40 +1,18 @@
-[C++FRUG #14][M]
-================
-`auto happy = new Year(2017)`
-----------------------------
+Articles C++17 sur LinuxFr.org
+==============================
 
-[M]: https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/236788136/
+Copyright &emsp; Oliver H &emsp; 2017
 
-> 19:30 &nbsp; **Accueil**  
-> 19:45 &nbsp; **Trois courtes présentations**  
-> 20:15 &nbsp; **Pause Dinatoire**  
-> 20:45 &nbsp; **C++17 abstractions for heterogeneous computing**  
-> 21:30 &nbsp; **Mot de clôture**
+[**CC BY-SA 4.0**](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
 
-&nbsp; &nbsp; &nbsp; &nbsp; **[cppfrug.org](http://cppfrug.org) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) Communauté C++ francophone**
+[![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
 
-Trois courtes présentations
----------------------------
-
-&nbsp;
-
-1. [**Articles C++17 sur LinuxFr.org**](http://cpp-frug.github.io/paris/events/2017-01-19_n14/index.html#/1) par Oliver
-2. [**Sérialisation à la compilation et à l'éxécution**](Serial) par Guss
-3. [**Framework Boson**](boson.reveal.html) par JB
-
-&nbsp;
-
-Ces présentations sont sous licence [**CC BY-SA 4.0**](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).  
-Et leur code Mardown est disponible sur [le dépôt Git C++FRUG](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
-
-
-
-[C++17 sur LinuxFr.org](http://linuxfr.org/tags/c++17/public)
-=======================
+[LinuxFr.org](http://linuxfr.org/tags/c++17/public)
+=============
 
 * Rédaction collaborative en Markdown
-* Licence libre (CC BY-SA 4.0)
+* Licence libre ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr))
 * Modérateurs sympas, pro et réactifs
 * Grande audience francophone
 * ~~Lecteurs C++~~ &nbsp; ~~Trolls~~ &nbsp; ~~Franglais~~
