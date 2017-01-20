@@ -18,7 +18,7 @@ Trois courtes présentations
 &nbsp;
 
 1. [**Articles C++17 sur LinuxFr.org**](LinuxFr.org) par Oliver
-2. [**Sérialisation à la compilation et à l'éxécution**](Serial) par Guss
+2. [**Sérialisation à la compilation et à l'exécution**](Serial) par Guss
 3. [**Framework Boson**](Boson) par JB
 
 &nbsp;
