@@ -27,12 +27,8 @@ Ces trois présentations sont sous licence [**CC BY-SA 4.0**](https://creativeco
 Et leur code *Mardown* est disponible sur [le dépôt Git C++FRUG](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
 
 
-Post-modern C++17 abstractions
-------------------------------
-for heterogeneous computing
----------------------------
-with Khronos OpenCL SYCL
-------------------------
+Post-modern C++17 abstractions for heterogeneous computing with Khronos OpenCL SYCL
+-----------------------------------------------------------------------------------
 
 http://www.gipsa-lab.grenoble-inp.fr/thematic-school/gpu2015/presentations/GIPSA-Lab-GPU2015-R-Keryell-01.pdf
 
