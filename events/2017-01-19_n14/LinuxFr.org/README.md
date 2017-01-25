@@ -111,8 +111,8 @@ Alternatives aux *feature testing macros*
 * Macro `__has_include`  
 
 
-`__has_include`
----------------
+`__has_include()`
+----------------
 
 [**P0061**](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include)  
 => vérifie la présence d'un *header* à la compilation
@@ -159,8 +159,8 @@ Concours de jeux de mots
 -------------
 
 [**P0292**](https://wg21.link/p0292) simplifie la métaprogrammation avec  
-`static_if` ... `constexpr_if` ... `constexpr if` ...  
-et finalement `if constexpr`
+`static_if` ... `constexpr_if` ... `constexpr if`  
+... et finalement `if constexpr`
   
 ```cpp
 template <class T, class... R>
@@ -336,11 +336,11 @@ Suppression du mot-clé `register`
 
 > Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à identifier la variable à conserver dans un registre du processeur (les compilateurs n'étaient pas très futés...)
 >
-> * **C++11** déprécie `register`, mais le conserve  
->   pour compatibilité avec le C (argument de fonction)
+> * **C++11** déprécie `register`  
+>   (conservé pour compatibilité avec le C)
 >
-> * **C++17** résèrve `register` pour un usage futur  
->   plutôt que d’essayer de résoudre les différences avec le C
+> * **C++17** résèrve `register` pour un autre usage futur  
+>   (trop compliqué de résoudre les différences avec le C)
 
 
 Booléen non incrémentable
