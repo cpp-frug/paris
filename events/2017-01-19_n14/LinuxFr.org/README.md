@@ -114,8 +114,8 @@ Alternatives aux *feature testing macros*
 `__has_include`
 ---------------
 
-> [**P0061**](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include)  
-> pour vérifier la présence d'un *header* à la compilation.
+[**P0061**](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include)  
+=> vérifie la présence d'un *header* à la compilation
 
 ```cpp
 #ifdef __has_include
@@ -158,8 +158,9 @@ Concours de jeux de mots
 `if constexpr`
 -------------
 
-> [**P0292**](https://wg21.link/p0292) simplifie la métaprogrammation  
-> avec `static_if` ... `constexpr_if` ... `constexpr if` ...
+[**P0292**](https://wg21.link/p0292) simplifie la métaprogrammation avec  
+`static_if` ... `constexpr_if` ... `constexpr if` ...  
+et finalement `if constexpr`
   
 ```cpp
 template <class T, class... R>
@@ -177,7 +178,7 @@ void fonction (const T& t, const R&... r)
 Variable `inline` ([P0386](http://wg21.link/p0386))
 ----------------------------------------------------
 
-* Après les variables `template` (C++14), voici les variables `inline`
+* Après les variables `template` (C++14)
 * Fin du [***One Definition Rule***](https://en.wikipedia.org/wiki/One_Definition_Rule) ?
 
 [![Les deux filles nerds résolvent une erreur de link d'une variable membre static non définie en rajoutant inline](https://cpp-frug.github.io/materials/images/nerd_cpp17_variable_inline.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_cpp17_variable_inline.svg)
@@ -187,8 +188,8 @@ Structured bindings
 -------------------
 
 [P0217](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**,  
-mais limitée aux `std::tuple`, aux tableaux (comme `std::array`)  
-et aux structures plates (comme `std::pair`).
+mais limitée aux `std::tuple`, aux tableaux (`std::array`)  
+et aux structures plates (`std::pair`)
     
 ```cpp
 struct A
@@ -206,15 +207,15 @@ A foo()
 auto [ x, y, ignored ] = foo();
 ``` 
     
-* Mieux que `std::tie` cantonné aux `std::tuple` et à `std::pair`
-* Pas de `std::ignore`
+* Mieux que `std::tie` (cantonné aux `std::tuple` et à `std::pair`)
+* Mais pas de `std::ignore`
 
 
-`if(init;condition)` et `switch(init;condition)`
+`if(init; condition)` et `switch(init; condition)`
 ------------------------------------------------
 
-Le TS [P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur*  
-comme pour `for( initialisation; condition; incrémentation )`.
+[P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur*  
+comme `for(init; condition; incrément)`
 
 ```cpp
 if (auto [it, inserted] = mySet.insert(value); inserted)
@@ -234,7 +235,7 @@ switch (bool loop=true; loop)
 `auto x{42};` déduit comme `int x{42};`
 -------------------------------------
 
-[N3922](https://wg21.link/n3922) comble un trou sur les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`.
+[N3922](https://wg21.link/n3922) comble un trou dans les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`.
     
 ```cpp
 auto a   {1};     //ok => int a{1};
@@ -335,22 +336,23 @@ Suppression du mot-clé `register`
 
 > Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à identifier la variable à conserver dans un registre du processeur (les compilateurs n'étaient pas très futés...)
 >
-> **C++11** : `register` est déprécié, mais conservé pour la compatibilité avec le C, en particulier avec les arguments des fonctions. Pourtant, son usage n’est pas pertinent en C++ :  redondant avec d’autres fonctionnalités et ses restrictions ne peuvent être facilement transcrites en C++.
+> * **C++11** déprécie `register`, mais le conserve pour compatibilité avec le C (argument de fonction)
 >
-> **C++17** : Plutôt que d’essayer de résoudre les différences avec le C, le standard fait de `register` un **mot-clé réservé non utilisé**.
+> * **C++17** résèrve `register` pour un usage futur plutôt que d’essayer de résoudre les différences avec le C
 
 
 Booléen non incrémentable
 -------------------------
 
-`bool` avait été conçu pour ne pas trop casser le vieux code C/C++
+La spécification initiale de `bool` ne devait pas trop casser le bon vieux code C/C++.
+
+* décrémentation interdite
+* incrémentation autorisée
 
 ```c
 #define bool int
 ```
-
-* décrémentation interdite
-* incrémentation autorisée
+Maintenant, l'incrémentation devient interdite.
 
 ```cpp
 bool b = foo();
