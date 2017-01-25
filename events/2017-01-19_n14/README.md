@@ -30,7 +30,7 @@ Et leur code *Mardown* est disponible sur le [**dépôt Git C++FRUG**](https://g
 Post-modern C++17 abstractions for heterogeneous computing with Khronos OpenCL SYCL
 -----------------------------------------------------------------------------------
 
-http://www.gipsa-lab.grenoble-inp.fr/thematic-school/gpu2015/presentations/GIPSA-Lab-GPU2015-R-Keryell-01.pdf
+https://github.com/keryell/ronan/blob/gh-pages/Talks/2017/2017-01-19-Paris_C%2B%2B_meetup_SYCL/2017-01-19-Paris_C%2B%2B_meetup_SYCL-expose.pdf
 
 [Ronan Keryell](https://www.linkedin.com/in/ronankeryell) travaille pour Xilinx Research Labs afin de permettre à Clang/LLVM de compiler le C++17/C++20 pour des FPGA.
 
