@@ -9,7 +9,7 @@
 > 20:45 &nbsp; **C++17 abstractions for heterogeneous computing**  
 > 21:30 &nbsp; **Prolongation du Meetup et discussions avec les conférentiers**
 
-[**cppfrug.org**](http://cppfrug.org/paris/events/2017-01-19_n14/) [github.com](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/README.md) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) **Communauté C++ francophone**
+[**cppfrug.org**](http://cppfrug.org/paris/events/2017-01-19_n14/) &emsp; [github.com](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/README.md) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) **Communauté C++ francophone**
 
 
 Trois courtes présentations
@@ -18,7 +18,7 @@ Trois courtes présentations
 &nbsp;
 
 1. [**Articles C++17 sur LinuxFr.org**](LinuxFr.org) par Oliver
-2. [**Sérialisation à la compilation et à l'exécution**](Serial) par Guss
+2. [**Mapping entre *Types* et *Identifiants* à la compilation et à l'exécution**](Serial) par Guss
 3. [**Framework Boson**](Boson) par JB
 
 &nbsp;
