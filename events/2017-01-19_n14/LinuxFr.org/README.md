@@ -211,8 +211,8 @@ auto [ x, y, ignored ] = foo();
 * Mais pas de `std::ignore`
 
 
-`if(init; condition)` et `switch(init; condition)`
-------------------------------------------------
+`if(init;condition)` et `switch(init;condition)`
+-----------------------------------------------
 
 [P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur*  
 comme `for(init; condition; incrément)`
@@ -235,7 +235,7 @@ switch (bool loop=true; loop)
 `auto x{42};` déduit comme `int x{42};`
 -------------------------------------
 
-[N3922](https://wg21.link/n3922) comble un trou dans les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`.
+[N3922](https://wg21.link/n3922) comble un trou dans les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`
     
 ```cpp
 auto a   {1};     //ok => int a{1};
@@ -336,23 +336,26 @@ Suppression du mot-clé `register`
 
 > Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à identifier la variable à conserver dans un registre du processeur (les compilateurs n'étaient pas très futés...)
 >
-> * **C++11** déprécie `register`, mais le conserve pour compatibilité avec le C (argument de fonction)
+> * **C++11** déprécie `register`, mais le conserve  
+>   pour compatibilité avec le C (argument de fonction)
 >
-> * **C++17** résèrve `register` pour un usage futur plutôt que d’essayer de résoudre les différences avec le C
+> * **C++17** résèrve `register` pour un usage futur  
+>   plutôt que d’essayer de résoudre les différences avec le C
 
 
 Booléen non incrémentable
 -------------------------
 
 La spécification initiale de `bool` ne devait pas trop casser le bon vieux code C/C++.
-
+    
 * décrémentation interdite
 * incrémentation autorisée
+    
+    ```c
+    #define bool int
+    ```
 
-```c
-#define bool int
-```
-Maintenant, l'incrémentation devient interdite.
+Maintenant, l'incrémentation devient également interdite.
 
 ```cpp
 bool b = foo();
