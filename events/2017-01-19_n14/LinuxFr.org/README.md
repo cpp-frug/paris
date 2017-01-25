@@ -65,11 +65,12 @@ Bonnes résolutions 2017
 
 
 
-C++17/20/23 aujourd'hui
------------------------
+C++17/20/23 dès aujourd'hui
+---------------------------
 
-> Les [*feature testing macros*](http://en.cppreference.com/w/User:D41D8CD98F/feature_testing_macros) permettent d'écrire du code  
-> qui s'adapte aux fonctionnalités prises en charge par le compilateur.
+Les [***feature testing macros***](http://en.cppreference.com/w/User:D41D8CD98F/feature_testing_macros) permettent d'écrire du code  
+qui s'adapte aux fonctionnalités prises en charge   
+par le compilateur et sa bibliotèque standard `std::`
 
 ```cpp
 #ifdef __cpp_lib_experimental_filesystem
