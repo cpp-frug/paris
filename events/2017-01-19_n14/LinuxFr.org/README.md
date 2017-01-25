@@ -27,7 +27,7 @@ Copyright &emsp; Oliver H &emsp; 2017
 Succès des publications
 =======================
 
-* 25 juin 2016 &emsp; Commité C++ clôture l'ajout des fonctionnalités pour C++17
+* 25 juin 2016 &emsp; Le comité C++ clôture l'ajout des fonctionnalités au C++17
 * 20 août 2016 &emsp; [**Les coulisses du standard C++**](http://linuxfr.org/news/les-coulisses-du-standard-cpp)
 * 2 octobre 2016 &nbsp; [**C++17, Genèse d’une version mineure**](http://linuxfr.org/news/cpp17-genese-d-une-version-mineure)
 
