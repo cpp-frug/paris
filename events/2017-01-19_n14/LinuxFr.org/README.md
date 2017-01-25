@@ -171,8 +171,8 @@ void fonction (const T& t, const R&... r)
 Variable `inline` ([P0386](http://wg21.link/p0386))
 ----------------------------------------------------
 
-> On avait déjà les variables `template` (C++14)  
-> Fin du [***One Definition Rule***](https://en.wikipedia.org/wiki/One_Definition_Rule) ?
+* Après les variables `template` (C++14), voici les variables `inline`
+* Fin du [***One Definition Rule***](https://en.wikipedia.org/wiki/One_Definition_Rule) ?
 
 [![Les deux filles nerds résolvent une erreur de link d'une variable membre static non définie en rajoutant inline](https://cpp-frug.github.io/materials/images/nerd_cpp17_variable_inline.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_cpp17_variable_inline.svg)
 
@@ -180,7 +180,9 @@ Variable `inline` ([P0386](http://wg21.link/p0386))
 Structured bindings
 -------------------
 
-[P0217](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**, mais limitée aux `std::tuple`, aux tableaux (comme `std::array`) et aux structures plates (comme `std::pair`).
+[P0217](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**,  
+mais limitée aux `std::tuple`, aux tableaux (comme `std::array`)  
+et aux structures plates (comme `std::pair`).
     
 ```cpp
 struct A
@@ -205,7 +207,8 @@ auto [ x, y, ignored ] = foo();
 `if(init;condition)` et `switch(init;condition)`
 ------------------------------------------------
 
-Le TS [P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur* comme pour `for( initialisation; condition; incrémentation )`.
+Le TS [P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur*  
+comme pour `for( initialisation; condition; incrémentation )`.
 
 ```cpp
 if (auto [it, inserted] = mySet.insert(value); inserted)
@@ -244,7 +247,7 @@ auto f = {1, 2.0}; //KO car pas le même type (int et double)
 `typename` pour les paramètres `template template`
 -------------------------------------------------
 
-[N4051](https://wg21.link/n4051) autorise enfin `typename` pour les paramètres `template template` !
+[N4051](https://wg21.link/n4051) autorise enfin `typename` pour les paramètres `template template`
 
 ```cpp
 template<template<typename> class    T> class Cpp98;
@@ -255,8 +258,8 @@ template<template<typename> typename T> class Cpp17;
 C++ without `class`
 -------------------
 
-Le nom originel du C++ était ***C with `class`***.
-C++17 est, par conséquent, le ***C++ without `class`***.
+Le nom originel du C++ était ***C with `class`***.  
+Avec [N4051](https://wg21.link/n4051), le C++17 devient le ***C++ without `class`***.
 
 ```cpp
 template <class T, template<class> C>
@@ -278,7 +281,10 @@ private:
 Suppression des trigraphes
 --------------------------
 
-C++11 aurait pu rendre les trigraphes obsolètes, mais quelques membres du comité de normalisation du C++ (IBM et Bloomberg) s'y étaient opposés. Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086) qui les supprime sans étape intermédiaire.
+C++11 aurait pu rendre les trigraphes obsolètes.  
+Mais quelques membres du comité C++ s'y étaient opposés (IBM, Bloomberg).  
+Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086)  
+qui les supprime directement sans passer par l'étape *deprecated*.
 
 ```cpp
 /??/
@@ -301,18 +307,18 @@ int main (int argc, char *argv[]) {
 ```
 
 
-Apple ][
---------
+Apple ][ (1977-1988)
+--------------------
 
-Aucune touche de l'Apple II (1977-1988) ne dispose du symbole *accolade* ou *crochet*.
+Aucune touche ne dispose du symbole *accolade* ou *crochet*.
 
 [![Image du clavier de l'Apple II qui n'a pas de touche avec accolade ou crochet](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Apple_II-IMG_7073.jpg/1024px-Apple_II-IMG_7073.jpg)](https://commons.wikimedia.org/wiki/File:Apple_II-IMG_7073.jpg)
 
 
-BBC Master
-----------
+BBC Master (1986-1994)
+----------------------
 
-Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994.
+Le clavier intégré du micro-ordinateur 8 bits BBC Master de Acorn indique les *crochets* mais pas les *accolades*.
 
 [![Clavier intégré du micro-ordinateur BBC Master de Acorn](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
 
@@ -321,17 +327,21 @@ Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué en
 Suppression du mot-clé `register`
 --------------------------------
 
-Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à garder dans un registre la variable qui était très utilisée. Les compilateurs n'étaient pas très futés...
-
-**C++11** : `register` est déprécié, mais conservé pour la compatibilité avec le C, en particulier avec les arguments des fonctions. Pourtant, son usage n’est pas pertinent en C++ :  redondant avec d’autres fonctionnalités et ses restrictions ne peuvent être facilement transcrites en C++.
-
-**C++17** : Plutôt que d’essayer de résoudre les différences avec le C, le standard fait de `register` un **mot-clé réservé non utilisé**.
+> Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à identifier la variable à conserver dans un registre du processeur (les compilateurs n'étaient pas très futés...)
+>
+> **C++11** : `register` est déprécié, mais conservé pour la compatibilité avec le C, en particulier avec les arguments des fonctions. Pourtant, son usage n’est pas pertinent en C++ :  redondant avec d’autres fonctionnalités et ses restrictions ne peuvent être facilement transcrites en C++.
+>
+> **C++17** : Plutôt que d’essayer de résoudre les différences avec le C, le standard fait de `register` un **mot-clé réservé non utilisé**.
 
 
 Booléen non incrémentable
 -------------------------
 
-`bool` avait été conçu pour ne pas trop casser le vieux code C/C++ (`#define bool int`)
+`bool` avait été conçu pour ne pas trop casser le vieux code C/C++
+
+```c
+#define bool int
+```
 
 * décrémentation interdite
 * incrémentation autorisée
@@ -341,5 +351,3 @@ bool b = foo();
 --b; // Erreur depuis C++98
 ++b; // Erreur depuis C++17
 ```
-
-
