@@ -27,8 +27,6 @@ Mapping entre Types et Identifiants
 `GCL::Serialization`
 -------------------
 
-* [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP)  
-
 * Two-way mapping  
   **Type** <---> **Index**  
 
@@ -38,7 +36,11 @@ Mapping entre Types et Identifiants
 
 * Runtime  
   **Write** into a file  
-  **Read** the file
+  **Read** the file  
+
+* [github.com/GuillaumeDua/GCL_CPP](https://github.com/GuillaumeDua/GCL_CPP/blob/master/GCL_CPP/Serialization.h)  
+  `Serialization.h`  
+  `Serialization.cpp`
 
 
 
