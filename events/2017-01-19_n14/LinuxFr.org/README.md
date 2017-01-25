@@ -90,8 +90,8 @@ void backup()
 * [valeur (année mois)](en.cppreference.com/w/cpp/experimental/feature_test#Language_Features) (`201501`)
 
 
-Alternatives à `__cpp_*`
-------------------------
+Alternatives aux *feature testing macros*
+----------------------------------------
 
 * macro `__cplusplus` = `201103`, `201402`, `201700`  
   => Détecte le flag `-std=c++14`
