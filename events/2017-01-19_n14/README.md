@@ -24,7 +24,7 @@ Trois courtes présentations
 &nbsp;
 
 Ces trois présentations sont sous licence [**CC BY-SA 4.0**](https://creativecommons.org/licenses/by-sa/4.0/deed.fr).  
-Et leur code *Mardown* est disponible sur [le dépôt Git C++FRUG](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
+Et leur code *Mardown* est disponible sur le [**dépôt Git C++FRUG**](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14).
 
 
 Post-modern C++17 abstractions for heterogeneous computing with Khronos OpenCL SYCL
