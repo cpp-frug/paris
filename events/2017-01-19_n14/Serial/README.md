@@ -6,7 +6,7 @@
 
 ---
 
-## Guillaume &nbsp; *Guss* &nbsp; Dua
+## Guillaume &nbsp; [*Guss*](https://github.com/GuillaumeDua) &nbsp; Dua
 
 ---
 
