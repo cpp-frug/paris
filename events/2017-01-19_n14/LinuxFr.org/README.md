@@ -94,16 +94,19 @@ void backup()
 Alternatives aux *feature testing macros*
 ----------------------------------------
 
-* macro `__cplusplus` = `201103`, `201402`, `201700`  
-  => Détecte le flag `-std=c++14`
-* macros [**Boost.Config**](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)
-* macro `__has_include`
+* Macro `__cplusplus`  
+  Valeurs `201103`, `201402` et bientôt `2017xx`  
+  Juste bien pour détecter le flag `-std=c++14`  
+  
+* Macros [**Boost.Config**](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)  
+
 * [**`CMAKE_CXX_KNOWN_FEATURES`**](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html)  
-  => CMake connait les fonctionnalités C++ du compilateur
+  CMake connait les fonctionnalités C++ du compilateur
         
     ```cmake
     target_compile_features(MyLib PRIVATE cxx_constexpr)
     ```
+* Macro `__has_include`  
 
 
 `__has_include`
