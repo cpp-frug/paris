@@ -87,8 +87,9 @@ void backup()
 #endif
 ```
 
-* `__cpp_lib_filesystem`
-* [valeur (année mois)](en.cppreference.com/w/cpp/experimental/feature_test#Language_Features) (`201501`)
+* `__cpp_concept` (déjà pris en charge par GCC)
+* `__cpp_lib_filesystem` (`_lib_` identifie une fonctionnalité de la `std::`)
+* Correspond à la [date comme `2015'01`](en.cppreference.com/w/cpp/experimental/feature_test#Language_Features) selon la publication de la TS
 
 
 Alternatives aux *feature testing macros*
@@ -96,6 +97,7 @@ Alternatives aux *feature testing macros*
 
 * Macro `__cplusplus`  
   Valeurs `201103`, `201402` et bientôt `2017xx`  
+  Ou bien `2011'03`, `2014'02` et `2017'00`  
   Juste bien pour détecter le flag `-std=c++14`  
   
 * Macros [**Boost.Config**](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)  
