@@ -1,7 +1,7 @@
 C++17 en images
 ===============
 
-Copyright &emsp; 2017 &emsp; Oliver H &emsp; &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
+Copyright &nbsp; 2017 &nbsp; Oliver H &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
 
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
@@ -10,7 +10,7 @@ Copyright &emsp; 2017 &emsp; Oliver H &emsp; &emsp; [CC BY-SA 4.0](https://creat
 [github.com/cpp-frug/paris/events/2017-04-26_n17/Cpp17-en-images](https://github.com/cpp-frug/paris/blob/master/events/2017-04-26_n17/Cpp17-en-images/README.md)
 
 C++ a une quarentaine d'années
-==============================
+------------------------------
 
 * 1977 &emsp; Bjarn rêve au *C with classes*
 * 1990 &emsp; Schisme entre C et C++
@@ -21,9 +21,22 @@ C++ a une quarentaine d'années
 
 
 C++17 ajoute xx pages
-=====================
+---------------------
 
-![Deux collègues content d'une nouvelle version C++17 mais qui ne sont pas au courant des dépêches C++17 sur LinuxFr.org qui leur permettrait de cerner les nouvelles fonctionnalités.](http://cpp-frug.github.io/materials/images/cpp-complexe-path.svg)
+[![Deux collègues content d'une nouvelle version C++17 mais qui ne sont pas au courant des Meetup C++FRUG qui leur permettrait de cerner les nouvelles fonctionnalités.](http://cpp-frug.github.io/materials/images/cpp-complexe-cppfrug.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-complexe-cppfrug.svg)
+
+
+Les *Concepts* et *Reflexion* étaient très attendues
+----------------------------------------------------
+
+[![Deux chatons tristes que Concepts et Reflexion n'aient pas été intégrées à C++17](http://cpp-frug.github.io/materials/images/cpp-chatons-tristes_copyright-Ziyue-OliverH-2016_CC-BY-SA-3.jpg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-chatons-tristes_copyright-Ziyue-OliverH-2016_CC-BY-SA-3.jpg)
+
+
+Les *Modules* n'en font pas partis non plus
+-------------------------------------------
+
+[![Bjarn et les Modules](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.svg)
+
 
 
 
