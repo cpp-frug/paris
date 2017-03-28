@@ -4,16 +4,13 @@
 Paris events of the French-speaking C++ community
 -------------------------------------------------
 
+* [**cppfrug.org/paris**](http://cppfrug.org/paris/)
+* [**github.com/cpp-frug/paris**](https://github.com/cpp-frug/paris/)
+* [**meetup.com/User-Group-Cpp-Francophone**](http://www.meetup.com/User-Group-Cpp-Francophone/)
+
+
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
-[`cppfrug.org/paris`](http://cppfrug.org/paris/)
-=====================
-
-[`github.com/cpp-frug/paris`](https://github.com/cpp-frug/paris/)
-=============================
-
-[`Meetup.com`](http://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/)
-=============================
 
 
 * 2013-03-19 [C++FRUG #1](events/2013-03-19_n01)
