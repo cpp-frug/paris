@@ -12,23 +12,25 @@ Paris events of the French-speaking C++ community
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
 
-
-* 2013-03-19 [C++FRUG #1](events/2013-03-19_n01)
-* 2013-06-05 C++FRUG #2 [Qt on mobile ](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/120838202/)
-* 2014-05-23 C++FRUG #3 [En faire ++ avec C++ ](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/177106822/)
-* 2014-10-02 C++FRUG #4 [C++ & Python](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/181945092/)
-* 2014-12-18 C++FRUG #5 [L'asynchronisme en deux talks](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/218740271/)
-* 2015-03-05 C++FRUG #6 [La métaprogrammation, non non ca sert en vrai](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/220602373/)
-* 2015-04-28 C++FRUG #7 [Nuts & Bolt](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/221811241/)
-* 2015-06-18 C++FRUG #8 [Nuts & Bolts II - Le retour](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/223101208/)
-* 2015-12-10 C++FRUG #9 [Not Dead Yet !](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/226963782/)
-* 2016-01-21 [C++FRUG #10](events/2016-01-21_n10) [`import <new_blood>`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/227761739/)
-* 2016-03-12 [C++FRUG #11](events/2016-03-12_n11) [`std::move(meetup)`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/229508095/)
-* 2016-04-27 [C++FRUG #12](events/2016-04-27_n12) [`decltype( new event )](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/230392153/)
-* 2016-06-08 [C++FRUG #13](events/2016-06-08_n13) [`std::exit(to_september)](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/231339781/)
-* 2017-01-19 [C++FRUG #14](events/2017-01-19_n14) [`auto happy = new Year(2017)`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/236788136/)
-* 2017-02-19 [C++FRUG #15](events/2017-02-19_n15) [`while( jokes --> 0 );`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/237138962/)
-* 2017-04-13 [C++FRUG #16](events/2017-04-13_n16)
+Date      | Présentations  | Meetup
+--------- | -------------- | -----------
+2013-03-19|[#1](events/2013-03-19_n01)
+2013-06-05| #2 | [Qt on mobile ](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/120838202/)
+2014-05-23| #3 | [En faire ++ avec C++ ](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/177106822/)
+2014-10-02| #4 | [C++ & Python](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/181945092/)
+2014-12-18| #5 | [L'asynchronisme en deux talks](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/218740271/)
+2015-03-05| #6 | [La métaprogrammation, non non ca sert en vrai](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/220602373/)
+2015-04-28| #7 | [Nuts & Bolt](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/221811241/)
+2015-06-18| #8 | [Nuts & Bolts II - Le retour](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/223101208/)
+2015-12-10| #9 | [Not Dead Yet !](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/226963782/)
+2016-01-21|[#10](events/2016-01-21_n10)|[`import <new_blood>`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/227761739/)
+2016-03-12|[#11](events/2016-03-12_n11)|[`std::move(meetup)`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/229508095/)
+2016-04-27|[#12](events/2016-04-27_n12)|[`decltype( new event )`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/230392153/)
+2016-06-08|[#13](events/2016-06-08_n13)|[`std::exit(to_september)`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/231339781/)
+2017-01-19|[#14](events/2017-01-19_n14)|[`auto happy = new Year(2017)`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/236788136/)
+2017-02-19|[#15](events/2017-02-19_n15)|[`while( jokes --> 0 );`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/237138962/)
+2017-04-13|[#16](events/2017-04-13_n16)|
+2017-04-26|[#17](events/2017-04-26_n17)|
 
 
 Objectif documentaire - Documentary goal
