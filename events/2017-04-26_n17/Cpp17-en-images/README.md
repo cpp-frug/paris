@@ -51,9 +51,7 @@ Date      | ISO/IEC ou Draft                                                    
 Photo d'Oulu prise par Loïc Joly pendant la réunion ISO C++.  
 Elle a été prise à 23h, en plein centre ville.
 
-[![Oulu à 23h](https://photos.google.com/share/AF1QipPqyOA5p8nbXZa6cro5YkrdtJcfCRAcKKL4O2Jbvcv8hWIIm-AbsDFEkxfZRzsryA/photo/AF1QipN-rZBPmW4qPEQ_XhzD_xN_wnimWf1Kj-q6VecF?key=VVdJSnF6SWFuMFdBZVNXSDRLcmk0NVpJbE43UFJR)](https://goo.gl/photos/Fb6RYRfYj4pymtCk7)
-
-https://photos.google.com/share/AF1QipPqyOA5p8nbXZa6cro5YkrdtJcfCRAcKKL4O2Jbvcv8hWIIm-AbsDFEkxfZRzsryA/photo/AF1QipN-rZBPmW4qPEQ_XhzD_xN_wnimWf1Kj-q6VecF?key=VVdJSnF6SWFuMFdBZVNXSDRLcmk0NVpJbE43UFJR
+[![Oulu à 23h](https://lh3.googleusercontent.com/0A9lXOQ9_b0UemOzUk1efet5-IrhzlxAfzPHq4x8OozDzuhubo5bRdUBcF4ey5UZ7FioEmowuzcWRgtywU94xyxb2-jm19R_Diuec9oPVzYBoDoRTu6TzWo_CsWtbZa6o-Wf8zH7K0nk-guS9He1m7xAwwJnVbvWPyih0XqOvQTxlP06fCPs1gBlJKYBx3ATiK7ryjypu0kQi2p5gHHSJ_w9apa_4eyfRj-7r13HgRVf-GqADUGNYEWbnQZKLq1lvqmYKLHr_NCm1aKxRELW3qfNUSHKW9IzuXF6hszPhulO_YRloMiX08FTbBmwCnnPpeRc4q-zHXgeiOFQdr3GLyO5kmOLLmc0B-i4S2DC1nXZymn523GxcTt0aGT7i1mX2tcDdESDAdlfREd427O08a31uaCNJAHNA13i62IhO_ZBJHoNMCTMxLX2DYBKcXjcvJNmmzIbO69Tn66S3_P7QI9ZZTAcc6_bUyV8A6IuaZ-xinYeLgPSBoIb3ampTCNMPxzn1XjrVhDmxLBmtYJjR2XZrRyXmgn9O3PYSHA4wb_ti2SPdUw8BN91kPAyR5-OnhF0yJJ1s-5EbVvmgw9mkO8e7lUc2hldoSPMUuOU7IuIQ8sev9MCYbYl6e49GSI_4XGRPpMXRbdyP4inRCQqlaHV4ltwJq6xTd-Zne9MZw=w675-h900-no)](https://goo.gl/photos/Fb6RYRfYj4pymtCk7)
 
 
 Les *Concepts* et *Reflexion* étaient très attendues
