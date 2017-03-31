@@ -60,22 +60,48 @@ Les *Concepts* et *Reflexion* étaient très attendues
 [![Deux chatons tristes que Concepts et Reflexion n'aient pas été intégrées à C++17](http://cpp-frug.github.io/materials/images/cpp-chatons-tristes_copyright-Ziyue-OliverH-2016_CC-BY-SA-3.jpg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-chatons-tristes_copyright-Ziyue-OliverH-2016_CC-BY-SA-3.jpg)
 
 
-Les *Modules* n'en font pas partis non plus
--------------------------------------------
+2003 - Bjarne Stroustrup présente les Concepts au comité C++
+------------------------------------------------------------
 
-[![Bjarn et les Modules en 2003](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2003.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2003.svg)
+[![Bjarn et les Modules en 2003](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2003.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2003.face.svg)
 
-
-[![Bjarn et les Modules en 2011](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2011.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2011.svg)
-
-
-[![Bjarn et les Modules en 2014](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2014.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2014.svg)
+*Quoi ! Pas pour C++03 ?*  
+*Bon Okey, C++03 n'est qu'une version mineure...*
 
 
-[![Bjarn et les Modules en 2017](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2017.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2017.svg)
+2011 - Les Concepts
+-------------------
+
+[![Bjarn et les Modules en 2011](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2011.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2011.face.svg)
+
+*Quoi ! Pas pour C++11 ?*  
+*Bon Okey, faut bien arrêter de repousser C++0x...*
 
 
-[![Bjarn et les Modules en 20xx](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.20xx.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.20xx.svg)
+2014 - Les Concepts
+-------------------
+
+[![Bjarn et les Modules en 2014](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2014.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2014.face.svg)
+
+*Quoi ! Pas pour C++14 ?*  
+*Bon Okey, C++14 n'est qu'une version mineure...*
+
+
+2017 - Les Concepts
+-------------------
+
+[![Bjarn et les Modules en 2017](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2017.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2017.face.svg)
+
+*Quoi ! Pas pour C++17 ?*  
+*Bon Okey, mais on arrête les versions mineures...*
+
+
+De très nombreuses décénies plus tard, les Concepts sont enfin intégrés
+-----------------------------------------------------------------------
+
+[![Bjarn et les Modules en 20xx](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.20xx.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.20xx.face.svg)
+
+*Ce n'est pas trop tôt !*
 
 
 Un air de promesses électorales
