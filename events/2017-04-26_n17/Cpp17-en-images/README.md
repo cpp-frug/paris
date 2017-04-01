@@ -44,7 +44,6 @@ Date      | ISO/IEC ou Draft                                                    
 2016-11-28|C++17 [N4618](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/n4618.pdf)                              | 1587 pages (+16%)
 
 
-
 2016 : Deux réunions pour figer le périmètre du C++17
 -----------------------------------------------------
 
@@ -63,7 +62,7 @@ Les *Concepts* et *Reflexion* étaient très attendues
 2003 - Bjarne Stroustrup présente les Concepts au comité C++
 ------------------------------------------------------------
 
-[![Bjarn et les Modules en 2003](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2003.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2003.face.svg)
+[![Bjarne et les Concepts en 2003](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2003.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2003.face.svg)
 
 *Quoi ! Pas pour C++03 ?*  
 *Bon Okey, C++03 n'est qu'une version mineure...*
@@ -72,7 +71,7 @@ Les *Concepts* et *Reflexion* étaient très attendues
 2011 - Les Concepts
 -------------------
 
-[![Bjarn et les Modules en 2011](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2011.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2011.face.svg)
+[![Bjarne et les Concepts en 2011](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2011.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2011.face.svg)
 
 *Quoi ! Pas pour C++11 ?*  
 *Bon Okey, faut bien arrêter de repousser C++0x...*
@@ -81,7 +80,7 @@ Les *Concepts* et *Reflexion* étaient très attendues
 2014 - Les Concepts
 -------------------
 
-[![Bjarn et les Modules en 2014](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2014.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2014.face.svg)
+[![Bjarne et les Concepts en 2014](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2014.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2014.face.svg)
 
 *Quoi ! Pas pour C++14 ?*  
 *Bon Okey, C++14 n'est qu'une version mineure...*
@@ -90,7 +89,7 @@ Les *Concepts* et *Reflexion* étaient très attendues
 2017 - Les Concepts
 -------------------
 
-[![Bjarn et les Modules en 2017](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2017.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2017.face.svg)
+[![Bjarne et les Concepts en 2017](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.2017.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.2017.face.svg)
 
 *Quoi ! Pas pour C++17 ?*  
 *Bon Okey, mais on arrête les versions mineures...*
@@ -99,7 +98,7 @@ Les *Concepts* et *Reflexion* étaient très attendues
 De très nombreuses décénies plus tard, les Concepts sont enfin intégrés
 -----------------------------------------------------------------------
 
-[![Bjarn et les Modules en 20xx](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.20xx.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.20xx.face.svg)
+[![Bjarne et les Concepts en 20xx](http://cpp-frug.github.io/materials/images/cpp-concepts-bjarne-path.20xx.face.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-concepts-bjarne-path.20xx.face.svg)
 
 *Ce n'est pas trop tôt !*
 
@@ -110,6 +109,7 @@ Un air de promesses électorales
 [![C++17 président](http://cpp-frug.github.io/materials/images/cpp-president-2017.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp-president-2017.svg)
 
 
+
 C++17 = Dépoussièrer le standard C++
 ====================================
 
@@ -118,10 +118,6 @@ Ordre d'évaluation
 ------------------
 
 [![On modifie le C++ pour corriger le livre de Bjarn](http://cpp-frug.github.io/materials/images/cpp17-bjarne-ordre-evaluation.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp17-bjarne-ordre-evaluation.png)
-
-
-
-
 
 <!--
 C++17/20/23 dès aujourd'hui
@@ -193,6 +189,7 @@ Alternatives aux *feature testing macros*
 
 -->
 
+
 Virgule flottante en hexadécimal
 --------------------------------
     
@@ -235,6 +232,7 @@ void fonction (const T& t, const R&... r)
 }
 ```
 -->
+
 
 Variable `inline` ([P0386](http://wg21.link/p0386))
 ----------------------------------------------------
@@ -293,6 +291,7 @@ switch (bool loop=true; loop)
 }
 ```
 -->
+
 
 `auto x{42};` déduit comme `int x{42};`
 -------------------------------------
@@ -393,7 +392,6 @@ Le clavier intégré du micro-ordinateur 8 bits BBC Master de Acorn indique les 
 [![Clavier intégré du micro-ordinateur BBC Master de Acorn](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
 
 <!--
-
 Suppression du mot-clé `register`
 --------------------------------
 
@@ -425,8 +423,8 @@ bool b = foo();
 --b; // Erreur depuis C++98
 ++b; // Erreur depuis C++17
 ```
-
 -->
+
 
 Fonctions libres
 ----------------
