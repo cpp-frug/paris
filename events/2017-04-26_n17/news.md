@@ -15,8 +15,20 @@ C++FRUG #17 - No C++17 (Not only)
 [meetup.com](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/239663039/) &emsp; [**cppfrug.org**](http://cppfrug.org/paris/events/2017-01-19_n14/) &emsp; [github.com](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/README.md) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) **Communauté C++ francophone**
 
 
-Actualités de la communauté C++ francophone
-===========================================
+Actualités C++
+==============
+
+
+C++Now
+======
+
+15–20 mai 2017  
+Aspen  
+Colorado  
+USA
+
+
+![Aspen en mois de juin](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aspen_CO_downton.jpg/1024px-Aspen_CO_downton.jpg)
 
 
 C++17
@@ -31,7 +43,7 @@ Le comité a achevé son travail sur le C++17 qui entre dans le process final de
 C++20
 =====
 
-Juillet 2017  
+10 Juillet 2017 &emsp; Toronto (Canada)  
 Le comité commence le nouveau cycle pour travailler sur C++20.
 
 
@@ -39,18 +51,25 @@ GCC
 ===
 
 2 mai 2017  
-GCC 7.1
+**GCC 7.1**
 
-[gcc.gnu.org/gcc-7/](https://gcc.gnu.org/gcc-7/)
+Prend en charge C++17 sauf le  
+*Elementary string conversions* [P0067](http://wg21.link/p0067)
 
+[gcc.gnu.org/gcc-7/](https://gcc.gnu.org/gcc-7/)  
+[cppreference.com/w/cpp/compiler_support)(http://en.cppreference.com/w/cpp/compiler_support)
 
 Clang
 =====
 
 13 mars 2017  
-Clang 4.0.0
+**Clang 4.0.0**
 
-[releases.llvm.org/4.0.0/tools/clang/docs](http://releases.llvm.org/4.0.0/tools/clang/docs/)
+Prend en charge C++17 sauf le 
+*Elementary string conversions* [P0067](http://wg21.link/p0067)
+el le *Splicing Maps and Sets* [P0083](http://wg21.link/p0083)
+
+[releases.llvm.org/4.0.0/tools/clang/docs](http://releases.llvm.org/4.0.0/tools/clang/docs/)  
 [releases.llvm.org/4.0.0/tools/clang/tools/extra/docs](http://releases.llvm.org/4.0.0/tools/clang/tools/extra/docs/) (`clang-tidy`, `clang-include-fixer`...)
 
 
@@ -75,8 +94,7 @@ Test `-fsave-optimization-record`
 [gcc.godbolt.org](http://gcc.godbolt.org)
 
 ```cpp
-int square (int num)
-{
+int square (int num) {
     return num * num;
 }
 ```
@@ -86,8 +104,7 @@ La multiplication est une suite de sommes
 -----------------------------------------
 
 ```cpp
-int square (int num)
-{
+int square (int num) {
     int result = 0;
     for (int i = 0; i < num; ++i)
         result += num;
@@ -95,12 +112,11 @@ int square (int num)
 }
 ```
 
-Fonction `sum()` appelée dans la boucle
----------------------------------------
+Fonction `sum()` dans la boucle `for`
+-------------------------------------
 
 ```cpp
-int sum (int a, int b)
-{
+int sum (int a, int b) {
     return a + b;
 }
 
@@ -124,5 +140,7 @@ Les compilateurs C++ en lignes
 * [tutorialspoint.com/compile_cpp11_online.php](https://goo.gl/9rqwoy) ;
 * [repl.it](https://repl.it/DfuG/1) ;
 * [webcompiler.cloudapp.net](http://webcompiler.cloudapp.net/).
+
+
 
 
