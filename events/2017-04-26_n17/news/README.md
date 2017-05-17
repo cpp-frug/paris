@@ -9,7 +9,7 @@ C++FRUG #17 is No C++17
 > &emsp; 21:00 &nbsp; **Nouvelle approche de Mocking** - Philippe  
 > &emsp; 21:30 &nbsp; **C++17 en images** - Oliver  
 
-[**cppfrug.org**](http://cppfrug.org/paris/events/2017-01-19_n14/) &emsp; [github.com](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/README.md) &emsp; [meetup.com](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/239663039/) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) **Communauté C++ francophone**
+[**cppfrug.org**](http://cppfrug.org/paris/events/2017-04-26_n17/) &emsp; [github.com](https://github.com/cpp-frug/paris/blob/master/events/2017-04-26_n17/README.md) &emsp; [meetup.com](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/239663039/) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) **Communauté C++ francophone**
 
 
 Actualités C++
