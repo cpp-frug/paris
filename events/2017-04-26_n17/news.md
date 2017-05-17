@@ -15,27 +15,31 @@ C++FRUG #17 - No C++17 (Not only)
 [meetup.com](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/239663039/) &emsp; [**cppfrug.org**](http://cppfrug.org/paris/events/2017-01-19_n14/) &emsp; [github.com](https://github.com/cpp-frug/paris/blob/master/events/2017-01-19_n14/README.md) [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg) **Communauté C++ francophone**
 
 
-
 Actualités de la communauté C++ francophone
 ===========================================
 
 
-C++17 -> C++20
-==============
+C++17
+=====
 
-2017-03-21 - Le comité a achevé son travail sur le C++17 qui entre dans le process final de l'ISO.
+21 mars 2017  
+Le comité a achevé son travail sur le C++17 qui entre dans le process final de l'ISO.
 
 [http://**wg21.link/n4659**](http://wg21.link/n4659)
 
-2017-07-xx - Le comité commence le nouveau cycle pour travailler sur C++20.
 
-http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf
+C++20
+=====
+
+Juillet 2017  
+Le comité commence le nouveau cycle pour travailler sur C++20.
 
 
 GCC
 ===
 
-2017-05-02 - GCC 7.1
+2 mai 2017  
+GCC 7.1
 
 [gcc.gnu.org/gcc-7/](https://gcc.gnu.org/gcc-7/)
 
@@ -43,7 +47,8 @@ GCC
 Clang
 =====
 
-2017-03-13 - Clang 4.0.0
+13 mars 2017  
+Clang 4.0.0
 
 [releases.llvm.org/4.0.0/tools/clang/docs](http://releases.llvm.org/4.0.0/tools/clang/docs/)
 [releases.llvm.org/4.0.0/tools/clang/tools/extra/docs](http://releases.llvm.org/4.0.0/tools/clang/tools/extra/docs/) (`clang-tidy`, `clang-include-fixer`...)
@@ -64,6 +69,49 @@ Clang new compilation flag
 > Specify the file name of any generated YAML optimization record
 
 
+Test `-fsave-optimization-record`
+--------------------------------
+
+[gcc.godbolt.org](http://gcc.godbolt.org)
+
+```cpp
+int square (int num)
+{
+    return num * num;
+}
+```
+
+
+La multiplication est une suite de sommes
+-----------------------------------------
+
+```cpp
+int square (int num)
+{
+    int result = 0;
+    for (int i = 0; i < num; ++i)
+        result += num;
+    return result;
+}
+```
+
+Fonction `sum()` appelée dans la boucle
+---------------------------------------
+
+```cpp
+int sum (int a, int b)
+{
+    return a + b;
+}
+
+int square (int num) {
+    int result = 0;
+    for (int i = 0; i < num; ++i)
+        result += sum (result, num);
+    return result;
+}
+```
+
 Les compilateurs C++ en lignes
 ------------------------------
     
@@ -75,10 +123,6 @@ Les compilateurs C++ en lignes
 * [rextester.com](http://rextester.com/XYSX22503) ;
 * [tutorialspoint.com/compile_cpp11_online.php](https://goo.gl/9rqwoy) ;
 * [repl.it](https://repl.it/DfuG/1) ;
-* [webcompiler.cloudapp.net](http://webcompiler.cloudapp.net/) (permet de vérifier la compilation avec Visual C++ sans installer Windows).
+* [webcompiler.cloudapp.net](http://webcompiler.cloudapp.net/).
 
 
-Test `-fsave-optimization-record`
---------------------------------
-
-[gcc.godbolt.org](http://gcc.godbolt.org)
