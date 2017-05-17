@@ -1,6 +1,7 @@
 
-C++FRUG #17 - No C++17 (Not only)
-=================================
+C++FRUG #17 is No C++17
+=======================
+<sup>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; (No = Not only)</sup>
 
 > **Jeudi 18 mai**  
 > &emsp; 19:00 &nbsp; Accueil  
@@ -35,16 +36,18 @@ C++17
 =====
 
 21 mars 2017  
-Le comité a achevé son travail sur le C++17 qui entre dans le process final de l'ISO.
+Le comité a achevé son travail sur le C++17.  
+L'institution ISO est en train de finaliser la mise en page.
 
-[http://**wg21.link/n4659**](http://wg21.link/n4659)
+Brouillon : [http://**wg21.link/n4659**](http://wg21.link/n4659)
 
 
 C++20
 =====
 
-10 Juillet 2017 &emsp; Toronto (Canada)  
-Le comité commence le nouveau cycle pour travailler sur C++20.
+10 Juillet 2017  
+Toronto (Canada)  
+Le comité reprend un nouveau cycle pour travailler sur C++20.
 
 
 GCC
@@ -57,7 +60,7 @@ Prend en charge C++17 sauf le
 *Elementary string conversions* [P0067](http://wg21.link/p0067)
 
 [gcc.gnu.org/gcc-7/](https://gcc.gnu.org/gcc-7/)  
-[cppreference.com/w/cpp/compiler_support)(http://en.cppreference.com/w/cpp/compiler_support)
+[cppreference.com/w/cpp/compiler_support](http://en.cppreference.com/w/cpp/compiler_support)
 
 Clang
 =====
@@ -65,8 +68,8 @@ Clang
 13 mars 2017  
 **Clang 4.0.0**
 
-Prend en charge C++17 sauf le 
-*Elementary string conversions* [P0067](http://wg21.link/p0067)
+Prend en charge C++17 sauf le  
+*Elementary string conversions* [P0067](http://wg21.link/p0067)  
 el le *Splicing Maps and Sets* [P0083](http://wg21.link/p0083)
 
 [releases.llvm.org/4.0.0/tools/clang/docs](http://releases.llvm.org/4.0.0/tools/clang/docs/)  
