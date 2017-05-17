@@ -145,5 +145,19 @@ Les compilateurs C++ en lignes
 * [webcompiler.cloudapp.net](http://webcompiler.cloudapp.net/).
 
 
+Évolutions cppfrug.org
+======================
+
+* Actuellement le site utilise partiellement [Jekhyll](https://github.com/jekyll/jekyll/blob/master/README.markdown)
+* Peut-être un passage à [Hugo](https://github.com/spf13/hugo)... Tests en cours par Aurelien Regat-Barrel.
+* Toujours avec [GitHub Pages](https://pages.github.com/) (site web statique)
+* Quel chat en ligne ? [jb3](https://github.com/devnewton/jb3), [Slack](https://isocpp.org/blog/2016/08/cpp-slack-group), [Mattermost](https://github.com/mattermost/platform/blob/master/README.md), [Rocket.Chat](https://github.com/RocketChat/Rocket.Chat/blob/develop/README.md)...
+* Enrichissement de [ZesteDeSavoir.com](https://zestedesavoir.com/) (créé par des anciens du SiteDuZéro)
 
 
+Vidéo des Meetups C++
+=====================
+
+Merci à Nicolas Hessling, professionnel de la captation audio-visuelle (spéctacles, conférences...) et montage vidéo multicam. Nicolas est également spécialiste de la numérisation des vielles cassettes VHS, SECAM, Hi-8... N'hésitez pas à lui commander des travaux ;-)
+
+C'est Guss, un jeune développeur fou C++, fanatique des template, qui va s'occuper des chaînes YouTube, DailyMotion... Guss est actuellement en convalescance et attend impatiemment les vidéo d'aujourd'hui. Souhaitons lui un bon rétablissement ;-)
