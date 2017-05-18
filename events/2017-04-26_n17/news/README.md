@@ -155,7 +155,7 @@ Elle est libre et open
 ----------------------
 
 Mars 2016 &emsp; **C++FRUG #11**  
-&emsp; &emsp; &emsp; Quentin présente ses coroutines
+&emsp; &emsp; &emsp; Quentin présente ses coroutines  
 &emsp; &emsp; &emsp; asynchrones bientôt libérées...
 
 Décembre 2016 &emsp; Docker rachète Infinit...
