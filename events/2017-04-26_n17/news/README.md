@@ -160,12 +160,11 @@ Elle est libre et open
     
 * 2016-12 &emsp; [Docker rachète Infinit](http://blog.infinit.sh/infinit-joins-docker/)  
     
-* 2017-02 &emsp; [**`github.com/infinit/elle`**](https://github.com/infinit/elle)
+* 2017-02 &emsp; [**`github.com/infinit/elle`**](https://github.com/infinit/elle)  
+&emsp; &emsp; &emsp; &emsp; [Promesse tenue.](http://blog.infinit.sh/elle-our-c-core-library-is-now-open-source/)
 
-[Promesse tenue.](http://blog.infinit.sh/elle-our-c-core-library-is-now-open-source/)  
-Merci Julien, Quentin et toute l'équipe &emsp; :-D  
-![Logo de Elle](https://raw.githubusercontent.com/infinit/elle/master/docs/static_files/elle_logotype@2x.png)
-
+![Logo de Elle](https://raw.githubusercontent.com/infinit/elle/master/docs/static_files/elle_logotype@2x.png)  
+Merci Julien, Quentin et toute l'équipe &emsp; :-D
 
 
 Évolutions cppfrug.org
