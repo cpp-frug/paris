@@ -161,7 +161,7 @@ Elle est libre et open
 * 2016-12 &nbsp; [Docker rachète Infinit](http://blog.infinit.sh/infinit-joins-docker/)  
     
 * 2017-02 &nbsp; [**`github.com/infinit/elle`**](https://github.com/infinit/elle)  
-&emsp; &emsp; &emsp; &emsp; [Promesse tenue.](http://blog.infinit.sh/elle-our-c-core-library-is-now-open-source/)
+&emsp; &emsp; &emsp; &emsp; [Promesse tenue](http://blog.infinit.sh/elle-our-c-core-library-is-now-open-source/)
 
 ![Logo de Elle](https://raw.githubusercontent.com/infinit/elle/master/docs/static_files/elle_logotype@2x.png)  
 Merci Julien, Quentin et toute l'équipe &emsp; :-D
