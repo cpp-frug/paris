@@ -41,7 +41,7 @@ Date      | ISO/IEC ou Draft                                                    
 2011-09-01|C++11 [14882:2011](http://new.vk.com/doc100509572_160085962?hash=6801602629449dfa59&dl=27c32949114b3322a2)| 1356 pages (+73%)
 2012-02-28|C++11 [N3376](http://open-std.org/JTC1/SC22/WG21/docs/papers/2012/n3376.pdf)                              | 1324 pages
 2014-11-19|C++14 [N4296](http://open-std.org/JTC1/SC22/WG21/docs/papers/2014/n4296.pdf)                              | 1368 pages (+ 3%)
-2016-11-28|C++17 [N4618](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/n4618.pdf)                              | 1587 pages (+16%)
+2017-03-21|C++17 [N4618](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/n4618.pdf)                              | 1622 pages (+19%)
 
 
 2016 : Deux réunions pour figer le périmètre du C++17
@@ -51,6 +51,12 @@ Photo d'Oulu prise par Loïc Joly pendant la réunion ISO C++.
 Elle a été prise à 23h, en plein centre ville.
 
 [![Oulu à 23h](https://lh3.googleusercontent.com/0A9lXOQ9_b0UemOzUk1efet5-IrhzlxAfzPHq4x8OozDzuhubo5bRdUBcF4ey5UZ7FioEmowuzcWRgtywU94xyxb2-jm19R_Diuec9oPVzYBoDoRTu6TzWo_CsWtbZa6o-Wf8zH7K0nk-guS9He1m7xAwwJnVbvWPyih0XqOvQTxlP06fCPs1gBlJKYBx3ATiK7ryjypu0kQi2p5gHHSJ_w9apa_4eyfRj-7r13HgRVf-GqADUGNYEWbnQZKLq1lvqmYKLHr_NCm1aKxRELW3qfNUSHKW9IzuXF6hszPhulO_YRloMiX08FTbBmwCnnPpeRc4q-zHXgeiOFQdr3GLyO5kmOLLmc0B-i4S2DC1nXZymn523GxcTt0aGT7i1mX2tcDdESDAdlfREd427O08a31uaCNJAHNA13i62IhO_ZBJHoNMCTMxLX2DYBKcXjcvJNmmzIbO69Tn66S3_P7QI9ZZTAcc6_bUyV8A6IuaZ-xinYeLgPSBoIb3ampTCNMPxzn1XjrVhDmxLBmtYJjR2XZrRyXmgn9O3PYSHA4wb_ti2SPdUw8BN91kPAyR5-OnhF0yJJ1s-5EbVvmgw9mkO8e7lUc2hldoSPMUuOU7IuIQ8sev9MCYbYl6e49GSI_4XGRPpMXRbdyP4inRCQqlaHV4ltwJq6xTd-Zne9MZw=w675-h900-no)](https://goo.gl/photos/Fb6RYRfYj4pymtCk7)
+
+
+01:00 de la nuit à Tromsø à 600 km de Oulu en juin
+--------------------------------------------------
+
+[![Le soleil n'est pas encore couché à une heure du matin dans la ville de Tromsø à 600 km de Oulu](https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Gr%C3%B8nnegata_Troms%C3%B8.jpg/1024px-Gr%C3%B8nnegata_Troms%C3%B8.jpg)](https://commons.wikimedia.org/wiki/File:Gr%C3%B8nnegata_Troms%C3%B8.jpg)
 
 
 Les *Concepts* et *Reflexion* étaient très attendues
@@ -114,80 +120,45 @@ C++17 = Dépoussièrer le standard C++
 ====================================
 
 
-Ordre d'évaluation
-------------------
+[*The C++ Programming Language*][CppPL]  
+de [Bjarne Stroustrup][BS] inventeur du C++  
+
+[CppPL]: https://fr.wikipedia.org/wiki/The_C%2B%2B_Programming_Language
+[BS]:    https://fr.wikipedia.org/wiki/Bjarne_Stroustrup
+
+![logo "The C++ Programming Language"](https://isocpp.org/files/img/logo1.PNG)
+
+
+Quatrième édition publiée en 2013 à la [page 1046][p1046] du paragraphe **36.3.6 _STL‐like Operations_**
+
+[p1046]: http://www.ebooksbucket.com/the-c-programming-language-4th-edition-b198
+
+>The `replace()` replaces one substring with another and adjusts the `string`’s size accordingly. For example:
+>
+>```cpp
+>void f()
+>{
+>  string s = "but I have heard it works even if you don't believe in it";
+>  s.replace(0,4,"");                   // erase initial "but "
+>  s.replace(s.find("even"),4,"only");
+>  s.replace(s.find(" don't"),6,"");    // erase by replacing with ""
+>  assert(s=="I have heard it works only if you believe in it");
+>}
+>```
+
+
+> A `replace()` returns a reference to the object for which it was called.  This can be used for chaining operations:
+>
+>```cpp
+>void f2()
+>{
+>  string s = "but I have heard it works even if you don't believe in it";
+>  s.replace(0,4,"").replace(s.find("even"),4,"only").replace(s.find(" don't"),6,"");
+>  assert(s=="I have heard it works only if you believe in it");
+>}
+>```
 
 [![On modifie le C++ pour corriger le livre de Bjarn](http://cpp-frug.github.io/materials/images/cpp17-bjarne-ordre-evaluation.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/cpp17-bjarne-ordre-evaluation.png)
-
-<!--
-C++17/20/23 dès aujourd'hui
----------------------------
-
-Les [***feature testing macros***](http://en.cppreference.com/w/User:D41D8CD98F/feature_testing_macros) permettent d'écrire du code  
-qui s'adapte aux fonctionnalités prises en charge   
-par le compilateur et sa bibliotèque standard `std::`
-
-```cpp
-#ifdef __cpp_lib_experimental_filesystem
-#include <filesystem>
-void backup()
-{
-  std::filesystem::copy("file.txt","file.bak");
-}
-#else
-void backup()
-{
-  /* ... */
-}
-#endif
-```
-
-* `__cpp_concept` (déjà pris en charge par GCC)
-* `__cpp_lib_filesystem` (`_lib_` identifie une fonctionnalité de la `std::`)
-* Correspond à la [date comme `2015'01`](en.cppreference.com/w/cpp/experimental/feature_test#Language_Features) selon la publication de la TS
-
-
-Alternatives aux *feature testing macros*
-----------------------------------------
-
-* Macro `__cplusplus`  
-  Valeurs `201103`, `201402` et bientôt `2017xx`  
-  Ou bien `2011'03`, `2014'02` et `2017'00`  
-  Juste bien pour détecter le flag `-std=c++14`  
-  
-* Macros [**Boost.Config**](http://www.boost.org/doc/libs/1_61_0/libs/config/doc/html/boost_config/boost_macro_reference.html)  
-
-* [**`CMAKE_CXX_KNOWN_FEATURES`**](https://cmake.org/cmake/help/latest/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html)  
-  CMake connait les fonctionnalités C++ du compilateur
-        
-    ```cmake
-    target_compile_features(MyLib PRIVATE cxx_constexpr)
-    ```
-* Macro `__has_include`  
-
-
-`__has_include()`
-----------------
-
-[**P0061**](https://wg21.link/p0061) ajoute la macro [**`__has_include()`**](http://en.cppreference.com/w/cpp/preprocessor/include)  
-=> vérifie la présence d'un *header* à la compilation
-
-```cpp
-#ifdef __has_include
-# if   __has_include(<filesystem>)
-#            include <filesystem>
-# elif __has_include(<experimental/filesystem>)
-#            include <experimental/filesystem>
-# elif __has_include(<boost/filesystem.hpp>)
-#            include <boost/filesystem.hpp>
-# else
-#  error  Cannot find any 'filesystem' header
-#else
-# include <boost/filesystem.hpp>
-#endif
-```
-
--->
 
 
 Virgule flottante en hexadécimal
@@ -203,35 +174,6 @@ double w = 0x'C0DE'2017'1.cafe'p1;
 [![Les Nerdettes s’entraînent pour le concours des littéraux hexadécimaux sur LinuxFr.org](https://cpp-frug.github.io/materials/images/nerdettes_litteral_hexa.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerdettes_litteral_hexa.svg)
 
 
-<!--
-Concours de jeux de mots
-------------------------
-
-[Attention, le concours se termine fin janvier !](http://linuxfr.org/news/attention-le-concours-de-jeux-de-mots-se-termine-fin-janvier-2017)
-
-[![Les deux filles nerds discutent sur la manipulation des bits au grand bonheur des jeux de mots](https://cpp-frug.github.io/materials/images/nerd_jeux-de-mots.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_jeux-de-mots.svg)
-
-
-
-`if constexpr`
--------------
-
-[**P0292**](https://wg21.link/p0292) simplifie la métaprogrammation avec  
-`static_if` ... `constexpr_if` ... `constexpr if`  
-... et finalement `if constexpr`
-  
-```cpp
-template <class T, class... R>
-void fonction (const T& t, const R&... r)
-{
-  std::cout << t;    // Gère un argument
-  if constexpr (sizeof...(r))
-    fonction(r...);  // Gère le reste
-  else
-    std::cout << std::endl;
-}
-```
--->
 
 
 Variable `inline` ([P0386](http://wg21.link/p0386))
@@ -242,55 +184,7 @@ Variable `inline` ([P0386](http://wg21.link/p0386))
 
 [![Les deux filles nerds résolvent une erreur de link d'une variable membre static non définie en rajoutant inline](https://cpp-frug.github.io/materials/images/nerd_cpp17_variable_inline.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/nerd_cpp17_variable_inline.svg)
 
-<!--
 
-Structured bindings
--------------------
-
-[P0217](https://wg21.link/p0217) apporte la **décomposition du retour de fonction**,  
-mais limitée aux `std::tuple`, aux tableaux (`std::array`)  
-et aux structures plates (`std::pair`)
-    
-```cpp
-struct A
-{
-  int  a;
-  bool b;
-  char c;
-};
-
-A foo()
-{
-  return A{42, true, 'c'};
-}
-
-auto [ x, y, ignored ] = foo();
-``` 
-    
-* Mieux que `std::tie` (cantonné aux `std::tuple` et à `std::pair`)
-* Mais pas de `std::ignore`
-
-
-`if(init;condition)` et `switch(init;condition)`
------------------------------------------------
-
-[P0305](wg21.link/p0305) ajoute les *instructions de sélection avec initialiseur*  
-comme `for(init; condition; incrément)`
-
-```cpp
-if (auto [it, inserted] = mySet.insert(value); inserted)
-{
-  foo(it);
-}
-
-switch (bool loop=true; loop)
-{
-  /* ... */
-  loop = false;
-  /* ... */
-}
-```
--->
 
 
 `auto x{42};` déduit comme `int x{42};`
@@ -312,48 +206,35 @@ auto f = {1, 2.0}; //KO car pas le même type (int et double)
 [![Une écolière écrit une boucle for en C++17 pour régler sa punition d'écrire 100 fois "Je ne dois pas envoyer d'avion en papier"](http://cpp-frug.github.io/materials/images/cpp-ecole-primaire_copyright-Ziyue-OliverH-2016_CC-BY-SA-3_auto.jpg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/README.md#c17-sauve-une-%C3%A9coli%C3%A8re)
 
 
-<!--
-`typename` pour les paramètres `template template`
--------------------------------------------------
-
-[N4051](https://wg21.link/n4051) autorise enfin `typename` pour les paramètres `template template`
-
-```cpp
-template<template<typename> class    T> class Cpp98;
-template<template<typename> typename T> class Cpp17;
-```
 
 
-C++ without `class`
--------------------
 
-Le nom originel du C++ était ***C with `class`***.  
-Avec [N4051](https://wg21.link/n4051), le C++17 devient le ***C++ without `class`***.
 
-```cpp
-template <class T, template<class> C>
-class AvecClass : C<T>
-{
-    int v;
-};
-    
-template <typename T, template<typename> C>
-struct SansClass : private C<T>
-{
-private:
-    int v;
-};
-```
--->
 
+Apple ][ (1977-1988)
+--------------------
+
+Ou sont les *accolade* et *crochet* ?
+
+[![Image du clavier de l'Apple II qui n'a pas de touche avec accolade ou crochet](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Apple_II-IMG_7073.jpg/1024px-Apple_II-IMG_7073.jpg)](https://commons.wikimedia.org/wiki/File:Apple_II-IMG_7073.jpg)
+
+
+BBC Master (1986-1994)
+----------------------
+
+Ah les *crochets*, mais pas les *accolades* ?
+
+[![Clavier intégré du micro-ordinateur BBC Master de Acorn](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
 
 Suppression des trigraphes
 --------------------------
 
-C++11 aurait pu rendre les trigraphes obsolètes.  
-Mais quelques membres du comité C++ s'y étaient opposés (IBM, Bloomberg).  
-Pour C++17, les membres ont finalement voté [N4086](https://wg21.link/n4086)  
-qui les supprime directement sans passer par l'étape *deprecated*.
+**C++11** : Trigraphes prévus pour être obsolètes.  
+Mais des membres du comité se sont opposés.  
+
+**C++17** - [N4086](https://wg21.link/n4086) les supprime  
+sans passer par l'étape *deprecated*.
+
 
 ```cpp
 /??/
@@ -364,7 +245,8 @@ int main (int argc, char *argv??(??)) ??<
   std::cout << txt << std::endl;
 ??>
 ``` 
-    
+
+
 ```cpp
 /\
 /\ Sans trigraphe
@@ -376,54 +258,6 @@ int main (int argc, char *argv[]) {
 ```
 
 
-Apple ][ (1977-1988)
---------------------
-
-Aucune touche ne dispose du symbole *accolade* ou *crochet*.
-
-[![Image du clavier de l'Apple II qui n'a pas de touche avec accolade ou crochet](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Apple_II-IMG_7073.jpg/1024px-Apple_II-IMG_7073.jpg)](https://commons.wikimedia.org/wiki/File:Apple_II-IMG_7073.jpg)
-
-
-BBC Master (1986-1994)
-----------------------
-
-Le clavier intégré du micro-ordinateur 8 bits BBC Master de Acorn indique les *crochets* mais pas les *accolades*.
-
-[![Clavier intégré du micro-ordinateur BBC Master de Acorn](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
-
-<!--
-Suppression du mot-clé `register`
---------------------------------
-
-> Historiquement, le mot-clé [`register`](http://en.cppreference.com/w/c/keyword/register) aidait le compilateur à identifier la variable à conserver dans un registre du processeur (les compilateurs n'étaient pas très futés...)
->
-> * **C++11** déprécie `register`  
->   (conservé pour compatibilité avec le C)
->
-> * **C++17** résèrve `register` pour un autre usage futur  
->   (trop compliqué de résoudre les différences avec le C)
-
-
-Booléen non incrémentable
--------------------------
-
-La spécification initiale de `bool` ne devait pas trop casser le bon vieux code C/C++.
-    
-* décrémentation interdite
-* incrémentation autorisée
-    
-    ```c
-    #define bool int
-    ```
-
-Maintenant, l'incrémentation devient également interdite.
-
-```cpp
-bool b = foo();
---b; // Erreur depuis C++98
-++b; // Erreur depuis C++17
-```
--->
 
 
 Fonctions libres
