@@ -209,7 +209,7 @@ auto e   {1, 2.0}; //KO car plus d'un élément
 auto f = {1, 2.0}; //KO car pas le même type (int et double)
 ``` 
 
-    
+
 [![Une écolière écrit une boucle for en C++17 pour régler sa punition d'écrire 100 fois "Je ne dois pas envoyer d'avion en papier"](http://cpp-frug.github.io/materials/images/cpp-ecole-primaire_copyright-Ziyue-OliverH-2016_CC-BY-SA-3_auto.jpg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/README.md#c17-sauve-une-%C3%A9coli%C3%A8re)
 
 
@@ -230,16 +230,6 @@ Ah les *crochets*, mais pas les *accolades* ?
 [![Clavier intégré du micro-ordinateur BBC Master de Acorn](https://upload.wikimedia.org/wikipedia/commons/6/60/Acorn_BBC_Master_Series.jpg "Micro-ordinateur BBC Master de Acorn (8-bit avec clavier intégré) fabriqué entre 1986 et 1994")](https://en.wikipedia.org/wiki/BBC_Master)
 
 
-Suppression des trigraphes
---------------------------
-
-**C++11** : Trigraphes prévus pour être obsolètes.  
-Mais des membres du comité se sont opposés.  
-
-**C++17** - [N4086](https://wg21.link/n4086) les supprime  
-sans passer par l'étape *deprecated*.
-
-
 ```cpp
 /??/
 /??/ Avec trigraphes
@@ -248,8 +238,7 @@ int main (int argc, char *argv??(??)) ??<
   const char txt??(??) = "J'aime le C++17??/0";
   std::cout << txt << std::endl;
 ??>
-``` 
-
+```
 
 ```cpp
 /\
@@ -262,23 +251,27 @@ int main (int argc, char *argv[]) {
 ```
 
 
+Suppression des trigraphes
+--------------------------
 
-`static_assert(condition)`
-==========================
+**C++11** : Trigraphes prévus pour être obsolètes.  
+Mais des membres du comité se sont opposés.  
+
+**C++17** - [N4086](https://wg21.link/n4086) les supprime  
+sans passer par l'étape *deprecated*.
 
 
-Enfin [N3928](https://wg21.link/n3928) permet `static_assert(condition)`    
-avec un seul paramètre </small>(sans le second paramètre `message`)<small>
-    
-Avant, seule la fonction [`static_assert(condition, message)`](http://fr.cppreference.com/w/cpp/language/static_assert) était disponible avec le second paramètre `message` obligatoire.
-    
+
+[N3928](https://wg21.link/n3928) permet [`static_assert(condition)`](http://fr.cppreference.com/w/cpp/language/static_assert)  
+sans le second paramètre `message`.
+
 ```cpp
 // Les static_assert avec un message vide étaient courants
 static_assert(sizeof(int) == 4, "");
-    
+
 // C++17 a étéinfluencé par l'usage (mauvaise pratique?)
 static_assert(sizeof(int) == 4);
-``` 
+```
 
 
 [![](https://cpp-frug.github.io/materials/images/compiler-c-est-tester_copyright-OliverH-2016_CC-BY-SA-3.0_original.png)](https://github.com/cpp-frug/materials/blob/gh-pages/images/compiler-c-est-tester_copyright-OliverH-2016_CC-BY-SA-3.0_original.png)
@@ -292,8 +285,11 @@ static_assert(sizeof(int) == 4);
 Devinette
 =========
 
-À quelle aspects C++17 la prochaine image fait référence ?
-----------------------------------------------------------
+À quelle aspects C++17
+----------------------
+
+la prochaine image fait référence ?
+-----------------------------------
 
 
 [![Les fonctions empty, data() et size() sortent de la prison "class" et rejoignent les fonctions begin() et end() qui les accueillent. Ces deux dernières fonctions accueillent également string_view. Derrières les barreaux de la prison des spécifications techniques, Unified-Call-Syntax va devoir y rester trois ans pour tenter de sortir avec C++20](http://cpp-frug.github.io/materials/images/fonctions_libres.svg)](https://github.com/cpp-frug/materials/blob/gh-pages/images/README.md#les-fonctions-libres)
@@ -304,30 +300,51 @@ Les prochains sujets ?
 ======================
 
 
-
 Singletons
 ==========
 
-Ce n'est si évident que cela, et c'est n'est pas toujours pertinent
+Ce n'est si évident que cela
+----------------------------
+
+Et c'est n'est pas toujours pertinent
+-------------------------------------
 
 
-Spécification technique P0135
-=============================  
+P0135
+=====
 
-La simplification de la taxonomie et la conséquence sur la copie elision.
+Simplification de la taxonomie
+---------------------------------
 
-`lvalue`, `xvalue`, `rvalue`, `prvalue`, `glvalue`
+et conséquence sur la copie elision
+-----------------------------------
+
+lvalue  xvalue  rvalue  prvalue  glvalue
+----------------------------------------
 
 
 Convertir un `enum` en `string` et inversement
-==============================================
+----------------------------------------------
 
-Est-ce possible ? Sans les macros ? à la compilation ?  
-Dynamiquement à l’exécution ? Et les `enum class` ?
-La réflexion statique C++20 est elle LA solution ?
+* Est-ce possible ?
+* Sans les macros ?
+* À la compilation ? À l’exécution ?
+* Et les `enum class` ?
+* La réflexion statique C++20 est elle **LA** solution ?
 
 
 CMake
 =====
 
 Astuces et C++
+--------------
+
+
+Controverses
+------------
+
+Loïc se propose de partager les débats  
+dont les membres du comité C++ ne sont  
+pas sûrs d'aller dans la bonne direction.
+
+La parole est à la communauté C++FRUG.
