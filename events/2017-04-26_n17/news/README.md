@@ -181,8 +181,8 @@ Merci Julien, Quentin et toute l'équipe &emsp; :-D
   <small>(site web statique)</small>
 
 
-Quel chat en ligne ?
---------------------
+[Quel chat en ligne ?](https://github.com/cpp-frug/cpp-frug.github.io/issues/1)
+----------------------
 
 * [jb3](https://github.com/devnewton/jb3)  
 
