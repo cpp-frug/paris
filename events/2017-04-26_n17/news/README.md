@@ -154,13 +154,13 @@ Les compilateurs C++ en lignes
 Elle est libre et open
 ----------------------
 
-* 2016-03 &emsp; [**C++FRUG #11**](https://www.meetup.com/User-Group-Cpp-Francophone/events/229508095/)  
+* 2016-03 &nbsp; [**C++FRUG #11**](https://www.meetup.com/User-Group-Cpp-Francophone/events/229508095/)  
 &emsp; &emsp; &emsp; &emsp; Quentin présente ses coroutines  
 &emsp; &emsp; &emsp; &emsp; asynchrones bientôt libérées...  
     
-* 2016-12 &emsp; [Docker rachète Infinit](http://blog.infinit.sh/infinit-joins-docker/)  
+* 2016-12 &nbsp; [Docker rachète Infinit](http://blog.infinit.sh/infinit-joins-docker/)  
     
-* 2017-02 &emsp; [**`github.com/infinit/elle`**](https://github.com/infinit/elle)  
+* 2017-02 &nbsp; [**`github.com/infinit/elle`**](https://github.com/infinit/elle)  
 &emsp; &emsp; &emsp; &emsp; [Promesse tenue.](http://blog.infinit.sh/elle-our-c-core-library-is-now-open-source/)
 
 ![Logo de Elle](https://raw.githubusercontent.com/infinit/elle/master/docs/static_files/elle_logotype@2x.png)  
