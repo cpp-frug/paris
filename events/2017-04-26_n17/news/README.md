@@ -151,6 +151,19 @@ Les compilateurs C++ en lignes
 
 
 
+Elle is free and open
+---------------------
+
+Au C++FRUG #11 (31 mars 2016), Quentin (Infinit)  
+nous présentait le framework de coroutine asynchrone  
+avec la promesse d'être bientôt libéré.  
+Entre temps, Docker a racheté Infinit.  
+Promesse tenue --> [github.com/infinit/elle](https://github.com/infinit/elle) (Apache 2.0)  
+Merci Quentin  
+![Logo de Elle](https://raw.githubusercontent.com/infinit/elle/master/docs/static_files/elle_logotype@2x.png)
+
+
+
 Évolutions cppfrug.org
 ----------------------
 
