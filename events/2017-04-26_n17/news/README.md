@@ -164,7 +164,7 @@ Elle est libre et open
 &emsp; &emsp; &emsp; &emsp; [Promesse tenue](http://blog.infinit.sh/elle-our-c-core-library-is-now-open-source/)
 
 ![Logo de Elle](https://raw.githubusercontent.com/infinit/elle/master/docs/static_files/elle_logotype@2x.png)  
-Merci Julien, Quentin et toute l'équipe &emsp; :-D
+Merci Julien, Quentin et toute l'équipe Infinit &emsp; :-D
 
 
 Évolutions cppfrug.org
