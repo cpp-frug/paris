@@ -1,7 +1,7 @@
 C++FRUG #17 is No C++17
 -----------------------
 
-> **Jeudi 18 mai** <sup>&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; (No = Not only)</sup>  
+> **Jeudi 18 mai** &emsp; &emsp; &emsp; &emsp; &emsp; <sup><small>(No = Not only)</small></sup>  
 > &emsp; 19:15 &nbsp; Présentation de notre sponsor  
 > &emsp; 19:30 &nbsp; [**Actualités**](./news)  
 > &emsp; 20:00 &nbsp; **Le C++ à la rescousse du Raspberry Pi** - Ludo  
