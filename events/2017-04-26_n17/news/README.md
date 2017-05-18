@@ -16,6 +16,8 @@ C++FRUG #17 is No C++17
 Actualités C++
 ==============
 
+Copyright 2017 olibre &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
+
 
 C++Now
 ======
