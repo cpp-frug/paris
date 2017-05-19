@@ -19,7 +19,7 @@ C'était mieux avant ?
 C++ a une quarantaine d'années
 ------------------------------
 
-* 1977 &emsp; Bjarn rêve au **C with classes**
+* 1977 &emsp; Bjarne rêve au **C with classes**
 * 1990 &emsp; Schisme entre **C** et **C++**
 * 1998 &emsp; Premier standard --> **C++98**
 * 2017 &emsp; Cinquième standard --> **C++17**
