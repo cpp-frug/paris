@@ -39,9 +39,9 @@ Date      | ISO/IEC ou Draft                                                    
 1998-09-01|C++98 [14882:1998](http://www.lirmm.fr/~ducour/Doc-objets/ISO+IEC+14882-1998.pdf)                         |  776 pages
 2003-10-15|C++03 [14882:2003](https://github.com/hstefan/htlib/blob/master/res/INCITS%2BISO%2BIEC%2B14882-2003.pdf)  |  786 pages (+ 1%)
 2011-09-01|C++11 [14882:2011](http://new.vk.com/doc100509572_160085962?hash=6801602629449dfa59&dl=27c32949114b3322a2)| 1356 pages (+73%)
-2012-02-28|C++11 [N3376](http://open-std.org/JTC1/SC22/WG21/docs/papers/2012/n3376.pdf)                              | 1324 pages
-2014-11-19|C++14 [N4296](http://open-std.org/JTC1/SC22/WG21/docs/papers/2014/n4296.pdf)                              | 1368 pages (+ 3%)
-2017-03-21|C++17 [N4618](http://open-std.org/JTC1/SC22/WG21/docs/papers/2016/n4618.pdf)                              | 1622 pages (+19%)
+2012-02-28|C++11 [N3376](http://open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3376.pdf)                              | 1324 pages
+2014-11-19|C++14 [N4296](http://open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4296.pdf)                              | 1368 pages (+ 3%)
+2017-03-21|C++17 [N4659](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf)                              | 1622 pages (+19%)
 
 
 2016 : Deux réunions pour figer le périmètre du C++17
