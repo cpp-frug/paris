@@ -1,7 +1,7 @@
 C++17 en images
 ---------------
 
-Copyright 2017 Oliver H &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
+Copyright 2017 olibre &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.fr)
 
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
