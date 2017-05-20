@@ -30,7 +30,7 @@ Date      | Présentations  | Meetup
 2017-01-19|[#14](events/2017-01-19_n14)|[`auto happy = new Year(2017)`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/236788136/)
 2017-02-19|[#15](events/2017-02-19_n15)|[`while( jokes --> 0 );`](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/237138962/)
 2017-04-13|[#16](events/2017-04-13_n16)|[C++ Marches On](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/238720203/)
-2017-04-26|[#17](events/2017-04-26_n17)|[No C++17 (Not only)](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/239663039/)
+2017-05-18|[#17](events/2017-05-18_n17)|[No C++17 (Not only)](https://www.meetup.com/fr-FR/User-Group-Cpp-Francophone/events/239663039/)
 
 
 Objectif documentaire - Documentary goal
