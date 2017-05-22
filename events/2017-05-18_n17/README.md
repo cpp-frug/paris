@@ -4,7 +4,7 @@ C++FRUG #17 is No C++17
 > **Jeudi 18 mai** &emsp; &emsp; &emsp; &emsp; &emsp; <sup><small>(No = Not only)</small></sup>  
 > &emsp; 19:15 &nbsp; Présentation de notre sponsor  
 > &emsp; 19:30 &nbsp; **Actualités**  
-> &emsp; 20:00 &nbsp; **Le C++ à la rescousse du Raspberry Pi** - Ludo  
+> &emsp; 20:00 &nbsp; [**Le C++ à la rescousse du Raspberry Pi**](./CppRaspberryPi3.pdf) - Ludo  
 > &emsp; 20:30 &nbsp; Pizza  
 > &emsp; 21:00 &nbsp; [**Nouvelle approche de Mocking**](./mockaron/mock.html) - Philippe  
 > &emsp; 21:30 &nbsp; [**C++17 en images**](./Cpp17-en-images) - olibre
