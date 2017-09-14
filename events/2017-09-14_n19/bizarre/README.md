@@ -1093,3 +1093,6 @@ Mini-features (petards mouilles) :
 truc marrant avec le return du main :).
 
 
+- code sapin de Noël
+- Bjarn livre bug
+- ::std::vector<::std::string>
