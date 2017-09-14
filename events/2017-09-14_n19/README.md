@@ -13,7 +13,7 @@ Fin des inscriptions la veille à minuit.
 
 * Meetup [meetup.com/User-Group-Cpp-Francophone/events/243111702/](https://www.meetup.com/User-Group-Cpp-Francophone/events/243111702/)
 * Jekyll [cppfrug.org/paris/events/2017-09-14_n19](http://cpp-frug.github.io/paris/events/2017-09-14_n19/)
-* GitHub [github.com/cpp-frug/paris/events/2017-09-14_n19/bizarre](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/)
+* GitHub [github.com/cpp-frug/paris/events/2017-09-14_n19](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/)
 
 
 
@@ -25,7 +25,7 @@ Jeudi 14 septembre 2017
 - 20h00  Property Based Testing - Nicolas Dubien
 - 20h30  Pause dinatoire 
 - 21h00  Lightning talks (open session)
-    - Bizarreries du C++ par Oliver
+    - [Bizarreries](bizare) du C++ par Oliver
     - quick-bench.com par Fred Tingaud
     - Proposer votre lightning talk dans les commentaires ou sur place...
 
@@ -69,7 +69,7 @@ Il n'est pas nécessaire de vous enregistrer à l'avance, venez juste avec votre
 une clé USB ou simplement un document en ligne et présentez le sujet de votre choix.
 Votre hôte s'assurera tout de même que chacun ne dépasse pas 10 minutes.
 
-- Oliver propose un lightning talk sur bizzareries du C++
+- Oliver propose un lightning talk sur [bizarreries du C++](bizarre)
 - Fred propose un lightning talk sur quick-bench.com
 - ...
 
