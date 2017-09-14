@@ -24,7 +24,6 @@ int main()
 ```
 
 
-
 ```cpp
 #include <iostream>
 
@@ -39,7 +38,6 @@ int main()
     7
     34
     123
-
 
 
 ```cpp
@@ -63,7 +61,6 @@ int main()
 
 http://coliru.stacked-crooked.com/a/0f60ac9f5bef835a
 
-
 ```cpp
 #include <iostream>
 #include <chrono>
@@ -80,16 +77,14 @@ int main()
 {
   auto day = 24h;
   auto halfhour = 0.5h;
-  std::cout << "one day is "<< day.count() <<" hours\n"
-            << "1/2 hour is "<< halfhour.count() <<" hours\n"
-            << "the answer is "<< answer(day.count()) <<'\n';
+  std::cout <<"one day is "<< day.count() <<" hours\n"
+            <<"1/2 hour is "<< halfhour.count() <<" hours\n"
+            <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
 
 
-
 Trigraph `??-` -> `~`
-
 
 ```cpp
 #include <iostream>
@@ -107,17 +102,15 @@ int main()
 {
   auto day = 24h;
   auto halfhour = 0.5h;
-  std::cout << "one day is "<< day.count() <<" hours\n"
-            << "1/2 hour is "<< halfhour.count() <<" hours\n"
-            << "the answer is "<< answer(day.count()) <<'\n';
+  std::cout <<"one day is "<< day.count() <<" hours\n"
+            <<"1/2 hour is "<< halfhour.count() <<" hours\n"
+            <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
-
 
 
 Espacement
 
-
 ```cpp
 #include <iostream>
 #include <chrono>
@@ -134,16 +127,14 @@ int main()
 {
   auto day = 24h;
   auto halfhour = 0.5h;
-  std::cout << "one day is "<< day.count() <<" hours\n"
-            << "1/2 hour is "<< halfhour.count() <<" hours\n"
-            << "the answer is "<< answer(day.count()) <<'\n';
+  std::cout <<"one day is "<< day.count() <<" hours\n"
+            <<"1/2 hour is "<< halfhour.count() <<" hours\n"
+            <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
 
 
-
 Opérateur ternaire
-
 
 ```cpp
 #include <iostream>
@@ -161,15 +152,14 @@ int main()
 {
   auto day = 24h;
   auto halfhour = 0.5h;
-  std::cout << "one day is "<< day.count() <<" hours\n"
-            << "1/2 hour is "<< halfhour.count() <<" hours\n"
-            << "the answer is "<< answer(day.count()) <<'\n';
+  std::cout <<"one day is "<< day.count() <<" hours\n"
+            <<"1/2 hour is "<< halfhour.count() <<" hours\n"
+            <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
 
 
 Complément à un *(ones' complement)*  `~1` -> `-2` (if signed)
-
 
 ```cpp
 #include <iostream>
@@ -187,15 +177,15 @@ int main()
 {
   auto day = 24h;
   auto halfhour = 0.5h;
-  std::cout << "one day is "<< day.count() <<" hours\n"
-            << "1/2 hour is "<< halfhour.count() <<" hours\n"
-            << "the answer is "<< answer(day.count()) <<'\n';
+  std::cout <<"one day is "<< day.count() <<" hours\n"
+            <<"1/2 hour is "<< halfhour.count() <<" hours\n"
+            <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
 
 
 
-
+http://coliru.stacked-crooked.com/a/8ff0bbede46cd18f
 
 ```cpp
 #include <iostream>
@@ -208,25 +198,87 @@ int main()
 ```
 
 
-
-La composition
-
-              évaluation
-              |
-    auto x = ("C++", '2017');
-                   | |
-             virgule valeur
-
-Pratique quand pour décomposer un variadic sans recursion :
+Vous avez dit bizarre ?
 
 ```cpp
-int _/*anonymous*/[] = (/*evaluation*/, 0)...;
+#include <iostream>
 
-template <typename ...T> void print_vars()
+int main()
 {
-  int _/*anonymous*/[] = ((std::cout << T::var), 0)...; (void)_;
+  auto x = ("C++", '2017');
+  std::cout << x << std::endl;
 }
 ```
+
+    842019127
+
+
+Opérateur virgule *(Comma operator)*
+(wikipedia.org)[https://en.wikipedia.org/wiki/Comma_operator]
+(cppreference.com)[http://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator]
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  auto x = ("C++", '2017');
+  std::cout << x << std::endl;
+}
+```
+
+    842019127
+
+
+Sans l'opérateur virgule
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  auto x = '2017';
+  std::cout << x << std::endl;
+}
+```
+
+    842019127
+
+
+Multi-character character constant
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  int x = '2017';
+  std::cout << x << std::endl;
+}
+```
+
+    842019127
+
+
+Multi-character character constant are just characters
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  int x = '2017';
+  char* txt = reinterpret_cast<char*>(&x);
+  std::cout << txt[3];
+  std::cout << txt[2];
+  std::cout << txt[1];
+  std::cout << txt[0];
+}
+```
+
+    2017
+
+
 
 
 
