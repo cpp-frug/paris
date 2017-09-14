@@ -72,8 +72,7 @@ int main()
     173
 
 
-
-http://coliru.stacked-crooked.com/a/0f60ac9f5bef835a
+Temps parcouru par la lumière entre le Soleil et Jupiter
 
 ```cpp
 #include <iostream>
@@ -101,6 +100,8 @@ int main()
     1/2 hour is 0.5 hours
     the answer is 42
 
+http://coliru.stacked-crooked.com/a/0f60ac9f5bef835a
+
 
 Trigraph &emsp; `??-` &emsp; -> &emsp; `~`
 
@@ -114,35 +115,6 @@ auto answer(T t)
 {
   // Light takes 43:07 from Sun to Jupiter
   return t ?~- 43:07;
-}
-
-int main()
-{
-  auto day = 24h;
-  auto halfhour = 0.5h;
-  std::cout <<"one day is "<< day.count() <<" hours\n"
-            <<"1/2 hour is "<< halfhour.count() <<" hours\n"
-            <<"the answer is "<< answer(day.count()) <<'\n';
-}
-```
-
-    one day is 24 hours
-    1/2 hour is 0.5 hours
-    the answer is 42
-
-
-Espacement
-
-```cpp
-#include <iostream>
-#include <chrono>
-using namespace std::chrono_literals;
-
-template <typename T>
-auto answer(T t)
-{
-  // Light takes 43:07 from Sun to Jupiter
-  return t ? ~-43 : 07;
 }
 
 int main()
@@ -221,7 +193,7 @@ int main()
 
 
 
-http://coliru.stacked-crooked.com/a/8ff0bbede46cd18f
+Vous avez dit bizarre ?
 
 ```cpp
 #include <iostream>
@@ -232,6 +204,8 @@ int main()
   std::cout << x << std::endl;
 }
 ```
+
+http://coliru.stacked-crooked.com/a/8ff0bbede46cd18f
 
 
 Vous avez dit bizarre ?
@@ -316,11 +290,7 @@ int main()
 
 
 
-
-
-
-
-http://coliru.stacked-crooked.com/a/3a7d316dd41cb1b3
+Non mais !!??
 
 ```cpp
 #include <iostream>
@@ -342,6 +312,8 @@ int main() {
 
     1
 
+http://coliru.stacked-crooked.com/a/3a7d316dd41cb1b3
+
 
 Trigraphs &emsp; `??!` &emsp; -> &emsp; `|`
 
@@ -350,16 +322,16 @@ Trigraphs &emsp; `??!` &emsp; -> &emsp; `|`
 
 template <bool B = true>
 bool foo (bool b = B) {
-  return !!b || !!b;
+  return !!b || !!b;     // !!b??!??!!!b
 }
 
 template <bool B = false>
 bool bar (bool b = B) {
-  std::cout << !b || b;
+  std::cout << !b || b;  // !b??!??!!b
 }
 
 int main() {
-  !foo() || bar();
+  !foo() || bar();      // !foo()??!??!bar();
 }
 ```
 
@@ -373,19 +345,16 @@ Simplifications
 
 template <bool B = true>
 bool foo (bool b = B) {
-//return !!b || !!b;
-  return b;
+  return b;  // !!b || !!b
 }
 
 template <bool B = false>
 bool bar (bool b = B) {
-//std::cout << !b || b;
-  std::cout << true;
+  std::cout << true;  // !b || b
 }
 
 int main() {
-//!foo() || bar();
-  if (foo()) bar();
+  if (foo()) bar();  // !foo() || bar();
 }
 ```
 
@@ -429,7 +398,7 @@ Ternary as lvalue
     (a ? b : c) = 42;
 
 
-```
+```cpp
 #include <iostream>
 
 int main()
@@ -438,13 +407,13 @@ int main()
     (a ? b : c) = 42;
     std::cout << a <<' '<< b <<' '<< c;
 }
-```cpp
+```
 
     32765 42 0
 
 
 
-http://coliru.stacked-crooked.com/a/230fc215df0fa6d1
+URL in code
 
 ```cpp
 #include <iostream>
@@ -456,6 +425,8 @@ http://www.cppfrug.org
 std::cout << '2';
 }
 ```
+
+http://coliru.stacked-crooked.com/a/230fc215df0fa6d1
 
 
 URL in code
@@ -486,7 +457,8 @@ goto http;
 }
 ```
 
-    42222222222222222222222...
+    42222222222222222222222222222222...
+
 
 
 Scope-declared types
@@ -510,6 +482,9 @@ int main()
     4 55.2
     5 276
 
+
+
+Optionnellement bizarre
 
 ```cpp
 std::optional<bool> var(false);
@@ -595,7 +570,7 @@ int main()
 template<typename T>
 void foo (T& t)
 {
-    t.template bar<int>();
+    t.template bar<int>();  // Insérer template
 }
 
 struct C
@@ -612,7 +587,8 @@ int main()
 ```
 
 
-Pourquoi le C++ ne veut pas cela ?
+
+Passer le retour d'une fonction par paramètre
 
 ```cpp
 class C {};
@@ -627,17 +603,8 @@ int main()
 }
 ```
 
-    > g++-5.2 -std=c++11 -Wall -Wextra -pedantic main.cpp
-    main.cpp: In function 'int main()':
-    main.cpp:9:11: error: invalid initialization of non-const reference of type 'C&' from an rvalue of type 'C'
-       foo( bar() );
-               ^
-    main.cpp:3:6: note:   initializing argument 1 of 'void foo(Myclass&)'
-     void foo (Myclass &) {}
-          ^
 
-
-Pourquoi le C++ ne veut pas cela ?
+GCC ne veut pas
 
 ```cpp
 class C {};
@@ -662,7 +629,7 @@ int main()
           ^~~
 
 
-Pourquoi le C++ ne veut pas cela ?
+Clang non plus
 
 ```cpp
 class C {};
@@ -686,7 +653,7 @@ int main()
          ^
 
 
-Pourquoi le C++ ne veut pas cela ?
+Transformer une R-Value en L-Value
 
 ```cpp
 class C {};
@@ -701,8 +668,7 @@ int main()
 }
 ```
 
-Le standard C++ nous empêche de faire une bêtise :  
-transformer une R-Value en L-Value  
+Le standard C++ ne permet pas de transformer une R-Value en L-Value  
 (modifier un objet temporaire qui va tout de suite mourir)
 
 
@@ -720,11 +686,11 @@ int main()
 ```
 
 1. La fonction `foo()` est appelée avec comme paramètre le retour de la fonction `bar()`
-c’est une **unnamed variable** (ou **anonymous variable**).
+   c’est une **unnamed variable** (ou **anonymous variable**).
 2. Comme sa durée de vie s’arrête avec la fin de l’appel de `foo()`,
-c’est aussi un **temporary object** (ou **temporary value**).
+   c’est aussi un **temporary object** (ou **temporary value**).
 3. Mais `foo(C&)` attend un objet modifiable.  
-(même s’il n’en fait rien, cet objet doit être modifiable.)
+   (même s’il n’en fait rien, cet objet doit être modifiable.)
 4. Donc il n’y a pas d’intérêt à donner un objet temporaire à une fonction qui va le modifier.
 
 
@@ -853,6 +819,7 @@ int main()
 ```
 
 
+Que sont `c1` et `c2` ?
 
 ```cpp
 #include <iostream>
@@ -875,6 +842,8 @@ int main()
 }
 ```
 
+
+Que sont `c1` et `c2` ?
 
 ```cpp
 #include <iostream>
@@ -902,7 +871,7 @@ int main()
     ctor: 8
 
 
-[Variable template](https://en.wikipedia.org/wiki/C%2B%2B14#Variable_templates) (C++14)
+`c1` et `c2` sont des [variables template](https://en.wikipedia.org/wiki/C%2B%2B14#Variable_templates) (C++14)
 
 ```cpp
 #include <iostream>
@@ -937,11 +906,12 @@ int main()
 
 Avant, pour avoir des "variables paramétrables" on avait deux contournements :
 
-- Déclarer + Définir des membres `static` aux classes templates (*.hpp + *.cpp)
+- Déclarer + Définir des membres `static` aux classes templates (`*.h` + `*.cpp`)
 - Définir des fonctions templates `constexpr` retournant la bonne valeur
 
 
 
+Quelle ligne ne compile pas ?
 
 ```cpp
 template <int X>
@@ -957,6 +927,25 @@ struct Derive : Base<X>
 };
 ```
 
+http://coliru.stacked-crooked.com/a/daca4a7b7d8ef906
+
+
+GCC
+
+```cpp
+template <int X>
+struct Base
+{
+    void foo() { }
+};
+
+template <int X>
+struct Derive : Base<X>
+{
+    void bar() { foo(); }  // ERROR
+};
+```
+
     > g++-7.2 -Wall -Wextra -pedantic main.cpp
     main.cpp: In member function 'void Derive<X>::bar()':
     main.cpp:10:18: error: there are no arguments to 'foo' that depend on a template parameter, so a declaration of 'foo' must be available [-fpermissive]
@@ -964,8 +953,8 @@ struct Derive : Base<X>
                       ^~~
     main.cpp:10:18: note: (if you use '-fpermissive', G++ will accept your code, but allowing the use of an undeclared name is deprecated)
 
-http://coliru.stacked-crooked.com/a/daca4a7b7d8ef906
 
+Clang
 
 ```cpp
 template <int X>
@@ -988,30 +977,27 @@ struct Derive : Base<X>
     main.cpp:11:3: warning: no newline at end of file [-Wnewline-eof]
 
 
-```cpp
-template <int X>
-struct Base
-{
-    void foo() { }
-};
-
-template <>
-struct Base<42>      // spécialisation de Base<X>
-{
-   void rien() { }   // pas de fonction foo()
-};
-
-template <int X>
-struct Derive : Base<X>   // Et si X=42 ?
-{
-    void bar() { foo(); } // D'où vient foo() ?
-};
-```
-
 Explication: `Derive<X>` connaîtra le contenu de `Base<X>`
 quand `Base<X>` sera instancié,
 donc quand `Derive<X>` sera lui-même instancié
 (pas lors du parsing de `Derive<X>`)
+
+```cpp
+template <int X>
+struct Base {
+   void foo() { }
+};
+
+template <>
+struct Base<42> {    // spécialisation de Base<X>
+   void rien() { }   // pas de fonction foo()
+};
+
+template <int X>
+struct Derive : Base<X> {  // Et si X=42 ?
+   void bar() { foo(); }   // D'où vient foo() ?
+};
+```
 
 
 Correction en utilisant `this->`
@@ -1060,7 +1046,7 @@ struct Base
 template <int X>
 struct Derive : Base<X>
 {
-    using Base<X>::foo;
+    using Base<X>::foo;    // using
     void bar() { foo(); }
 };
 ```
