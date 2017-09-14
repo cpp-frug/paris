@@ -12,6 +12,20 @@ Copyright 2017 olibre &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses
 
 
 
+Pas besoin d'indiquer `return` pour `main()`
+
+```cpp
+int main()
+{
+  // return 0 by default
+}
+```
+
+    > g++ main.cpp && ./a.out && echo $?
+    0
+
+
+
 ```cpp
 #include <iostream>
 
@@ -412,7 +426,21 @@ int main()
 
 Ternary as lvalue
 
-    (a == 0 ? a : b) = 1;
+    (a ? b : c) = 42;
+
+
+```
+#include <iostream>
+
+int main()
+{
+    int a, b, c;
+    (a ? b : c) = 42;
+    std::cout << a <<' '<< b <<' '<< c;
+}
+```cpp
+
+    32765 42 0
 
 
 
@@ -483,1053 +511,560 @@ int main()
     5 276
 
 
-
-http://madebyevan.com/obscure-cpp-features/
-
-
-https://www.youtube.com/watch?v=_wzc7a3McOs
-
-
-
-  
-Mini-features (petards mouilles) :
----------------
-...) {
-- template union wt/ ctor/dtor	:
-- main return 0 by default		:
-
-C'est plutot incomplet, par exemple je me rappel plus le truc marrant avec le return du main :).
-
-
-
-std::optionnal<bool> var(false);
+```cpp
+std::optional<bool> var(false);
 
 if (var && var == false)
-   std::cout << "Lolz\n";
-   
-   
-   
-Il faut corriger le code ci-dessous pour satisfaire les compilos C++.
+    std::cout << "lol";
+```
 
-Pas besoin de fonctionnalités C++11 / C++14, c’est du bon vieux C++03.
 
- 
-
- 
-
-template<typename T>
-
-void myfunction( T& t )
-
-{
-
-    t.process<int>();
-
-}
-
- 
-
-struct Myclass
-
-{
-
-    template<typename T>
-
-    void process() { }
-
-};
-
- 
+```cpp
+#include <iostream>
+#include <optional>
 
 int main()
-
 {
+  std::optional<bool> var(false);
 
-   Myclass myclass;
+  if (var && var == false)
+    std::cout << "lol";
+}
+```
 
-    myfunction<Myclass>(myclass);
+    lol
 
+
+
+```cpp
+template<typename T>
+void foo (T& t)
+{
+    t.bar<int>();
 }
 
- 
-
- 
-
- 
-
-Erreur GCC 5.1
-
- 
-
- 
-
-> g++ -std=c++11 -Wall -Wextra -pedantic main.cpp
-
- 
-
-main.cpp: In function 'void myfunction(T&)':
-
-main.cpp:11:15: error: expected primary-expression before 'int'
-
-     t.process<int>();
-
-               ^
-
-main.cpp:11:15: error: expected ';' before 'int'
-
- 
-
- 
-
-Erreur Clang 3.6
-
- 
-
- 
-
-> clang++ -std=c++11 -Wall -Wextra -pedantic main.cpp
-
- 
-
-main.cpp:11:7: error: use 'template' keyword to treat 'process' as a dependent template name
-
-    t.process<int>();
-
-      ^
-
-      template
-
-1 error generated.
-
-
-
-
-
-
-
-
-
-
-Cette nouvelle énigme tient en 5 lignes de code :
-
- 
-
- 
-
-class Myclass {};
-
- 
-
-void foo (Myclass &) {}
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
+struct C
 {
-
-  foo( bar() );
-
-}
-
- 
-
- 
-
-Et comme d’habitude, les compilos se plaignent L
-
- 
-
-GCC-5.1
-
- 
-
-> g++ -std=c++11 -Wall -Wextra -pedantic main.cpp
-
-main.cpp: In function 'int main()':
-
-main.cpp:9:11: error: invalid initialization of non-const reference of type 'Myclass&' from an rvalue of type 'Myclass'
-
-   foo( bar() );
-
-           ^
-
-main.cpp:3:6: note:   initializing argument 1 of 'void foo(Myclass&)'
-
-void foo (Myclass &) {}
-
-      ^
-
- 
-
- 
-
-Clang-3.6
-
- 
-
-> clang++ -std=c++11 -Wall -Wextra -pedantic main.cpp
-
-main.cpp:9:3: error: no matching function for call to 'foo'
-
-  foo( bar() );
-
-  ^~~
-
-main.cpp:3:6: note: candidate function not viable: expects an l-value for 1st argument
-
-void foo (Myclass &) {}
-
-     ^
-
-1 error generated.
-
- 
-
- 
-
-La question: Qu’est-ce que le C++ nous interdit de faire ici ?
-
- 
-
-Vous pouvez aussi essayer de trouver une correction.
-
-(je connais trois solutions possibles, il y en a peut-être d’autres…)
-
- 
-
-Faites vos essais en utilisant gcc.godbolt.org (compilo en ligne).
-
-
-
-
-
-L’erreur est d’essayer de transformer une R-Value en L-Value.
-
- 
-
-Le compilateur peut être trompé par l’utilisation d’un « setter chaîné » comme ceci :
-
-  Myclass &setTheMember(int  val) { member = val; return *this; }
-
- 
-
-Il faut donc éviter ça si le compilateur le permet (compiler de préférence avec C++11), et utiliser l’écriture & et && en qualificateur de fonction.
-
- 
-
-#include <utility>
-
-class Myclass {
-
-public:
-
-  Myclass &setTheMember(int val) { member = val; return *this; }
-
- 
-
-  Myclass &setTheMemberSafe(int val) & { member = val; return *this; }
-
-  Myclass &&setTheMemberSafe(int val) && { member = val; return std::move(*this); }
-
- 
-
-  int member;
-
+    template<typename T>
+    void bar() { }
 };
 
- 
-
-void foo (Myclass & c) {}
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
+int main()
 {
+    C c;
+    foo<C>(c);
+}
+```
 
-  Myclass obj {};
+    > g++-7.2 -Wall -Wextra -pedantic main.cpp
+    main.cpp: In function 'void foo(T&)':
+    main.cpp:4:11: error: expected primary-expression before 'int'
+          t.bar<int>();
+                ^~~
+    main.cpp:4:11: error: expected ';' before 'int'
 
-  obj.setTheMember(2);
 
- 
-
-  foo( bar().setTheMember(1) );
-
-  foo( bar().setTheMemberSafe(1) ); // ERREUR (COOL !)
-
+```cpp
+template<typename T>
+void foo (T& t)
+{
+    t.bar<int>();
 }
 
+struct C
+{
+    template<typename T>
+    void bar() { }
+};
+
+int main()
+{
+    C c;
+    foo<C>(c);
+}
+```
+
+    > clang++-3.6 -Wall -Wextra -pedantic main.cpp
+    main.cpp:4:7: error: use 'template' keyword to treat 'bar' as a dependent template name
+        t.bar<int>();
+          ^
+          template
 
 
+```cpp
+template<typename T>
+void foo (T& t)
+{
+    t.template bar<int>();
+}
 
-Bravo à Sikirou et Armel pour avoir trouvé des réponses à la question.
+struct C
+{
+    template<typename T>
+    void bar() { }
+};
 
-Merci à Docteur Bakic et Frank pour leurs solutions.
+int main()
+{
+    C c;
+    foo<C>(c);
+}
+```
 
- 
 
-Rappel du problème :
+Pourquoi le C++ ne veut pas cela ?
 
- 
+```cpp
+class C {};
 
-struct Myclass {};
+void foo (C &) {}
 
- 
+C bar() { return C(); }
 
-void foo(Myclass &) {}
+int main()
+{
+  foo( bar() );
+}
+```
 
- 
+    > g++-5.2 -std=c++11 -Wall -Wextra -pedantic main.cpp
+    main.cpp: In function 'int main()':
+    main.cpp:9:11: error: invalid initialization of non-const reference of type 'C&' from an rvalue of type 'C'
+       foo( bar() );
+               ^
+    main.cpp:3:6: note:   initializing argument 1 of 'void foo(Myclass&)'
+     void foo (Myclass &) {}
+          ^
 
-Myclass bar() { return Myclass(); }
 
- 
+Pourquoi le C++ ne veut pas cela ?
 
-int main()             
+```cpp
+class C {};
 
-{             //compiler errors:
+void foo (C &) {}
 
-  foo(bar()); //CLANG: no matching function for call to 'foo'
+C bar() { return C(); }
 
-}             //GCC: invalid initialization of non-const reference of type 'Myclass&' from an rvalue of type 'Myclass'
+int main()
+{
+  foo( bar() );
+}
+```
 
- 
+    > g++-7.2 -Wall -Wextra main.cpp
+    main.cpp: In function 'int main()':
+    main.cpp:9:11: error: cannot bind non-const lvalue reference of type 'C&' to an rvalue of type 'C'
+       foo( bar() );
+            ~~~^~
+    main.cpp:3:6: note:   initializing argument 1 of 'void foo(C&)
+     void foo (C &) {}
+          ^~~
 
- 
 
-Rappel de la question :
+Pourquoi le C++ ne veut pas cela ?
 
-Qu’est-ce que le C++ nous interdit de faire ici ?
+```cpp
+class C {};
 
- 
+void foo (C &) {}
 
-Réponse rapide :
+C bar() { return C(); }
 
-Le standard nous empêche de faire des bêtises :
-Eviter de modifier une objet temporaire qui va tout de suite mourir.
+int main()
+{
+  foo( bar() );
+}
+```
 
- 
+    > clang++-3.8 -Wall -Wextra main.cpp
+    main.cpp:9:3: error: no matching function for call to 'foo'
+      foo( bar() );
+      ^~~
+    main.cpp:3:6: note: candidate function not viable: expects an l-value for 1st argument
+    void foo (C &) {}
+         ^
 
-Explications :
 
-1.       La fonction foo() est appelée avec comme paramètre le retour de la fonction bar()
-c’est une unnamed variable (ou anonymous variable).
+Pourquoi le C++ ne veut pas cela ?
 
-2.       Comme sa durée de vie s’arrête avec la fin de l’appel de foo(),
-c’est aussi un temporary object (certains préfèrent dire une temporary value).
+```cpp
+class C {};
 
-3.       Mais foo(Myclass&) attend un objet modifiable.
+void foo (C &) {}
+
+C bar() { return C(); }
+
+int main()
+{
+  foo( bar() );
+}
+```
+
+Le standard C++ nous empêche de faire une bêtise :  
+transformer une R-Value en L-Value  
+(modifier un objet temporaire qui va tout de suite mourir)
+
+
+```cpp
+class C {};
+
+void foo (C &) {}
+
+C bar() { return C(); }
+
+int main()
+{
+  foo( bar() );
+}
+```
+
+1. La fonction `foo()` est appelée avec comme paramètre le retour de la fonction `bar()`
+c’est une **unnamed variable** (ou **anonymous variable**).
+2. Comme sa durée de vie s’arrête avec la fin de l’appel de `foo()`,
+c’est aussi un **temporary object** (ou **temporary value**).
+3. Mais `foo(C&)` attend un objet modifiable.  
 (même s’il n’en fait rien, cet objet doit être modifiable.)
+4. Donc il n’y a pas d’intérêt à donner un objet temporaire à une fonction qui va le modifier.
 
-4.       Donc il n’y a pas d’intérêt à donner un objet temporaire à une fonction qui va le modifier.
 
- 
-
-Sikirou nous rappelle la parole de Scott Meyers dans le verset 19 de la sourate More Effective C++ 
-(je me suis permis de blasphémer simplifier un peu)
+Scott Meyers - More Effective C++
 
 Consider this function:
 
+```cpp
 // changes all chars in str to upper case
-
 void uppercasify( std::string& str );
+```
 
-In the character-counting example, a char array passed to uppercasify() fails: 
+In the character-counting example, a char array passed to uppercasify() fails:  
+http://coliru.stacked-crooked.com/a/f324de25c709cb0e
 
+```cpp
 char title[] = "Effective C++";
+uppercasify(             title  );  // error #1
+uppercasify( std::string(title) );  // error #2
+```
 
-uppercasify(             title  );    // error #1
-uppercasify( std::string(title) );    // error #2
+`error #1` No temporary is created to make the call succeed. Why not?
 
- 
+Suppose a temporary were created (`error #2`). Then the temporary would be passed to `uppercasify()`, which would modify the temporary so its characters were in upper case. But the actual argument to the function call — `title` — would not be affected; only the temporary `std::string` object generated from `title` would be changed.
 
-error #1: No temporary is created to make the call succeed. Why not?
+Surely this is not what the programmer intended. That programmer passed title to `uppercasify()`, and that programmer expected `title` to be modified.
 
-Suppose a temporary were created (the error #2). Then the temporary would be passed to uppercasify(), which would modify the temporary so its characters were in upper case. But the actual argument to the function call — title — would not be affected; only the temporary std::string object generated from title would be changed.
+Implicit type conversion for references-to-non-const objects, then, would allow temporary objects to be changed when programmers expected non-temporary objects to be modified. That's why the language prohibits the generation of temporaries for non-const reference parameters. Reference-to-const parameters don't suffer from this problem, because such parameters, by virtue of being `const`, can't be changed.
 
-Surely this is not what the programmer intended. That programmer passed title to uppercasify(), and that programmer expected title to be modified.
 
-Implicit type conversion for references-to-non-const objects, then, would allow temporary objects to be changed when programmers expected non-temporary objects to be modified. That's why the language prohibits the generation of temporaries for non-const reference parameters. Reference-to-const parameters don't suffer from this problem, because such parameters, by virtue of being const, can't be changed.
+[Contournenement C++03](http://coliru.stacked-crooked.com/a/314016237c79ad25)
 
-Compiler le code sur Coliru => http://coliru.stacked-crooked.com/a/f324de25c709cb0e
+```cpp
+struct C {};
 
- 
+void foo (const C &) {}  // const
 
-Bon, cela n’empêche pas de tricher si on repère une fonction retournant une référence :
-
- 
-
-#include <utility>     // std::move
-
- 
-
-struct Myclass
-
-{
-
-   Myclass &  truc() { return           *this;  }
-
-   Myclass && toto() { return std::move(*this); }
-
-};
-
- 
-
-void foo(Myclass &) {}
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
-{
-
-  foo( bar().truc() );   // OK ??
-
-//foo( bar().toto() );   // error
-
-}
-
- 
-
-Lien coliru => http://coliru.stacked-crooked.com/a/aebff3189a99eaff
-
- 
-
-Heureusement, notre apôtre Armel se rappelle encore de l’enseignement de Saint Joel Falcou :
-
- 
-
-Avec C++11, protégez vos brebis égarées avec les ref-qualifier & et &&
-
-http://en.cppreference.com/w/cpp/language/member_functions
-
- 
-
-#include <utility>     // std::move
-
- 
-
-struct Myclass
-
-{
-
-   Myclass &  truc() &  { return           *this;  } // non-const rvalue-references to temporary objects
-
-   Myclass && toto() && { return std::move(*this); }
-
-};
-
- 
-
-void foo(Myclass &) {}
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
-{
-
-  foo( bar().truc() );   // error
-
-//foo( bar().toto() );   // error
-
-}
-
- 
-
-Lien coliru => http://coliru.stacked-crooked.com/a/e1fd06609cdb2b43
-
- 
-
-Un fix C++03 
-
- 
-
-struct Myclass {};
-
- 
-
-void foo( const Myclass & ) {}
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
-{
-
-  foo( bar() );
-
-}
-
- 
-
-http://coliru.stacked-crooked.com/a/314016237c79ad25
-
- 
-
-Un autre contournement en C++03 
-
- 
-
-struct Myclass {};
-
- 
-
-void foo( Myclass & ) {}
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
-{
-
-  Myclass mc;        // no temporary object
-
-  foo( mc = bar() );   // OK C++03
-
-}
-
- 
-
-http://coliru.stacked-crooked.com/a/bff5b2165e2e4994
-
- 
-
-Et la fameuse rvalue-reference (en C++11)
-
- 
-
-struct Myclass {};
-
- 
-
-void foo( Myclass && ) {}       // non-const rvalue-reference
-
- 
-
-Myclass bar() { return Myclass(); }
-
- 
-
-int main()             
-
-{
-
-  foo( bar() );                 // OK C++11
-
-}
-
- 
-
-http://coliru.stacked-crooked.com/a/c6bd0c3a57282d8f
-
- 
-
- 
-
-Vous pouvez constater que c’est plus plus facile quand même, non ?
-
- 
-
-Allez, je vous préparerai une troisième Enigme pour la semaine prochaine ;-)
-
-Oliver
-
-
-
-
-
-
-
-
-
-
-Que sont ‘pap_’ et ‘pape’ dans le code source ?
-
- 
-
- 
-
-Code source
-
- 
-
- 
-
-#include <iostream>
-
- 
-
-template<class T>
-
-struct     Pap
-
-{
-
-  Pap()  { std::cout << "default ctor"         << std::endl; }
-
-  Pap(T) { std::cout << "ctor : " << sizeof(T) << std::endl; }
-
-};
-
- 
-
-template <typename T>
-
-Pap<T>         pap_;
-
- 
-
-template <typename T>
-
-Pap<T>         pape(0);
-
- 
+C bar() { return C(); }
 
 int main()
-
 {
-
-  auto t0 = pap_<short>;
-
-  auto t2 = pape<short>;
-
-  auto t1 = pape<double>;
-
-  return 0;
-
+  foo( bar() );
 }
-
- 
-
- 
-
-Compilation
-
- 
-
- 
-
-g++ -std=c++14 main.cpp
-
- 
-
- 
-
-Sortie lors de l’exécution
-
- 
-
- 
-
-default ctor
-
-ctor : 2
-
-ctor : 8
+```
 
 
+[Un autre contournenement C++03](http://coliru.stacked-crooked.com/a/bff5b2165e2e4994)
+
+```cpp
+struct C {};
+
+void foo (C &) {}
+
+C bar() { return C(); }
+
+int main()
+{
+  C c;  // no temporary object
+  foo( c = bar() );
+}
+```
 
 
-Code source
+[Contournement C++11](http://coliru.stacked-crooked.com/a/aebff3189a99eaff)
 
- 
+```cpp
+#include <utility>  // std::move
 
- 
+struct C
+{
+    C &  ok() { return           *this;  }
+    C && ko() { return std::move(*this); }
+};
+
+void foo (C &) {}
+
+C bar() { return C(); }
+
+int main()
+{
+    foo( bar().ok() );
+    foo( bar().ko() );  // ERROR
+}
+```
+
+
+Mais [sans succès](http://coliru.stacked-crooked.com/a/e1fd06609cdb2b43)
+avec les
+[ref-qualifier `&` et `&&`](http://en.cppreference.com/w/cpp/language/member_functions)
+
+
+```cpp
+#include <utility>  // std::move
+
+struct C
+{
+    C &  ok() &  { return           *this;  }
+    C && ko() && { return std::move(*this); }
+};
+
+void foo (C &) {}
+
+C bar() { return C(); }
+
+int main()
+{
+    foo( bar().ok() );  // ERROR
+    foo( bar().ko() );  // ERROR
+}
+```
+
+[Avec](http://coliru.stacked-crooked.com/a/c6bd0c3a57282d8f)
+la rvalue-reference (C++11)
+
+```cpp
+struct C {};
+
+void foo (C &&) {}  // non-const rvalue-reference
+
+C bar() { return C(); }
+
+int main()
+{
+  foo( bar() );
+}
+```
+
+
+
+```cpp
+#include <iostream>
 
 template<class T>
+struct C
+{
+  C()  { std::cout <<"default ctor\n";            }
+  C(T) { std::cout <<"ctor: "<< sizeof(T) <<'\n'; }
+};
 
-struct     Pap { };
+template <class T> C<T> c1;
+template <class T> C<T> c2(2);
 
- 
+int main()
+{
+  auto a1 = c1<short>;
+  auto a2 = c2<short>;
+  auto a3 = c2<double>;
+}
+```
 
-template <typename T>
 
-Pap<T>         pape;
+```cpp
+#include <iostream>
 
- 
+template<class T>
+struct C
+{
+  C()  { std::cout <<"default ctor\n";            }
+  C(T) { std::cout <<"ctor: "<< sizeof(T) <<'\n'; }
+};
 
- 
+template <class T> C<T> c1;
+template <class T> C<T> c2(2);
 
-Réponse
+int main()
+{
+  auto a1 = c1<short>;
+  auto a2 = c2<short>;
+  auto a3 = c2<double>;
+}
+```
 
- 
+    default ctor
+    ctor: 2
+    ctor: 8
 
- 
 
-pape is a variable template    # C++14
+[Variable template](https://en.wikipedia.org/wiki/C%2B%2B14#Variable_templates) (C++14)
 
- 
+```cpp
+#include <iostream>
 
- 
+template<class T>
+struct C
+{
+  C()  { std::cout <<"default ctor\n";            }
+  C(T) { std::cout <<"ctor: "<< sizeof(T) <<'\n'; }
+};
 
-Félicitations
+template <class T> C<T> c1;
+template <class T> C<T> c2(2);
 
- 
+int main()
+{
+  auto a1 = c1<short>;
+  auto a2 = c2<short>;
+  auto a3 = c2<double>;
+}
+```
 
- 
+    default ctor
+    ctor: 2
+    ctor: 8
 
-Bravo à Pape et Docteur Bakic pour avoir trouvé rapidement.
 
-Encore bravo à Pape, mais aussi à Alex pour le lancement d’AtomX  (et accessoirement à Gildas).
+À quoi sert les
+[variable templates](http://en.cppreference.com/w/cpp/language/variable_template)
+?
 
-Bravo à tous ceux qui se sont grattés la tête pour comprendre cette nouvelle notation.
-
- 
-
- 
-
-Références
-
- 
-
- 
-
-·         wikipedia / C++14 Variable templates
-
-·         cppreference / variable template
-
- 
-
- 
-
-Mais à quoi ça sert ?
-
- 
-
- 
 
 Avant, pour avoir des "variables paramétrables" on avait deux contournements :
 
-·         Déclarer + Définir des membres static aux classes templates (*.hpp + *.cpp)
-
-·         Définir des fonctions templates constexpr retournant la bonne valeur
-
- 
-
- 
-
-Oui, mais à quoi ça sert d’avoir des "variables paramétrables" ?
-
- 
-
- 
-
-à manger des brownies
-
- 
-
- 
-
-C’est l’heure du gouter
-
- 
-
- 
-
-Des brownies sont disponibles sur mon armoire
-
- 
-
- 
-
--- Oliver
-
-01 70 48 27 79
-
-06 31 82 83 84
-
- 
-
- 
-
-Plus de lecture :
-
-stackoverflow.com / C++14 Variable Templates: What is their purpose? Any usage example?
+- Déclarer + Définir des membres `static` aux classes templates (*.hpp + *.cpp)
+- Définir des fonctions templates `constexpr` retournant la bonne valeur
 
 
 
 
-
-
-Code source     http://coliru.stacked-crooked.com/a/daca4a7b7d8ef906
-
- 
-
- 
-
+```cpp
 template <int X>
-
 struct Base
-
 {
-
     void foo() { }
-
 };
 
- 
-
 template <int X>
-
 struct Derive : Base<X>
-
 {
-
     void bar() { foo(); }
-
 };
+```
 
- 
+    > g++-7.2 -Wall -Wextra -pedantic main.cpp
+    main.cpp: In member function 'void Derive<X>::bar()':
+    main.cpp:10:18: error: there are no arguments to 'foo' that depend on a template parameter, so a declaration of 'foo' must be available [-fpermissive]
+         void bar() { foo(); }
+                      ^~~
+    main.cpp:10:18: note: (if you use '-fpermissive', G++ will accept your code, but allowing the use of an undeclared name is deprecated)
 
-int main()
-
-{
-
-}
-
- 
-
- 
-
-Erreurs g++ 5.2.0
-
- 
-
- 
-
-main.cpp: In member function 'void Derive<X>::bar()':
-
-main.cpp:10:22: error: there are no arguments to 'foo' that depend on a template parameter, so a declaration of 'foo' must be available [-fpermissive]
-
-     void bar() { foo(); }
-
-                      ^
-
-main.cpp:10:22: note: (if you use '-fpermissive', G++ will accept your code, but allowing the use of an undeclared name is deprecated)
-
- 
-
- 
-
-Erreurs clang++ 3.6.0
-
- 
-
- 
-
-main.cpp:10:18: error: use of undeclared identifier 'foo'
-
-    void bar() { foo(); }
-
-                 ^
-
-1 error generated.
-
- 
-
- 
-
-Question
-
- 
-
- 
-
-Pourquoi le standard C++ empêche une classe template d’utiliser une fonction de sa classe mère template ?
-
- 
-
- 
-
-Récompense
+http://coliru.stacked-crooked.com/a/daca4a7b7d8ef906
 
 
-
-
-
-
-
-
-
-
-omme Siki l’indique, Derive<X> ne connaîtra le contenu de Base<X> que quand ce dernier sera instancié, donc quand Derive<X> sera lui-même instancié.
-
- 
-
-                http://coliru.stacked-crooked.com/a/25ffa8aa92fb8962
-
- 
-
+```cpp
 template <int X>
-
 struct Base
-
 {
-
-   void foo() { }
-
+    void foo() { }
 };
 
- 
-
-template <>                    // spécialisation de Base<X>
-
-struct Base<42>
-
-{
-
-   void foobar() { }           // la function foo() n’existe plus !
-
-};
-
- 
-
 template <int X>
-
 struct Derive : Base<X>
-
 {
-
-   void bar() { this->foo(); } // Derive<X> pourrait être spécialisé avec X=42
-
-};                             // mais Base<42> ne contient pas de fonction foo()
-
- 
-
-int main()
-
-{
-
-   Derive<41> d41;
-
-   d41.bar();                  // correct
-
- 
-
-   Derive<42> d42;
-
-   d42.bar();                  // erreur
-
-}
-
- 
-
- 
-
-g++ 5.2.0
-
- 
-
-main.cpp: In instantiation of 'void Derive<X>::bar() [with int X = 42]':
-
-main.cpp:25:12:   required from here
-
-main.cpp:16:17: error: 'struct Derive<42>' has no member named 'foo'
-
-    void bar() { this->foo(); } // Derive<X> pourrait être spécialisé avec X=42
-
-                 ^
-
- 
-
- 
-
-clang++ 3.6.0
-
- 
-
-main.cpp:16:23: error: no member named 'foo' in 'Derive<42>'
-
-   void bar() { this->foo(); } // Derive<X> pourrait être spécialisé avec X=42
-
-                ~~~~  ^
-
-main.cpp:25:8: note: in instantiation of member function 'Derive<42>::bar' requested here
-
-   d42.bar();                  // erreur
-
-       ^
-
-1 error generated.
-
- 
-
- 
-
-Les  différentes solutions
-
- 
-
- 
-
-template <int X>
-
-struct Derive : Base<X>
-
-{
-
-    void bar() { this->foo(); }
-
-};
-
- 
-
- 
-
- 
-
-template <int X>
-
-struct Derive : Base<X>
-
-{
-
-    void bar() { Base<X>::foo(); }
-
-};
-
- 
-
- 
-
- 
-
-template <int X>
-
-struct Derive : Base<X>
-
-{
-
-    using Base<X>::foo;
-
     void bar() { foo(); }
-
 };
+```
+
+    > clang++-3.8 -Wall -Wextra -pedantic main.cpp
+    main.cpp:10:18: error: use of undeclared identifier 'foo'
+        void bar() { foo(); }
+                     ^
+    main.cpp:11:3: warning: no newline at end of file [-Wnewline-eof]
+
+
+```cpp
+template <int X>
+struct Base
+{
+    void foo() { }
+};
+
+template <>
+struct Base<42>      // spécialisation de Base<X>
+{
+   void rien() { }   // pas de fonction foo()
+};
+
+template <int X>
+struct Derive : Base<X>   // Et si X=42 ?
+{
+    void bar() { foo(); } // D'où vient foo() ?
+};
+```
+
+Explication: `Derive<X>` connaîtra le contenu de `Base<X>`
+quand `Base<X>` sera instancié,
+donc quand `Derive<X>` sera lui-même instancié
+(pas lors du parsing de `Derive<X>`)
+
+
+Correction en utilisant `this->`
+
+```cpp
+template <int X>
+struct Base
+{
+    void foo() { }
+};
+
+template <int X>
+struct Derive : Base<X>
+{
+    void bar() { this->foo(); }  // this->
+};
+```
+
+
+Correction en utilisant `Base<X>::`
+
+```cpp
+template <int X>
+struct Base
+{
+    void foo() { }
+};
+
+template <int X>
+struct Derive : Base<X>
+{
+    void bar() { Base<X>::foo(); }  // Base<X>::
+};
+```
+
+
+Correction en utilisant `using Base<X>::foo`
+
+```cpp
+template <int X>
+struct Base
+{
+    void foo() { }
+};
+
+template <int X>
+struct Derive : Base<X>
+{
+    using Base<X>::foo;
+    void bar() { foo(); }
+};
+```
+
 
 
 
@@ -1541,5 +1076,20 @@ http://en.cppreference.com/w/cpp/language/operator_alternative
 
 
 
+
+
+http://madebyevan.com/obscure-cpp-features/
+
+
+https://www.youtube.com/watch?v=_wzc7a3McOs
+
+
+
+  
+Mini-features (petards mouilles) :
+---------------
+- template union wt/ ctor/dtor	:
+
+truc marrant avec le return du main :).
 
 
