@@ -5,140 +5,261 @@ Copyright 2017 olibre &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses
 
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
-* Présentation: [cppfrug.org/paris/events/2017-09-14_n19/bizarre/reveal.html](http://cppfrug.org/paris/events/2017-09-14_n19/bizarre/reveal.html)
-* Site statique : [cppfrug.org/paris/events/2017-09-14_n19/bizarre](http://cpp-frug.github.io/paris/events/2017-09-14_n19/bizarre/)
-* Src : [github.com/cpp-frug/paris/events/2017-09-14_n19/bizarre](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/bizarre/README.md)
+* Reveal [cppfrug.org/paris/events/2017-09-14_n19/bizarre/reveal.html](http://cppfrug.org/paris/events/2017-09-14_n19/bizarre/reveal.html)
+* Jekyll [cppfrug.org/paris/events/2017-09-14_n19/bizarre](http://cpp-frug.github.io/paris/events/2017-09-14_n19/bizarre/)
+* Source [github.com/cpp-frug/paris/events/2017-09-14_n19/bizarre](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/bizarre/README.md)
 
 
 
 
- 
+```cpp
+#include <iostream>
 
-Cette fois-ci c’est du C++14.
+int main()
+{
+  std::cout << 007 << std::endl;
+  std::cout << 042 << std::endl;
+  std::cout << 123 << std::endl;
+}
+```
 
- 
 
-Faut que tu m’expliques cette énigme
 
-avant que la lumière du Soleil atteigne Jupiter,
+```cpp
+#include <iostream>
 
-allez je te laisse jusqu’à 11:43:00 !
+int main()
+{
+  std::cout << 007 << std::endl;
+  std::cout << 042 << std::endl;
+  std::cout << 123 << std::endl;
+}
+```
 
- 
+    7
+    34
+    123
+
+
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  std::cout << std::oct;  // s'applique partout
+
+  std::cout << 007 << std::endl;
+  std::cout << 042 << std::endl;
+  std::cout << 123 << std::endl;
+}
+```
+
+    7
+    42
+    173
+
+
 
 http://coliru.stacked-crooked.com/a/0f60ac9f5bef835a
 
- 
 
- 
-
+```cpp
 #include <iostream>
-
 #include <chrono>
-
- 
-
 using namespace std::chrono_literals;
 
 template <typename T>
-
-auto foo(T val)
-
+auto answer(T t)
 {
-
-    return val ???-- 43:00; // Time that light takes from Sun to Jupiter
-
+  // Light takes 43:07 from Sun to Jupiter
+  return t ???-- 43:07;
 }
 
 int main()
-
 {
+  auto day = 24h;
+  auto halfhour = 0.5h;
+  std::cout << "one day is "<< day.count() <<" hours\n"
+            << "1/2 hour is "<< halfhour.count() <<" hours\n"
+            << "the answer is "<< answer(day.count()) <<'\n';
+}
+```
 
-    auto day = 24h;
 
-    auto halfhour = 0.5h;
 
-    std::cout << "one day is "<< day.count() <<" hours\n"
+Trigraph `??-` -> `~`
 
-              << "half an hour is "<< halfhour.count() <<" hours\n"
 
-              << "and the answer is "<< foo(day.count()) <<'\n';
+```cpp
+#include <iostream>
+#include <chrono>
+using namespace std::chrono_literals;
 
+template <typename T>
+auto answer(T t)
+{
+  // Light takes 43:07 from Sun to Jupiter
+  return t ?~- 43:07;
 }
 
- 
+int main()
+{
+  auto day = 24h;
+  auto halfhour = 0.5h;
+  std::cout << "one day is "<< day.count() <<" hours\n"
+            << "1/2 hour is "<< halfhour.count() <<" hours\n"
+            << "the answer is "<< answer(day.count()) <<'\n';
+}
+```
 
- 
+
+
+Espacement
+
+
+```cpp
+#include <iostream>
+#include <chrono>
+using namespace std::chrono_literals;
+
+template <typename T>
+auto answer(T t)
+{
+  // Light takes 43:07 from Sun to Jupiter
+  return t ? ~-43 : 07;
+}
+
+int main()
+{
+  auto day = 24h;
+  auto halfhour = 0.5h;
+  std::cout << "one day is "<< day.count() <<" hours\n"
+            << "1/2 hour is "<< halfhour.count() <<" hours\n"
+            << "the answer is "<< answer(day.count()) <<'\n';
+}
+```
 
 
 
- 
+Opérateur ternaire
+
+
+```cpp
+#include <iostream>
+#include <chrono>
+using namespace std::chrono_literals;
+
+template <typename T>
+auto answer(T t)
+{
+  // Light takes 43:07 from Sun to Jupiter
+  return t ? ~-43 : 07;
+}
+
+int main()
+{
+  auto day = 24h;
+  auto halfhour = 0.5h;
+  std::cout << "one day is "<< day.count() <<" hours\n"
+            << "1/2 hour is "<< halfhour.count() <<" hours\n"
+            << "the answer is "<< answer(day.count()) <<'\n';
+}
+```
+
+
+Complément à un *(ones' complement)*  `~1` -> `-2` (if signed)
+
+
+```cpp
+#include <iostream>
+#include <chrono>
+using namespace std::chrono_literals;
+
+template <typename T>
+auto answer(T t)
+{
+  // Light takes 43:07 from Sun to Jupiter
+  return t ? 42 : 07;
+}
+
+int main()
+{
+  auto day = 24h;
+  auto halfhour = 0.5h;
+  std::cout << "one day is "<< day.count() <<" hours\n"
+            << "1/2 hour is "<< halfhour.count() <<" hours\n"
+            << "the answer is "<< answer(day.count()) <<'\n';
+}
+```
 
 
 
- 
 
-Peux-tu m’expliquer le fonctionnement de l’opérateur TG ?
 
- 
+```cpp
+#include <iostream>
+
+int main()
+{
+  auto x = ("C++", '2017');
+  std::cout << x << std::endl;
+}
+```
+
+
+
+La composition
+
+              évaluation
+              |
+    auto x = ("C++", '2017');
+                   | |
+             virgule valeur
+
+Pratique quand pour décomposer un variadic sans recursion :
+
+```cpp
+int _/*anonymous*/[] = (/*evaluation*/, 0)...;
+
+template <typename ...T> void print_vars()
+{
+  int _/*anonymous*/[] = ((std::cout << T::var), 0)...; (void)_;
+}
+```
+
+
+
+
 
 http://coliru.stacked-crooked.com/a/3a7d316dd41cb1b3
 
- 
-
- 
-
+```cpp
 #include <iostream>
 
- 
-
-template <bool T = true>
-
-bool foo(bool b = T)
-
+template <bool B = true>
+bool foo(bool b = B)
 {
-
-    return !!b??!??!!!b;
-
+  return !!b??!??!!!b;
 }
 
- 
-
-template <bool T = false>
-
-bool bar(bool b = T)
-
+template <bool B = false>
+bool bar(bool b = B)
 {
-
-    std::cout << !b??!??!!b;
-
+  std::cout << !b??!??!!b;
 }
-
- 
 
 int main()
-
 {
-
   !foo()??!??!bar();
-
 }
+```
+
+
+Trigraphs `??!` -> `|`
 
 
 
-
-auto x = ("C++", '2017');
-
-
-Oui c'est contre-intuitif, mais la composition : "Evaluation + virgule + value" est utilisée et c'est pratique.
-
-Par exemple lorsque tu depack un variadic sans recursion :
-
-int _/*anonymous*/[] = (/*evaluation*/, 0)...;
-
-tel que (de tête):
-
-template <typename ...T> void print_vars() { int _/*anonymous*/[] = ((std::cout << T::var), 0)...; (void)_; }
   
   
   
@@ -152,7 +273,6 @@ https://www.youtube.com/watch?v=_wzc7a3McOs
   
 Mini-features (petards mouilles) :
 ---------------
-- Trigraphs 					: ??! -> |
 - Array / ptr arythmetic		: a[1] -> 1[a]							+ operator[] overload
 - Ternary as lvalue				: (a == 0 ? a : b) = 1;
 - URL in code					: label + comment
