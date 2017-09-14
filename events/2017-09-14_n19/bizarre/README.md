@@ -7,7 +7,7 @@ Copyright 2017 olibre &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses
 
 * Reveal [cppfrug.org/paris/events/2017-09-14_n19/bizarre/reveal.html](http://cppfrug.org/paris/events/2017-09-14_n19/bizarre/reveal.html)
 * Jekyll [cppfrug.org/paris/events/2017-09-14_n19/bizarre](http://cpp-frug.github.io/paris/events/2017-09-14_n19/bizarre/)
-* Source [github.com/cpp-frug/paris/events/2017-09-14_n19/bizarre](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/bizarre/README.md)
+* GitHub [github.com/cpp-frug/paris/events/2017-09-14_n19/bizarre](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/bizarre/README.md)
 
 
 
@@ -83,8 +83,12 @@ int main()
 }
 ```
 
+    one day is 24 hours
+    1/2 hour is 0.5 hours
+    the answer is 42
 
-Trigraph `??-` -> `~`
+
+Trigraph &emsp; `??-` &emsp; -> &emsp; `~`
 
 ```cpp
 #include <iostream>
@@ -107,6 +111,10 @@ int main()
             <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
+
+    one day is 24 hours
+    1/2 hour is 0.5 hours
+    the answer is 42
 
 
 Espacement
@@ -133,6 +141,10 @@ int main()
 }
 ```
 
+    one day is 24 hours
+    1/2 hour is 0.5 hours
+    the answer is 42
+
 
 Opérateur ternaire
 
@@ -158,8 +170,14 @@ int main()
 }
 ```
 
+    one day is 24 hours
+    1/2 hour is 0.5 hours
+    the answer is 42
 
-Complément à un *(ones' complement)*  `~1` -> `-2` (if signed)
+
+Complément à un *(ones' complement)*
+[std::bit_not](http://en.cppreference.com/w/cpp/utility/functional/bit_not)
+&emsp; `~1` &emsp; -> &emsp; `-2` &emsp; (si signé)
 
 ```cpp
 #include <iostream>
@@ -182,6 +200,10 @@ int main()
             <<"the answer is "<< answer(day.count()) <<'\n';
 }
 ```
+
+    one day is 24 hours
+    1/2 hour is 0.5 hours
+    the answer is 42
 
 
 
@@ -214,8 +236,8 @@ int main()
 
 
 Opérateur virgule *(Comma operator)*
-(wikipedia.org)[https://en.wikipedia.org/wiki/Comma_operator]
-(cppreference.com)[http://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator]
+[wikipedia.org](https://en.wikipedia.org/wiki/Comma_operator)
+[cppreference.com](http://en.cppreference.com/w/cpp/language/operator_other#Built-in_comma_operator)
 
 ```cpp
 #include <iostream>
@@ -290,31 +312,178 @@ http://coliru.stacked-crooked.com/a/3a7d316dd41cb1b3
 #include <iostream>
 
 template <bool B = true>
-bool foo(bool b = B)
-{
+bool foo (bool b = B) {
   return !!b??!??!!!b;
 }
 
 template <bool B = false>
-bool bar(bool b = B)
-{
+bool bar (bool b = B) {
   std::cout << !b??!??!!b;
 }
 
-int main()
-{
+int main() {
   !foo()??!??!bar();
 }
 ```
 
-
-Trigraphs `??!` -> `|`
-
+    1
 
 
-  
-  
-  
+Trigraphs &emsp; `??!` &emsp; -> &emsp; `|`
+
+```cpp
+#include <iostream>
+
+template <bool B = true>
+bool foo (bool b = B) {
+  return !!b || !!b;
+}
+
+template <bool B = false>
+bool bar (bool b = B) {
+  std::cout << !b || b;
+}
+
+int main() {
+  !foo() || bar();
+}
+```
+
+    1
+
+
+Simplifications
+
+```cpp
+#include <iostream>
+
+template <bool B = true>
+bool foo (bool b = B) {
+//return !!b || !!b;
+  return b;
+}
+
+template <bool B = false>
+bool bar (bool b = B) {
+//std::cout << !b || b;
+  std::cout << true;
+}
+
+int main() {
+//!foo() || bar();
+  if (foo()) bar();
+}
+```
+
+    1
+
+
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  char a[] = "ciel + v";
+
+  std::cout << 7 + a << 1[a] << 7[a]
+     << 2[a] << 6[a] << 3[a] << 2[a]
+     << 6[a] <<  *a  << 5[a] << a[5];
+}
+```
+
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  char a[] = "ciel + v";
+
+  std::cout << 7 + a << 1[a] << 7[a]
+     << 2[a] << 6[a] << 3[a] << 2[a]
+     << 6[a] <<  *a  << 5[a] << a[5];
+}
+```
+
+    vive le c++
+
+
+
+Ternary as lvalue
+
+    (a == 0 ? a : b) = 1;
+
+
+
+http://coliru.stacked-crooked.com/a/230fc215df0fa6d1
+
+```cpp
+#include <iostream>
+
+int main()
+{
+std::cout << '4';
+http://www.cppfrug.org
+std::cout << '2';
+}
+```
+
+
+URL in code
+
+```cpp
+#include <iostream>
+
+int main()
+{
+std::cout << '4';
+http://www.cppfrug.org
+std::cout << '2';
+}
+```
+
+    42
+
+
+```cpp
+#include <iostream>
+
+int main()
+{
+std::cout << '4';
+http://www.cppfrug.org
+std::cout << '2';
+goto http;
+}
+```
+
+    42222222222222222222222...
+
+
+Scope-declared types
+
+```cpp
+#include <iostream>
+
+int main()
+{
+  for (struct { int a; float b; } loop = { 1, 2.3 };
+       loop.a < 5 || loop.b < 999;
+       loop.a++, loop.b *= loop.a)
+
+         std::cout << loop.a <<' '<< loop.b <<'\n';
+}
+```
+
+    1 2.3
+    2 4.6
+    3 13.8
+    4 55.2
+    5 276
+
+
+
 http://madebyevan.com/obscure-cpp-features/
 
 
@@ -325,10 +494,7 @@ https://www.youtube.com/watch?v=_wzc7a3McOs
   
 Mini-features (petards mouilles) :
 ---------------
-- Array / ptr arythmetic		: a[1] -> 1[a]							+ operator[] overload
-- Ternary as lvalue				: (a == 0 ? a : b) = 1;
-- URL in code					: label + comment
-- scope-declared types 			: for(struct { int a; float b; } loop = { 1, 2 }; ...; ...) {
+...) {
 - template union wt/ ctor/dtor	:
 - main return 0 by default		:
 
