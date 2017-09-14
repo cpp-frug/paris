@@ -1,6 +1,5 @@
-[C++FRUG #19][M] - Before we pack for Bellevue
-====================================
-[M]: https://www.meetup.com/User-Group-Cpp-Francophone/events/243111702/
+C++FRUG #19 - Before we pack for Bellevue
+=========================================
 
 Dix-neuvième édition des rencontres du **C++ French User Group** (C++FRUG) Paris.
 
@@ -12,6 +11,9 @@ d'annuler l'inscription au plus tôt pour permettre
 à ceux en liste d'attente de profiter des places libérées.
 Fin des inscriptions la veille à minuit.
 
+* Meetup [meetup.com/User-Group-Cpp-Francophone/events/243111702/](https://www.meetup.com/User-Group-Cpp-Francophone/events/243111702/)
+* Jekyll [cppfrug.org/paris/events/2017-09-14_n19](http://cpp-frug.github.io/paris/events/2017-09-14_n19/)
+* GitHub [github.com/cpp-frug/paris/events/2017-09-14_n19/bizarre](https://github.com/cpp-frug/paris/blob/master/events/2017-09-14_n19/)
 
 
 
