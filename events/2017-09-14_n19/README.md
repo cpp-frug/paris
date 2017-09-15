@@ -26,8 +26,7 @@ Jeudi 14 septembre 2017
 - 20h00  Property Based Testing - Nicolas Dubien
 - 20h30  Pause dinatoire 
 - 21h00  Lightning talks (open session)
-    - [quick-bench.com](http://quick-bench.com/) par Fred Tingaud:  
-      https://github.com/FredTingaud/talks/tree/master/quick-bench-std-sort-lightning
+    - [quick-bench.com](http://quick-bench.com/) par Fred Tingaud avec le slides HTML sur [GitHub](https://github.com/FredTingaud/talks/tree/master/quick-bench-std-sort-lightning)
     - [Daily C++](dailies_fluent_cpp.pdf) by 
     - [Bizarreries](bizare) du C++ par Oliver
     - [property based testing avec RapidCheck](https://dubzzz.github.io/property-based-testing-cpp/talk/talk.v2.html) par Nicolas Dubien (sources des slides sur [GitHub](https://github.com/dubzzz/property-based-testing-cpp))
