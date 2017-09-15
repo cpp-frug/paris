@@ -30,7 +30,7 @@ Jeudi 14 septembre 2017
     - [Daily C++](dailies_fluent_cpp.pdf) by 
     - [Bizarreries](bizarre) du C++ par Oliver
     - [property based testing avec RapidCheck](https://dubzzz.github.io/property-based-testing-cpp/talk/talk.v2.html) par Nicolas Dubien (sources des slides sur [GitHub](https://github.com/dubzzz/property-based-testing-cpp))
-    - [`clang-format`](https://docs.google.com/presentation/d/1cFG8OIW1hhHU3C-_FPYGWlnjZANNyb3nUST9p0LKUFM/) par Benoit Blanchon et aussi disponible sur son (blog)[https://blog.benoitblanchon.fr/clang-format-5/]
+    - [`clang-format`](https://docs.google.com/presentation/d/1cFG8OIW1hhHU3C-_FPYGWlnjZANNyb3nUST9p0LKUFM/) par Benoit Blanchon et aussi disponible sur son [blog](https://blog.benoitblanchon.fr/clang-format-5/)
     - C++ ABI par Mathieu Ropert
 
 
