@@ -30,7 +30,7 @@ Jeudi 14 septembre 2017
     - [Daily C++](dailies_fluent_cpp.pdf) par [Jonathan Boccara](https://www.fluentcpp.com/about-me/)
     - [Bizarreries](bizarre) du C++ par Oliver
     - [`clang-format`](https://docs.google.com/presentation/d/1cFG8OIW1hhHU3C-_FPYGWlnjZANNyb3nUST9p0LKUFM/) par Benoit Blanchon et aussi disponible sur son [blog](https://blog.benoitblanchon.fr/clang-format-5/)
-    - C++ ABI par Mathieu Ropert
+    - [C++ ABI](https://docs.google.com/presentation/d/1MAV5zp6UitZ55UTYIS7AMZK8E80AFPuysoSLyVSTawY/edit?usp=sharing) par Mathieu Ropert
 
 
 Pour s'y rendre
