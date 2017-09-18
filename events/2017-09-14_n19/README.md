@@ -21,8 +21,12 @@ Jeudi 14 septembre 2017
 ------------------
 
 - 19h30  Accueil 
-- 19h45  Actualités sur le C++ et présentation de notre sponsor
-    - Rejoindre **Cpplang** sur Slack --> https://cpplang.now.sh/, puis sur https://cpplang.slack.com
+- 19h45  Actualités sur le C++ et présentation de notre sponsor  
+    **C++FRUG sur le Slack officiel du C++**
+    - s'inscrire sur [cpplang.now.sh](https://cpplang.now.sh/)
+    - puis se connecter sur [cpplang.slack.com](https://cpplang.slack.com/)
+    - enfin rejoindre C++FRUG sur le canal [#cppfrug](https://cpplang.slack.com/messages/C6XV6SGT0/)
+    - sinon, nous avons toujours [chat.cppfrug.org](https://chat.cppfrug.org/)
 - 20h00  [Property Based Testing](https://dubzzz.github.io/property-based-testing-cpp/talk/talk.v2.html) avec RadidCheck par Nicolas Dubien (sources des slides sur [GitHub](https://github.com/dubzzz/property-based-testing-cpp))
 - 20h30  Pause dinatoire
 - 21h00  Lightning talks (open session)
