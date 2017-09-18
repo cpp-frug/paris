@@ -23,13 +23,12 @@ Jeudi 14 septembre 2017
 - 19h30  Accueil 
 - 19h45  Actualités sur le C++ et présentation de notre sponsor
     - Rejoindre **Cpplang** sur Slack --> https://cpplang.now.sh/, puis sur https://cpplang.slack.com
-- 20h00  Property Based Testing - Nicolas Dubien
-- 20h30  Pause dinatoire 
+- 20h00  [Property Based Testing](https://dubzzz.github.io/property-based-testing-cpp/talk/talk.v2.html) avec RadidCheck par Nicolas Dubien (sources des slides sur [GitHub](https://github.com/dubzzz/property-based-testing-cpp))
+- 20h30  Pause dinatoire
 - 21h00  Lightning talks (open session)
     - [quick-bench.com](http://quick-bench.com/) par Fred Tingaud avec le slides HTML sur [GitHub](https://github.com/FredTingaud/talks/tree/master/quick-bench-std-sort-lightning)
-    - [Daily C++](dailies_fluent_cpp.pdf) by 
+    - [Daily C++](dailies_fluent_cpp.pdf) par [Jonathan Boccara](https://www.fluentcpp.com/about-me/)
     - [Bizarreries](bizarre) du C++ par Oliver
-    - [property based testing avec RapidCheck](https://dubzzz.github.io/property-based-testing-cpp/talk/talk.v2.html) par Nicolas Dubien (sources des slides sur [GitHub](https://github.com/dubzzz/property-based-testing-cpp))
     - [`clang-format`](https://docs.google.com/presentation/d/1cFG8OIW1hhHU3C-_FPYGWlnjZANNyb3nUST9p0LKUFM/) par Benoit Blanchon et aussi disponible sur son [blog](https://blog.benoitblanchon.fr/clang-format-5/)
     - C++ ABI par Mathieu Ropert
 
