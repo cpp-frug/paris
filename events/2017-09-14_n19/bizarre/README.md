@@ -1052,7 +1052,18 @@ struct Derive : Base<X>
 ```
 
 
+Where `foo` is declared?
 
+```cpp
+#include <iostream>
+#include <string>
+
+int main()
+{
+    std::string(foo)(1, '#');
+    std::cout << foo << std::endl;
+}
+```
 
 
 and xor or and_eq bitand compl 
