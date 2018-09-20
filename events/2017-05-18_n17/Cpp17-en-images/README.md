@@ -5,9 +5,9 @@ Copyright 2017 olibre &emsp; [CC BY-SA 4.0](https://creativecommons.org/licenses
 
 [![le logo C++FRUG est consitué du drapeau de la francophonie avec C++ au centre](http://cpp-frug.github.io/images/Cpp-Francophonie.svg "Logo C++FRUG")](https://github.com/cpp-frug/cpp-frug.github.io/blob/master/images/Cpp-Francophonie.svg)
 
-* Présentation: [cppfrug.org/paris/events/2017-05-18_n17/Cpp17-en-images/reveal.html](http://cppfrug.org/paris/events/2017-05-18_n17/Cpp17-en-images/reveal.html) 
+* Présentation : [cppfrug.org/paris/events/2017-05-18_n17/Cpp17-en-images/reveal.html](http://cppfrug.org/paris/events/2017-05-18_n17/Cpp17-en-images/reveal.html) 
 * Site statique : [cppfrug.org/paris/events/2017-05-18_n17/Cpp17-en-images](http://cpp-frug.github.io/paris/events/2017-05-18_n17/Cpp17-en-images/)
-* Src : [github.com/cpp-frug/paris/events/2017-05-18_n17/Cpp17-en-images](https://github.com/cpp-frug/paris/blob/master/events/2017-05-18_n17/Cpp17-en-images/README.md)
+* Source : [github.com/cpp-frug/paris/events/2017-05-18_n17/Cpp17-en-images](https://github.com/cpp-frug/paris/blob/master/events/2017-05-18_n17/Cpp17-en-images/README.md)
 
 
 C'était mieux avant ?
@@ -199,11 +199,11 @@ Variable `inline` ([P0386](http://wg21.link/p0386))
 [N3922](https://wg21.link/n3922) comble un trou dans les règles de déduction pour `auto` à partir des `{`listes d'initialisation`}`
     
 ```cpp
-auto a   {1};     //ok => int a{1};
-auto b = {1};     //ok => std::initializer_list<int> b = {1};
+auto a   {1};      //OK => int a{1};
+auto b = {1};      //OK => std::initializer_list<int> b = {1};
     
-auto c   {1, 2};  //KO car plus d'un élément
-auto d = {1, 2};  //ok => std::initializer_list<int> d = {1, 2};
+auto c   {1, 2};   //KO car plus d'un élément
+auto d = {1, 2};   //OK => std::initializer_list<int> d = {1, 2};
     
 auto e   {1, 2.0}; //KO car plus d'un élément
 auto f = {1, 2.0}; //KO car pas le même type (int et double)
@@ -269,7 +269,7 @@ sans le second paramètre `message`.
 // Les static_assert avec un message vide étaient courants
 static_assert(sizeof(int) == 4, "");
 
-// C++17 a étéinfluencé par l'usage (mauvaise pratique?)
+// C++17 a été influencé par l'usage (mauvaise pratique ?)
 static_assert(sizeof(int) == 4);
 ```
 
@@ -285,7 +285,7 @@ static_assert(sizeof(int) == 4);
 Devinette
 =========
 
-À quelle aspects C++17
+À quels aspects C++17
 ----------------------
 
 la prochaine image fait référence ?
@@ -303,10 +303,10 @@ Les prochains sujets ?
 Singletons
 ==========
 
-Ce n'est si évident que cela
+Ce n'est pas si évident que cela
 ----------------------------
 
-Et c'est n'est pas toujours pertinent
+Et ce n'est pas toujours pertinent
 -------------------------------------
 
 
@@ -343,8 +343,8 @@ Astuces et C++
 Controverses
 ------------
 
-Loïc se propose de partager les débats  
-dont les membres du comité C++ ne sont  
+Loïc se propose de partager les débats pour
+lesquels les membres du comité C++ ne sont
 pas sûrs d'aller dans la bonne direction.
 
 La parole est à la communauté C++FRUG.
